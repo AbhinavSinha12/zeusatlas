@@ -133,15 +133,42 @@ public abstract class AtlasQueryAdapter {
 
 	/*
 	 * functions which write x where x is a set of variables or types
+	 * So I took jons code and pasted it in. 
+	 * 
+	 * I would think that each call to a wrapper class will return an IValue
+	 * 
+	 * 
 	 */
 	public IValue runWriteQuery(QueryFactory qf, IQueryState queryState,
 			IQueryFunctionSymbolTable qfst , String input){
 		
-		// call(f:freebuf)
+		/*
+		 * I have no idea what this does but I think it creates a function to look up
+		 * so I'll say that we want to look up the function that we pass to the runWriteQuery
+		 * in the String parameter labeled input.
+		 * 
+		*/
 		IFunctionArtifact function = qf.createFunctionArtifact(input);
+		
+		/*
+		 * I have no idea what this is for but jon uses it
+		 */
 		IArtifacts artifacts = qf.createArtifacts();
+		
+		/*
+		 * So we add the function to the artifacts.....
+		 */
 		artifacts.add(function);
+		
+		/*
+		 * I think this is where we actually set up the function call
+		 */
 		IQueryFunction write = qfst.lookupSymbol(FUNCTION.WRITE);
+		
+		/*
+		 * When we "execute" the IQueryFunction we pass it the artifacts that are passed
+		 * in. We will then get the result back as an IValue.
+		 */
 		IValue result = write.execute(qfst, queryState, new IValue[] {artifacts});
 		
 		
