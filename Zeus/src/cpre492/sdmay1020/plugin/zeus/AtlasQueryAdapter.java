@@ -131,8 +131,21 @@ public abstract class AtlasQueryAdapter {
 		return null;
 	}
 
-	static Collection<Function> runWriteQuery(){
-		return null;
+	/*
+	 * functions which write x where x is a set of variables or types
+	 */
+	public IValue runWriteQuery(QueryFactory qf, IQueryState queryState,
+			IQueryFunctionSymbolTable qfst , String input){
+		
+		// call(f:freebuf)
+		IFunctionArtifact function = qf.createFunctionArtifact(input);
+		IArtifacts artifacts = qf.createArtifacts();
+		artifacts.add(function);
+		IQueryFunction write = qfst.lookupSymbol(FUNCTION.WRITE);
+		IValue result = write.execute(qfst, queryState, new IValue[] {artifacts});
+		
+		
+		return result;
 	}
 
 	static Collection<Artifact> runWrittenByQuery(){
