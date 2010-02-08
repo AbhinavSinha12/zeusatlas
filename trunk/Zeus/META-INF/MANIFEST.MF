@@ -6,8 +6,10 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: cpre492.sdmay1020.plugin.zeus.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- AtlasPlugin;bundle-version="1.0.0",
- AtlasPluginAPI;bundle-version="1.0.0",
- RhinoJAR;bundle-version="1.0.0"
+ com.ensoftcorp.plugin.atlas.api;bundle-version="0.1.15",
+ rhinojar2;bundle-version="1.0.0",
+ zeusapi;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: com.ensoftcorp.plugin.atlas.query.api,
+ com.ensoftcorp.plugin.atlas.ui.api
