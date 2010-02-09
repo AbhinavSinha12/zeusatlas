@@ -139,39 +139,20 @@ public abstract class AtlasQueryAdapter {
 	 * 
 	 * 
 	 */
-	public IValue runWriteQuery(QueryFactory qf, IQueryState queryState,
-			IQueryFunctionSymbolTable qfst , String input){
+	public IValue runWriteQuery (IValue[] input){
 		
-		/*
-		 * I have no idea what this does but I think it creates a function to look up
-		 * so I'll say that we want to look up the function that we pass to the runWriteQuery
-		 * in the String parameter labeled input.
-		 * 
-		*/
-		IFunctionArtifact function = qf.createFunctionArtifact(input);
+		//TODO: remove this once global vars are set up
+		QueryFactory qf = QueryFactory.instance;
+		IQueryState queryState = qf.createQueryState();
+		IQueryFunctionSymbolTable qfst = qf.createQueryFunctionSymbolTable();
+		//end remove
 		
-		/*
-		 * I have no idea what this is for but jon uses it
-		 */
-		IArtifacts artifacts = qf.createArtifacts();
-		
-		/*
-		 * So we add the function to the artifacts.....
-		 */
-		artifacts.add(function);
-		
-		/*
-		 * I think this is where we actually set up the function call
-		 */
+		// Set up the query function call in the Atlas query language
 		IQueryFunction write = qfst.lookupSymbol(FUNCTION.WRITE);
-		
-		/*
-		 * When we "execute" the IQueryFunction we pass it the artifacts that are passed
-		 * in. We will then get the result back as an IValue.
-		 */
-		IValue result = write.execute(qfst, queryState, new IValue[] {artifacts});
-		
-		
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = write.execute(qfst, queryState, input);
 		return result;
 	}
 
