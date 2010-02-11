@@ -27,7 +27,17 @@ import org.eclipse.ui.IWorkbenchWindowActionDelegate;
  * @author Kristina Gervais
  *
  */
-public abstract class AtlasQueryAdapter {
+public class AtlasQueryAdapter {
+	
+	private QueryFactory qf = null;
+	private IQueryState queryState = null;
+	private IQueryFunctionSymbolTable qfst = null;
+	
+	public AtlasQueryAdapter(){
+		qf = QueryFactory.instance;
+		queryState = qf.createQueryState();
+		qfst = qf.createQueryFunctionSymbolTable();
+	}
 	
 	static Collection<Artifact> runArgumentCastQuery(){
 		return null;
@@ -133,19 +143,11 @@ public abstract class AtlasQueryAdapter {
 
 	/*
 	 * functions which write x where x is a set of variables or types
-	 * So I took jons code and pasted it in. 
-	 * 
 	 * I would think that each call to a wrapper class will return an IValue
 	 * 
 	 * 
 	 */
 	public IValue runWriteQuery (IValue[] input){
-		
-		//TODO: remove this once global vars are set up
-		QueryFactory qf = QueryFactory.instance;
-		IQueryState queryState = qf.createQueryState();
-		IQueryFunctionSymbolTable qfst = qf.createQueryFunctionSymbolTable();
-		//end remove
 		
 		// Set up the query function call in the Atlas query language
 		IQueryFunction write = qfst.lookupSymbol(FUNCTION.WRITE);
@@ -162,15 +164,9 @@ public abstract class AtlasQueryAdapter {
 	 * pretty much the same as WriteQuery except the result should be artifacts
 	 * still need to work on return values do they need to be anything other then ivalues 
 	 */
-	static IValue runWrittenByQuery( IValue[] input ){
-		
-		//TODO: remove this once global vars are set up
-		QueryFactory qf = QueryFactory.instance;
-		IQueryState queryState = qf.createQueryState();
-		IQueryFunctionSymbolTable qfst = qf.createQueryFunctionSymbolTable();
-		//end remove
-		
-		//creat the writtenby query function
+	public IValue runWrittenByQuery( IValue[] input ){
+			
+		//create the writtenby query function
 		IQueryFunction writtenby = qfst.lookupSymbol(FUNCTION.WRITTENBY);
 		
 		//execute the function and save the results into the ivalue named results
