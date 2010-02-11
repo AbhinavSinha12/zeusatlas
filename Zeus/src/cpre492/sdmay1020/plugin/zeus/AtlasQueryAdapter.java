@@ -153,11 +153,31 @@ public abstract class AtlasQueryAdapter {
 		// make the Atlas query call #x = write(n);
 		// where #x is 'result' and n is 'input'
 		IValue result = write.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
 		return result;
 	}
 
-	static Collection<Artifact> runWrittenByQuery(){
-		return null;
+	/*
+	 * pretty much the same as WriteQuery except the result should be artifacts
+	 * still need to work on return values do they need to be anything other then ivalues 
+	 */
+	static IValue runWrittenByQuery( IValue[] input ){
+		
+		//TODO: remove this once global vars are set up
+		QueryFactory qf = QueryFactory.instance;
+		IQueryState queryState = qf.createQueryState();
+		IQueryFunctionSymbolTable qfst = qf.createQueryFunctionSymbolTable();
+		//end remove
+		
+		//creat the writtenby query function
+		IQueryFunction writtenby = qfst.lookupSymbol(FUNCTION.WRITTENBY);
+		
+		//execute the function and save the results into the ivalue named results
+		IValue results = writtenby.execute(qfst, queryState, input);
+		
+		
+		return results;
 	}
 
 	/********************* Sample Code from ATLAS-SAMPLE-CLIENT SampleAction.java *******************/
