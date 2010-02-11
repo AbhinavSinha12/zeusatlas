@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="Zeus.ActionSet"
+            label="Zeus Actions"
+            visible="true"
+	        description="">
+        <action id="Zeus.Run"
+           	  label="Run Query"
+ 	          toolbarPath="org.eclipse.ui.workbench.file/new.ext"
+	          icon="icons/ZeusIcon.PNG"
+	          tooltip="Runs the JavaScript Query for Atlas"
+	          class="cpre492.sdmay1020.plugin.zeus.ZeusRunButtonAction">
+	    </action>
+      </actionSet>
+   </extension>
+</plugin>
