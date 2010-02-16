@@ -118,21 +118,28 @@ public class AtlasQueryAdapter {
 	
 	
 	/**
-	 * artifacts which are defined in path (e.g. artifacts defined in a header file)
-	 *  path is a string representing part of a file path, e.g. "includes/disk.h"
-	 * @return
+	 * This wrapper function will return the artifacts which are defined in path(e.g. artifacts defined in a header file),
+	 * path is a string representing part of a file path, e.g. "includes/disk.h"
+	 * @param inputPath - a String representing part of a file path
+	 * @return result - IArtifacts that result from the query
+	 * @author Alex Kharbush
 	 */
 	
-	public IValue runDefQuery (IValue[] input)
+	public IArtifacts runDefQuery (String inputPath)
 	{
 		// Set up the query function call in the Atlas query language
 		IQueryFunction def = qfst.lookupSymbol(FUNCTION.DEF);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = def.execute(qfst, queryState, input);
+		//Setup the IValue array
+		IValue[] submit = new IValue[1];
 		
-		//TODO: cast result into funcitons and return functions
+		//TODO need to setup a new IStringValue
+		submit[0] =  new IStringValue(inputPath);
+		
+		//TODO is this a correct cast from IValue to IArtifacts
+		IArtifacts result = (IArtifacts) def.execute(qfst, queryState, submit);
+		
+		//Return statement
 		return result;
 	}
 	
