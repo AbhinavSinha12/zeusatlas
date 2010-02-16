@@ -39,7 +39,29 @@ public class AtlasQueryAdapter {
 		qfst = qf.createQueryFunctionSymbolTable();
 	}
 	
+/**
+ * 
+ * @param input
+ * @return
+ */
+	public IValue runMinusQuery(IValue[] input)
+	{
+		// Set up the query function call in the Atlas query language
+		IQueryFunction MINUS = qfst.lookupSymbol(FUNCTION.MINUS);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = MINUS.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
+	}
 	
+	/**
+	 * 
+	 * @param input
+	 * @return
+	 */
 	public IValue runAndQuery(IValue[] input)
 	{
 		// Set up the query function call in the Atlas query language
@@ -71,22 +93,21 @@ public class AtlasQueryAdapter {
 	 * artifacts which are defined in path (e.g. artifacts defined in a header file)
 	 *  path is a string representing part of a file path, e.g. "includes/disk.h"
 	 * @return
-	 * for some odd reason this method does  not exist
 	 */
-	/*
-	public IValue runPathQuery (IValue[] input)
+	
+	public IValue runDefQuery (IValue[] input)
 	{
 		// Set up the query function call in the Atlas query language
-		IQueryFunction PATH = qfst.lookupSymbol(FUNCTION.PATH);
+		IQueryFunction def = qfst.lookupSymbol(FUNCTION.DEF);
 			
 		// make the Atlas query call #x = write(n);
 		// where #x is 'result' and n is 'input'
-		IValue result = PATH.execute(qfst, queryState, input);
+		IValue result = def.execute(qfst, queryState, input);
 		
 		//TODO: cast result into funcitons and return functions
 		return result;
 	}
-	*/
+	
 	
 	
 	/**
@@ -120,13 +141,18 @@ public class AtlasQueryAdapter {
 		return result;
 	}
 
+
 	//TODO : this needs to be reviewed
-	static Collection<Function> runArgumentsQuery(){
-		return null;
-	}
-	//TODO : this needs to be reviewed
-	static Collection<Artifact> runArtifactsQuery(){
-		return null;
+	public IValue runArtifactsQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction art = qfst.lookupSymbol(FUNCTION.ARTIFACTS);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = art.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
 
 	/**
@@ -168,7 +194,6 @@ public class AtlasQueryAdapter {
 	 * functions which are in the call graph starting at function x
 	 * @return
 	 */
-	//TODO : double check this is call graph
 	public IValue runCallGraphQuery(IValue[] input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction cg = qfst.lookupSymbol(FUNCTION.CG);
@@ -196,14 +221,21 @@ public class AtlasQueryAdapter {
 		//TODO: cast result into funcitons and return functions
 		return result;
 	}
-	//TODO : this needs to be reviewed
-	static Collection<Artifact> runCastQuery(){
-		return null;
+	
+	
+	//TODO : this needs to be commented
+	public IValue runCastQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction cast = qfst.lookupSymbol(FUNCTION.CAST);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = cast.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
-	//TODO : this needs to be reviewed
-	static Collection<Artifact> runDefinitionQuery(){
-		return null;
-	}
+
 
 	//TODO : this needs to be reviewed
 	static Collection<Function> runFunctionDeclareQuery(){
