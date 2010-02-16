@@ -40,20 +40,27 @@ public class AtlasQueryAdapter {
 	}
 	
 /**
- * 
- * @param input
- * @return
+ * This Wrapper Function will take the subtraction of two queries
+ * @param input1 the first input of IValue
+ * @param input2 the second input of IValue
+ * @return result the result of the query in IValue form
  */
-	public IValue runMinusQuery(IValue[] input)
+	public IValue runMinusQuery(IValue input1, IValue input2)
 	{
 		// Set up the query function call in the Atlas query language
 		IQueryFunction MINUS = qfst.lookupSymbol(FUNCTION.MINUS);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = MINUS.execute(qfst, queryState, input);
 		
-		//TODO: cast result into funcitons and return functions
+		//Setup the IValue array
+		IValue[] submit = new IValue[2];
+		
+		submit[0] = input1;
+		submit[1] = input2;
+		
+		//This is where the call to atlas is actually made, we will pass in the submit IValue array and get back an IValue
+		IValue result = MINUS.execute(qfst, queryState, submit);
+		
+		//Return statement
 		return result;
 	}
 	
