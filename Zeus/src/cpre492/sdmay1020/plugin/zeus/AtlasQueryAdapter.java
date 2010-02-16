@@ -100,8 +100,20 @@ public class AtlasQueryAdapter {
 		return null;
 	}
 
-	static Collection<Artifact> runReadByQuery(){
-		return null;
+	/**
+	 * artifacts which are read by x where x is a set of functions
+	 * @return
+	 */
+	public IValue runReadByQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction readby = qfst.lookupSymbol(FUNCTION.READBY);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = readby.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
 
 	/**
@@ -128,9 +140,21 @@ public class AtlasQueryAdapter {
 		return null;
 	}
 
-	static Collection<Function> runReferenceQuery(){
-		return null;
-	}
+	/**
+	 * functions which read or write x, equivalent to "read(x) or write(x)"
+	 * @return
+	 */
+	public IValue runReferenceQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction ref = qfst.lookupSymbol(FUNCTION.REF);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = ref.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;	
+		}
 
 	static Collection<Function> runReverseCallGraphQuery(){
 		return null;
