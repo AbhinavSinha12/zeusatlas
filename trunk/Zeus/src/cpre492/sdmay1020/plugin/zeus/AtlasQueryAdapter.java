@@ -104,8 +104,24 @@ public class AtlasQueryAdapter {
 		return null;
 	}
 
-	static Collection<Function> runReadQuery(){
-		return null;
+	/**
+	 * read(x): functions which read x where x is a set of variables, 
+	 * types or functions (reads of function addresses are useful for finding 
+	 * function pointer initialization)
+	 * @return
+	 */
+	public IValue runReadQuery(IValue[] input ){
+		
+		// Set up the query function call in the Atlas query language
+		IQueryFunction read = qfst.lookupSymbol(FUNCTION.READ);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = read.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
+		
 	}
 
 	static Collection<Artifact> runReferencedByQuery(){
