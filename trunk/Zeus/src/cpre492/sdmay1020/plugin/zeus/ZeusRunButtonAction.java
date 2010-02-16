@@ -30,6 +30,7 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 
 	@Override
 	public void run(IAction action) {
+		//TODO: launch Rhino
 		MessageDialog.openInformation(window.getShell(), "Sample", "Hello World!");
 	}
 
