@@ -39,12 +39,48 @@ public class AtlasQueryAdapter {
 		qfst = qf.createQueryFunctionSymbolTable();
 	}
 	
+	
+	/**
+	 * artifacts which are defined in path (e.g. artifacts defined in a header file)
+	 *  path is a string representing part of a file path, e.g. "includes/disk.h"
+	 * @return
+	 * for some odd reason this method does  not exist
+	 */
+	/*
+	public IValue runPathQuery (IValue[] input)
+	{
+		// Set up the query function call in the Atlas query language
+		IQueryFunction PATH = qfst.lookupSymbol(FUNCTION.PATH);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = PATH.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
+	}
+	*/
+	
+	
+	
 	static Collection<Artifact> runArgumentCastQuery(){
 		return null;
 	}
 
-	static Collection<Function> runArgumentQuery(){
-		return null;
+	/**
+	 * functions which pass x as an argument to another function x is a set of types
+	 * @return
+	 */
+	public IValue runArgumentQuery(IValue[] input ){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction arg = qfst.lookupSymbol(FUNCTION.ARG);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = arg.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
 
 	static Collection<Function> runArgumentsQuery(){
@@ -59,16 +95,53 @@ public class AtlasQueryAdapter {
 		return null;
 	}
 
-	static Collection<Function> runCalledByQuery(){
-		return null;
+	/**
+	 * functions which are called by x where  x is a set of functions
+	 * @return
+	 */
+	public IValue runCalledByQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction callby = qfst.lookupSymbol(FUNCTION.CALLEDBY);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = callby.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
 
-	static Collection<Function> runCallGraphQuery(){
-		return null;
+	/**
+	 * functions which are in the call graph starting at function x
+	 * @return
+	 */
+	//TODO : double check this is call graph
+	public IValue runCallGraphQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction cg = qfst.lookupSymbol(FUNCTION.CG);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = cg.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
 
-	static Collection<Function> runCallQuery(){
-		return null;
+	/**
+	 *  * functions which call x where x is a set of functions
+	 * @return
+	 */
+	public IValue runCallQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction call = qfst.lookupSymbol(FUNCTION.CALL);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = call.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
 
 	static Collection<Artifact> runCastQuery(){
@@ -136,8 +209,20 @@ public class AtlasQueryAdapter {
 		
 	}
 
-	static Collection<Artifact> runReferencedByQuery(){
-		return null;
+	/**
+	 * artifacts which are read or written by x, equivalent to "readby(x) or write(x)"
+	 * @return
+	 */
+	public IValue runReferencedByQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction refby = qfst.lookupSymbol(FUNCTION.REFBY);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = refby.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
 
 	/**
@@ -160,8 +245,21 @@ public class AtlasQueryAdapter {
 		return null;
 	}
 
-	static Collection<Function> runRootsQuery(){
-		return null;
+	/**
+	 * functions which are roots of the reverse call graph starting at leaf function x leaves(x)   
+	 *  functions which are leaves of the call graph starting at root function x
+	 * @return
+	 */
+	public IValue  runRootsQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction roots = qfst.lookupSymbol(FUNCTION.ROOTS);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = roots.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
 
 	static Collection<Type> runTypesQuery(){
