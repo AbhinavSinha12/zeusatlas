@@ -40,6 +40,33 @@ public class AtlasQueryAdapter {
 	}
 	
 	
+	public IValue runAndQuery(IValue[] input)
+	{
+		// Set up the query function call in the Atlas query language
+		IQueryFunction AND = qfst.lookupSymbol(FUNCTION.AND);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = AND.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
+	}
+	
+	public IValue runOrQuery (IValue[] input)
+	{
+		// Set up the query function call in the Atlas query language
+		IQueryFunction OR = qfst.lookupSymbol(FUNCTION.OR);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = OR.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
+	}
+	
+	
 	/**
 	 * artifacts which are defined in path (e.g. artifacts defined in a header file)
 	 *  path is a string representing part of a file path, e.g. "includes/disk.h"
@@ -62,9 +89,19 @@ public class AtlasQueryAdapter {
 	*/
 	
 	
-	
-	static Collection<Artifact> runArgumentCastQuery(){
-		return null;
+	/**
+	 * //TODO : this needs to be reviewed
+	 */
+	public IValue runArgumentCastQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction argCast = qfst.lookupSymbol(FUNCTION.ARGCAST);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = argCast.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
 
 	/**
@@ -83,16 +120,32 @@ public class AtlasQueryAdapter {
 		return result;
 	}
 
+	//TODO : this needs to be reviewed
 	static Collection<Function> runArgumentsQuery(){
 		return null;
 	}
-
+	//TODO : this needs to be reviewed
 	static Collection<Artifact> runArtifactsQuery(){
 		return null;
 	}
 
-	static Collection<Artifact> runArtifactsRegQuery(){
-		return null;
+	/**
+	 *  artifacts (functions,variables,types)  whose names match the given regular expression 
+	 *  (equivalent to the union of the last three)
+	 * @return
+	 */
+	//TODO : check is this is correct qfst.lookupSymbol
+	
+	public IValue runArtifactsRegQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction Artifacts = qfst.lookupSymbol(FUNCTION.ARTIFACTS);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = Artifacts.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
 
 	/**
@@ -143,32 +196,61 @@ public class AtlasQueryAdapter {
 		//TODO: cast result into funcitons and return functions
 		return result;
 	}
-
+	//TODO : this needs to be reviewed
 	static Collection<Artifact> runCastQuery(){
 		return null;
 	}
-
+	//TODO : this needs to be reviewed
 	static Collection<Artifact> runDefinitionQuery(){
 		return null;
 	}
 
+	//TODO : this needs to be reviewed
 	static Collection<Function> runFunctionDeclareQuery(){
 		return null;
 	}
 
+	/**
+	 * declared function whose names match the given regular expression 
+	 * (useful because some functions are declared but not defined)
+	 * @return
+	 */
 	
-	static Collection<Function> runFunctionDeclareRegExQuery(){
-		return null;
+	//TODO : I dont think this is the correct lookup for FDECL regular expression
+	public IValue runFunctionDeclareRegExQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction fdecl = qfst.lookupSymbol(FUNCTION.FDECL);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = fdecl.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
+	
+	//TODO Needs to be reviewed
 	static Collection<Function> runFunctionsCastQuery(){
 		return null;
 	}
 
-	
-	static Collection<Function> runFunctionsRegExQuery(){
-		return null;
+	/**
+	 * functions whose names match the given regular expression  (from the set of all defined functions)
+	 * @return
+	 */
+	public IValue runFunctionsRegExQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction readby = qfst.lookupSymbol(FUNCTION.READBY);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = readby.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
 
+	//TODO Needs to be reviewed
 	static Collection<Function> runLeavesQuery(){
 		return null;
 	}
@@ -241,8 +323,21 @@ public class AtlasQueryAdapter {
 		return result;	
 		}
 
-	static Collection<Function> runReverseCallGraphQuery(){
-		return null;
+	/**
+	 * functions which are in the reverse call graph starting at function x
+	 * @return
+	 */
+	//TODO: make sure this is rcg
+	public IValue runReverseCallGraphQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction rgc = qfst.lookupSymbol(FUNCTION.RCG);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = rgc.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
 
 	/**
@@ -262,21 +357,69 @@ public class AtlasQueryAdapter {
 		return result;
 	}
 
-	static Collection<Type> runTypesQuery(){
-		return null;
+	/**
+	 * filters artifacts by kind 
+	 * @return
+	 */
+	public  IValue runTypesQuery(IValue[] input){
+		
+		// Set up the query function call in the Atlas query language
+		IQueryFunction types = qfst.lookupSymbol(FUNCTION.TYPES);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = types.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
 
-	static Collection<Type> runTypesRegExQuery(){
-		return null;
+	/**
+	 * types whose names match the given regular expression (from the set of all types)     
+	 * @return
+	 */
+	public IValue runTypesRegExQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction Types = qfst.lookupSymbol(FUNCTION.TYPES);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = Types.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
 
-	static Collection<Variable> runVariablesQuery(){
-		return null;
+	/**
+	 * filters artifacts by kind 
+	 * @return
+	 */
+	public IValue runVariablesQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction varibles = qfst.lookupSymbol(FUNCTION.VARIABLES);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = varibles.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
 
-	
-	static Collection<Variable> runVariablesRegExQuery(){
-		return null;
+	/**
+	 * variables whose names match the given regular expression (from the set of all variables)
+	 * @return
+	 */
+	public IValue runVariablesRegExQuery(IValue[] input){
+		// Set up the query function call in the Atlas query language
+		IQueryFunction vars = qfst.lookupSymbol(FUNCTION.VARIABLES);
+			
+		// make the Atlas query call #x = write(n);
+		// where #x is 'result' and n is 'input'
+		IValue result = vars.execute(qfst, queryState, input);
+		
+		//TODO: cast result into funcitons and return functions
+		return result;
 	}
 
 	/*
