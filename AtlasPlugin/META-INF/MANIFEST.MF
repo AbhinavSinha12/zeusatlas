@@ -21,8 +21,6 @@ Export-Package: com.ensoftcorp.component.swing,
  com.ensoftcorp.plugin.atlas.ui.views,
  com.ensoftcorp.plugin.atlas.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.common.ui,
- org.eclipse.draw2d,
  org.apache.log4j,
  org.eclipse.ui.ide,
  com.ensoftcorp.module.util,
