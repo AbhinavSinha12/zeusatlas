@@ -191,83 +191,124 @@ public class AtlasQueryAdapter {
 	}
 
 
-	//TODO : this needs to be reviewed
-	public IValue runArtifactsQuery(IValue[] input){
+	
+	/**
+	 * filters artifacts by kind (e.g. return only variables from the set x)
+	 * @param IArtifact - input
+	 * @return IArtifact - result
+	 * @author Alex Kharbush
+	 */
+	public IArtifacts runArtifactsQuery(IArtifact input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction art = qfst.lookupSymbol(FUNCTION.ARTIFACTS);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = art.execute(qfst, queryState, input);
+		//Setup the IValue array
+		IValue[] submit = new IValue[1];
 		
-		//TODO: cast result into funcitons and return functions
+		//TODO need to setup a new IArtifact as an IValue [] should not need cast
+		submit[0] = (IValue) input;
+		
+		//This is where the art command is actually made, we will pass the submit IValue[] and get back a set of IArtifacts
+		IArtifacts result =(IArtifacts) art.execute(qfst, queryState, submit);
+		
+		//Return Result
 		return result;
 	}
 
 	/**
 	 *  artifacts (functions,variables,types)  whose names match the given regular expression 
 	 *  (equivalent to the union of the last three)
-	 * @return
+	 *  @param String  - input
+	 * @return IArtifacts - result
+	 * 
+	 * @author Alex Kharbush
 	 */
 	//TODO : check is this is correct qfst.lookupSymbol
 	
-	public IValue runArtifactsRegQuery(IValue[] input){
+	public IArtifacts runArtifactsRegQuery(String input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction Artifacts = qfst.lookupSymbol(FUNCTION.ARTIFACTS);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = Artifacts.execute(qfst, queryState, input);
+		//Setup the IValue array
+		IValue[] submit = new IValue[1];
 		
-		//TODO: cast result into funcitons and return functions
+		//TODO need to setup a new IStringValue
+		submit[0] =  new IStringValue(input);
+		
+		//This is where the artifacts command is sent to atlas, we pass submit[] to it
+		IArtifacts result = (IArtifacts)Artifacts.execute(qfst, queryState, submit);
+		
+		//Return result
 		return result;
 	}
 
 	/**
 	 * functions which are called by x where  x is a set of functions
-	 * @return
+	 * @param input - IFunctionArtifact
+	 * @return result - IFunctionArtifact
+	 * @Aurthor Alex Kharbush
 	 */
-	public IValue runCalledByQuery(IValue[] input){
+	public IFunctionArtifact runCalledByQuery(IFunctionArtifact input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction callby = qfst.lookupSymbol(FUNCTION.CALLEDBY);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = callby.execute(qfst, queryState, input);
+		//Setup the IValue array
+		IValue[] submit = new IValue[1];
 		
-		//TODO: cast result into funcitons and return functions
+		//Fill the first value of the IValue array with an IFunctionArtifact
+		submit[0] =  (IValue) input;
+		
+	
+		//Send submit to atlas
+		IFunctionArtifact result = (IFunctionArtifact)callby.execute(qfst, queryState, submit);
+		
+		//Return Result
 		return result;
 	}
 
 	/**
 	 * functions which are in the call graph starting at function x
-	 * @return
+	 * @return IFunctionArtifact - result
+	 * @param IFunctionArtiface - input
+	 * @author Alex Kharbush
 	 */
-	public IValue runCallGraphQuery(IValue[] input){
+	public IFunctionArtifact runCallGraphQuery(IFunctionArtifact input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction cg = qfst.lookupSymbol(FUNCTION.CG);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = cg.execute(qfst, queryState, input);
+		//Setup the IValue array
+		IValue[] submit = new IValue[1];
 		
-		//TODO: cast result into funcitons and return functions
+		//Fill the first value of the IValue array with an IFunctionArtifact
+		submit[0] =  (IValue) input;
+		
+		IFunctionArtifact result = (IFunctionArtifact)cg.execute(qfst, queryState, submit);
+		
+		//Return Result
 		return result;
 	}
 
 	/**
 	 *  * functions which call x where x is a set of functions
-	 * @return
+	 * @return result - IFunctionArtifact
+	 * @param input - IFunctionArtifact
+	 * @author Alex Kharbush
+	 * 
 	 */
-	public IValue runCallQuery(IValue[] input){
+	public IFunctionArtifact runCallQuery(IFunctionArtifact input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction call = qfst.lookupSymbol(FUNCTION.CALL);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = call.execute(qfst, queryState, input);
 		
-		//TODO: cast result into funcitons and return functions
+		//Setup the IValue array
+		IValue[] submit = new IValue[1];
+		
+		//Fill the first value of the IValue array with an IFunctionArtifact
+		submit[0] =  (IValue) input;
+		
+		IFunctionArtifact result = (IFunctionArtifact)call.execute(qfst, queryState, submit);
+		
+		//Return Result
 		return result;
 	}
 	
