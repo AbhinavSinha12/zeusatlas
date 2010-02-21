@@ -71,7 +71,7 @@ public class AtlasQueryAdapter {
 	 * @param input1 the first input of a query
 	 * @param input2 the second input of a query
 	 * @return result the result of the query in IValue form
-	 * @param Alex Kharbush
+	 * @author Alex Kharbush
 	 */
 	public IValue runAndQuery(IValue input1, IValue input2)
 	{
@@ -149,6 +149,17 @@ public class AtlasQueryAdapter {
 	
 	/**
 	 * //TODO : this needs to be reviewed
+	 * 
+	 * Returns an array containing the constants of this enum type, in the order they are declared.
+	 * This method may be used to iterate over the constants as follows:
+	 * 
+	 * eg for (IQueryFunctionSymbolTable.FUNCTION c : IQueryFunctionSymbolTable.FUNCTION.values())
+    System.out.println(c);
+    
+    
+	 * @return "an array containing the constants of this enum type, in the order they are declared" from the API
+	 * 
+	 * @author Alex Kharbush
 	 */
 	public IValue runArgumentCastQuery(IValue[] input){
 		// Set up the query function call in the Atlas query language
@@ -163,18 +174,19 @@ public class AtlasQueryAdapter {
 	}
 
 	/**
-	 * functions which pass x as an argument to another function x is a set of types
-	 * @return
+	 * functions which pass x as an argument to another function, x is a set of types
+	 * @param Input - Iartifacts
+	 * @return Functions called result
+	 * @author Alex Kharbush
 	 */
-	public IValue runArgumentQuery(IValue[] input ){
+	public IFunctionArtifact runArgumentQuery(IArtifacts[] input ){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction arg = qfst.lookupSymbol(FUNCTION.ARG);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = arg.execute(qfst, queryState, input);
+		//TODO: will this be able to handle multiple functions that are returned
+		IFunctionArtifact result= (IFunctionArtifact)arg.execute(qfst, queryState, input);
 		
-		//TODO: cast result into funcitons and return functions
+		//Return Result
 		return result;
 	}
 
