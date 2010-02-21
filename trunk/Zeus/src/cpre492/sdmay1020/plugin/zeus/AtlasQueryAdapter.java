@@ -313,7 +313,7 @@ public class AtlasQueryAdapter {
 	}
 	
 	
-	//TODO : this needs to be commented
+	//TODO : this needs to be Reviewed
 	public IValue runCastQuery(IValue[] input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction cast = qfst.lookupSymbol(FUNCTION.CAST);
@@ -335,19 +335,26 @@ public class AtlasQueryAdapter {
 	/**
 	 * declared function whose names match the given regular expression 
 	 * (useful because some functions are declared but not defined)
-	 * @return
+	 * @return result - IFunctionArtifact
+	 * @param input - String that is a regular expression
+	 * @author Alex Kharbush
 	 */
 	
 	//TODO : I dont think this is the correct lookup for FDECL regular expression
-	public IValue runFunctionDeclareRegExQuery(IValue[] input){
+	public IFunctionArtifact runFunctionDeclareRegExQuery(String input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction fdecl = qfst.lookupSymbol(FUNCTION.FDECL);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = fdecl.execute(qfst, queryState, input);
 		
-		//TODO: cast result into funcitons and return functions
+		//Setup the IValue array
+		IValue[] submit = new IValue[1];
+		
+		//TODO need to setup a new IStringValue
+		submit[0] =  new IStringValue(input);
+		
+		IFunctionArtifact result =(IFunctionArtifact) fdecl.execute(qfst, queryState, submit);
+		
+		//Return Result
 		return result;
 	}
 	
@@ -360,13 +367,19 @@ public class AtlasQueryAdapter {
 	 * functions whose names match the given regular expression  (from the set of all defined functions)
 	 * @return
 	 */
-	public IValue runFunctionsRegExQuery(IValue[] input){
+	public IFunctionArtifact runFunctionsRegExQuery(String input){
 		// Set up the query function call in the Atlas query language
-		IQueryFunction readby = qfst.lookupSymbol(FUNCTION.READBY);
+		IQueryFunction FunctionsRegEX = qfst.lookupSymbol(FUNCTION.FUNCTIONS);
 			
+		//Setup the IValue array
+		IValue[] submit = new IValue[1];
+		
+		//TODO need to setup a new IStringValue
+		submit[0] =  new IStringValue(input);
+		
 		// make the Atlas query call #x = write(n);
 		// where #x is 'result' and n is 'input'
-		IValue result = readby.execute(qfst, queryState, input);
+		IFunctionArtifact result = (IFunctionArtifact)FunctionsRegEX.execute(qfst, queryState, submit);
 		
 		//TODO: cast result into funcitons and return functions
 		return result;
@@ -496,21 +509,7 @@ public class AtlasQueryAdapter {
 		return result;
 	}
 
-	/**
-	 * types whose names match the given regular expression (from the set of all types)     
-	 * @return
-	 */
-	public IValue runTypesRegExQuery(IValue[] input){
-		// Set up the query function call in the Atlas query language
-		IQueryFunction Types = qfst.lookupSymbol(FUNCTION.TYPES);
-			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = Types.execute(qfst, queryState, input);
-		
-		//TODO: cast result into funcitons and return functions
-		return result;
-	}
+
 
 	/**
 	 * filters artifacts by kind 
@@ -530,50 +529,75 @@ public class AtlasQueryAdapter {
 
 	/**
 	 * variables whose names match the given regular expression (from the set of all variables)
-	 * @return
+	 * @return result - IVarible
+	 * @param input - String input representing a regular expression
+	 * @author Alex Kharbush
 	 */
-	public IValue runVariablesRegExQuery(IValue[] input){
+	public IVariable runVariablesRegExQuery(String input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction vars = qfst.lookupSymbol(FUNCTION.VARIABLES);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = vars.execute(qfst, queryState, input);
+		//Setup the IValue array
+		IValue[] submit = new IValue[1];
 		
-		//TODO: cast result into funcitons and return functions
+		//TODO need to setup a new IStringValue
+		submit[0] =  new IStringValue(inputPath);
+		
+		IVariable result = (IVariable)vars.execute(qfst, queryState, submit);
+		
+		
 		return result;
 	}
 
-	/*
+	/**
+	 * @param input - IArtifact
+	 * @return result - IFunctionArtiface
+	 * 
 	 * functions which write x where x is a set of variables or types
 	 * I would think that each call to a wrapper class will return an IValue
 	 * 
-	 * 
+	 * @author Alex Kharbush
 	 */
-	public IValue runWriteQuery (IValue[] input){
+	public IFunctionArtifact runWriteQuery (IArtifact input){
 		
 		// Set up the query function call in the Atlas query language
 		IQueryFunction write = qfst.lookupSymbol(FUNCTION.WRITE);
-			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = write.execute(qfst, queryState, input);
 		
-		//TODO: cast result into funcitons and return functions
+		//Set up the IVAlue array to send to write.execute
+		IValue[] submit = new IValue[1];
+		
+		//Set the value in the array to the input
+		submit[0]= (IValue)input;
+		
+		//
+		IFunctionArtifact result = (IFunctionArtifact)write.execute(qfst, queryState, submit);
+		
+		//Return the Result
 		return result;
 	}
 
-	/*
+	/**
+	 * artifacts which are written by x where x is a set of functions
+	 * 
+	 * @param input - IfunctionArtifact
+	 * @return result - IArtifacts
+	 * 
+	 * @author Alex Kharbush
+	 * 
 	 * pretty much the same as WriteQuery except the result should be artifacts
 	 * still need to work on return values do they need to be anything other then ivalues 
 	 */
-	public IValue runWrittenByQuery( IValue[] input ){
+	public IArtifacts runWrittenByQuery( IFunctionArtifact input ){
 			
 		//create the writtenby query function
 		IQueryFunction writtenby = qfst.lookupSymbol(FUNCTION.WRITTENBY);
 		
+		IValue[] submit = new IValue[1];
+		
+		submit[0]= (IValue)input;
+		
 		//execute the function and save the results into the ivalue named results
-		IValue results = writtenby.execute(qfst, queryState, input);
+		IArtifacts results = (IArtifacts)writtenby.execute(qfst, queryState, submit);
 		
 		
 		return results;
