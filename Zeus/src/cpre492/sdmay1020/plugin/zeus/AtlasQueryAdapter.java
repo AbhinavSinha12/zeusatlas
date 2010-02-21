@@ -134,13 +134,15 @@ public class AtlasQueryAdapter {
 		IValue[] submit = new IValue[1];
 		
 		//TODO need to setup a new IStringValue
-		submit[0] =  new IStringValue(inputPath);
+		//submit[0] =  new IStringValue(inputPath);
 		
 		//TODO is this a correct cast from IValue to IArtifacts
-		IArtifacts result = (IArtifacts) def.execute(qfst, queryState, submit);
+		//IArtifacts result = (IArtifacts) def.execute(qfst, queryState, submit);
 		
 		//Return statement
-		return result;
+		//return result;
+		
+		return null;
 	}
 	
 	
