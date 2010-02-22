@@ -1,13 +1,14 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Zeus
-Bundle-SymbolicName: Zeus
+Bundle-SymbolicName: Zeus;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: cpre492.sdmay1020.plugin.zeus.Activator
+Bundle-Activator: cpre492.sdmay1020.plugin.zeus.Zeus
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- AtlasPlugin;bundle-version="1.0.0",
- AtlasPluginAPI;bundle-version="1.0.0",
- RhinoJAR;bundle-version="1.0.0"
+ RhinoJAR;bundle-version="1.0.0",
+ com.ensoftcorp.plugin.atlas;bundle-version="0.3.4",
+ com.ensoftcorp.plugin.atlas.api;bundle-version="0.3.4"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.mozilla.javascript
