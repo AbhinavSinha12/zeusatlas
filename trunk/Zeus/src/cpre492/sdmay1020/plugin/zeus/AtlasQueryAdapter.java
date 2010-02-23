@@ -10,6 +10,7 @@ import com.ensoftcorp.plugin.atlas.query.lang.IQueryFunction;
 import com.ensoftcorp.plugin.atlas.query.lang.IQueryFunctionSymbolTable;
 import com.ensoftcorp.plugin.atlas.query.lang.IQueryState;
 import com.ensoftcorp.plugin.atlas.query.lang.IStringValue;
+import com.ensoftcorp.plugin.atlas.query.lang.ITypeArtifact;
 import com.ensoftcorp.plugin.atlas.query.lang.IValue;
 import com.ensoftcorp.plugin.atlas.query.lang.IVariable;
 import com.ensoftcorp.plugin.atlas.query.lang.IQueryFunctionSymbolTable.FUNCTION;
@@ -365,7 +366,9 @@ public class AtlasQueryAdapter {
 
 	/**
 	 * functions whose names match the given regular expression  (from the set of all defined functions)
-	 * @return
+	 * @return result - IFunctionArtifact
+	 * @param input - String
+	 * @author Alex Kharbush
 	 */
 	public IFunctionArtifact runFunctionsRegExQuery(String input){
 		// Set up the query function call in the Atlas query language
@@ -392,15 +395,21 @@ public class AtlasQueryAdapter {
 
 	/**
 	 * artifacts which are read by x where x is a set of functions
-	 * @return
+	 * @return result - IArtifact
+	 * @param input - IFunctionArtifact
+	 * @author Alex Kharbush
 	 */
-	public IValue runReadByQuery(IValue[] input){
+	public IArtifact runReadByQuery(IFunctionArtifact input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction readby = qfst.lookupSymbol(FUNCTION.READBY);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = readby.execute(qfst, queryState, input);
+		//Setup the IValue array
+		IValue[] submit = new IValue[1];
+		
+	
+		submit[0] =  (IValue) input;
+		
+		IArtifact result = (IArtifact)readby.execute(qfst, queryState, submit);
 		
 		//TODO: cast result into funcitons and return functions
 		return result;
@@ -412,49 +421,64 @@ public class AtlasQueryAdapter {
 	 * function pointer initialization)
 	 * @return
 	 */
-	public IValue runReadQuery(IValue[] input ){
+	public IFunctionArtifact runReadQuery(IArtifacts input ){
 		
 		// Set up the query function call in the Atlas query language
 		IQueryFunction read = qfst.lookupSymbol(FUNCTION.READ);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = read.execute(qfst, queryState, input);
+		//Setup the IValue array
+		IValue[] submit = new IValue[1];
 		
-		//TODO: cast result into funcitons and return functions
+	
+		submit[0] =  input;
+		
+		IFunctionArtifact result =(IFunctionArtifact) read.execute(qfst, queryState, submit);
+		
+		//Return Result
 		return result;
 		
 	}
 
 	/**
 	 * artifacts which are read or written by x, equivalent to "readby(x) or write(x)"
-	 * @return
+	 * @return result - IArtifacts
+	 * @param input - IArtifact
+	 * @author Alex Kharbush
 	 */
-	public IValue runReferencedByQuery(IValue[] input){
+	public IArtifacts runReferencedByQuery(IArtifact input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction refby = qfst.lookupSymbol(FUNCTION.REFBY);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = refby.execute(qfst, queryState, input);
+		IValue[] submit = new IValue[1];
 		
-		//TODO: cast result into funcitons and return functions
+		
+		submit[0] =  (IValue)input;
+		IArtifacts result = (IArtifacts)refby.execute(qfst, queryState, submit);
+		
+		//Return Result
 		return result;
 	}
 
 	/**
 	 * functions which read or write x, equivalent to "read(x) or write(x)"
-	 * @return
+	 * @return result - IFunctionArtifact
+	 * @param input - IArtifact 
+	 * @author Alex Kharbush
 	 */
-	public IValue runReferenceQuery(IValue[] input){
+	public IFunctionArtifact runReferenceQuery(IArtifact input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction ref = qfst.lookupSymbol(FUNCTION.REF);
-			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = ref.execute(qfst, queryState, input);
+
+		//Setup the IValue array
+		IValue[] submit = new IValue[1];
 		
-		//TODO: cast result into funcitons and return functions
+		
+		submit[0] =  (IValue)input;
+		
+		
+		IFunctionArtifact result = (IFunctionArtifact)ref.execute(qfst, queryState, submit);
+		
+		//Return result
 		return result;	
 		}
 
@@ -463,49 +487,71 @@ public class AtlasQueryAdapter {
 	 * @return
 	 */
 	//TODO: make sure this is rcg
-	public IValue runReverseCallGraphQuery(IValue[] input){
+	public IFunctionArtifact runReverseCallGraphQuery(IFunctionArtifact input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction rgc = qfst.lookupSymbol(FUNCTION.RCG);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = rgc.execute(qfst, queryState, input);
+		//Setup the IValue array
+		IValue[] submit = new IValue[1];
 		
-		//TODO: cast result into funcitons and return functions
+		
+		submit[0] =  (IValue)input;
+		
+		
+		IFunctionArtifact result = (IFunctionArtifact)rgc.execute(qfst, queryState, submit);
+		
+		//Return Result
 		return result;
 	}
 
 	/**
 	 * functions which are roots of the reverse call graph starting at leaf function x leaves(x)   
 	 *  functions which are leaves of the call graph starting at root function x
-	 * @return
+	 * @return Result - IFunctionArtifact
+	 * @param input - IFunctionArtifact
+	 * @author Alex Kharbush
 	 */
-	public IValue  runRootsQuery(IValue[] input){
+	public IFunctionArtifact  runRootsQuery(IFunctionArtifact input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction roots = qfst.lookupSymbol(FUNCTION.ROOTS);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = roots.execute(qfst, queryState, input);
 		
-		//TODO: cast result into funcitons and return functions
+		//Setup the IValue array
+		IValue[] submit = new IValue[1];
+		
+		
+		submit[0] =  (IValue)input;
+		
+		
+		
+		IFunctionArtifact result =(IFunctionArtifact) roots.execute(qfst, queryState, submit);
+		
+		//Return Results
 		return result;
 	}
 
 	/**
 	 * filters artifacts by kind 
-	 * @return
+	 * @return result - Types
+	 * @param input - IArtifacts
+	 * @author Alex Kharbush
 	 */
-	public  IValue runTypesQuery(IValue[] input){
+	public  ITypeArtifact runTypesQuery(IArtifacts input){
 		
 		// Set up the query function call in the Atlas query language
 		IQueryFunction types = qfst.lookupSymbol(FUNCTION.TYPES);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = types.execute(qfst, queryState, input);
 		
-		//TODO: cast result into funcitons and return functions
+		//Setup the IValue array
+		IValue[] submit = new IValue[1];
+		
+		
+		submit[0] =  (IValue)input;
+		
+		
+		ITypeArtifact result = (ITypeArtifact) types.execute(qfst, queryState, submit);
+		
+		//Return Result
 		return result;
 	}
 
@@ -513,17 +559,23 @@ public class AtlasQueryAdapter {
 
 	/**
 	 * filters artifacts by kind 
-	 * @return
+	 * @return result - IVarible
+	 * @param input - IArtifacts
+	 * @author Alex Kharbush
 	 */
-	public IValue runVariablesQuery(IValue[] input){
+	public IVariable runVariablesQuery(IArtifacts input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction varibles = qfst.lookupSymbol(FUNCTION.VARIABLES);
 			
-		// make the Atlas query call #x = write(n);
-		// where #x is 'result' and n is 'input'
-		IValue result = varibles.execute(qfst, queryState, input);
+		//Setup the IValue array
+		IValue[] submit = new IValue[1];
 		
-		//TODO: cast result into funcitons and return functions
+		
+		submit[0] =  (IValue)input;
+		
+		IVariable result = (IVariable) varibles.execute(qfst, queryState, submit);
+		
+		//Return Result
 		return result;
 	}
 
