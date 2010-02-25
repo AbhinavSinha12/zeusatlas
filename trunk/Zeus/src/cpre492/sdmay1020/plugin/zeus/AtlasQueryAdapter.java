@@ -126,7 +126,7 @@ public class AtlasQueryAdapter {
 	 * @author Alex Kharbush
 	 */
 	
-	public IArtifacts runDefQuery (String inputPath)
+	public ZIArtifacts runDefQuery (String inputPath)
 	{
 		// Set up the query function call in the Atlas query language
 		IQueryFunction def = qfst.lookupSymbol(FUNCTION.DEF);
@@ -134,17 +134,13 @@ public class AtlasQueryAdapter {
 		//Create an IValue
 		ZIValue fromStringInput = new ZIValue(inputPath);
 	
-		
-		//TODO is this a correct cast from IValue to IArtifacts
-		IArtifacts result = (IArtifacts) def.execute(qfst, queryState, fromStringInput.returnIValueArray());
+		ZIArtifacts result =new ZIArtifacts( def.execute(qfst, queryState, fromStringInput.returnIValueArray()));
 		
 		//Return statement
 		return result;
 		
 		
 	}
-	
-	
 	
 	/**
 	 * //TODO : this needs to be reviewed
@@ -166,7 +162,7 @@ public class AtlasQueryAdapter {
 	
 		IValue result = argCast.execute(qfst, queryState, input);
 		
-		//TODO: cast result into funcitons and return functions
+	
 		return result;
 	}
 
@@ -176,13 +172,13 @@ public class AtlasQueryAdapter {
 	 * @return Functions called result
 	 * @author Alex Kharbush
 	 */
-	public ZFunction runArgumentQuery(IArtifacts[] input ){
+	public ZFunction runArgumentQuery(ZIArtifacts input ){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction arg = qfst.lookupSymbol(FUNCTION.ARG);
 			
 
 		// will this be able to handle multiple functions that are returned
-		ZFunction result=  new ZFunction(arg.execute(qfst, queryState, input));
+		ZFunction result=  new ZFunction(arg.execute(qfst, queryState, input.returnZIArtifacts()));
 		
 		//Return Result
 		return result;
@@ -196,18 +192,12 @@ public class AtlasQueryAdapter {
 	 * @return IArtifact - result
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts runArtifactsQuery(IArtifact input){
+	public ZIArtifacts runArtifactsQuery(ZIArtifacts input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction art = qfst.lookupSymbol(FUNCTION.ARTIFACTS);
-			
-		//Setup the IValue array
-		IValue[] submit = new IValue[1];
-		
-		//TODO need to setup a new IArtifact as an IValue [] should not need cast
-		submit[0] = (IValue) input;
 		
 		//This is where the art command is actually made, we will pass the submit IValue[] and get back a set of IArtifacts
-		IArtifacts result =(IArtifacts) art.execute(qfst, queryState, submit);
+		ZIArtifacts result = new ZIArtifacts (art.execute(qfst, queryState, input.returnZIArtifacts() ));
 		
 		//Return Result
 		return result;
@@ -221,14 +211,10 @@ public class AtlasQueryAdapter {
 	 * 
 	 * @author Alex Kharbush
 	 */
-	//TODO : check is this is correct qfst.lookupSymbol
 	
 	public ZIArtifacts runArtifactsRegQuery(String input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction Artifacts = qfst.lookupSymbol(FUNCTION.ARTIFACTS);
-			
-	
-		IValue inputValue =  qf.createStringValue(input);
 		
 		
 		ZIValue stringInputIValue = new ZIValue(input);
@@ -311,16 +297,22 @@ public class AtlasQueryAdapter {
 	}
 	
 	
-	//TODO : this needs to be Reviewed
-	public IValue runCastQuery(IValue[] input){
+	/**
+	 *   x is a set of types.  cast(myType) will return the functions which contain a cast to "myType". 
+	 *    More specifically, input is IArtifacts containing ITypeArtifact, 
+	 *    returning IArtifacts containing IFunctionAritfact.
+	 * @param input ZIArtifacts
+	 * @return result - ZIArtifacts
+	 * @author Alex Kharbush
+	 */
+	public ZIArtifacts runCastQuery(ZIArtifacts input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction cast = qfst.lookupSymbol(FUNCTION.CAST);
 			
 		// make the Atlas query call #x = write(n);
 		// where #x is 'result' and n is 'input'
-		IValue result = cast.execute(qfst, queryState, input);
+		ZIArtifacts result = new ZIArtifacts(cast.execute(qfst, queryState, input.returnZIArtifacts()));
 		
-		//TODO: cast result into funcitons and return functions
 		return result;
 	}
 
@@ -338,15 +330,14 @@ public class AtlasQueryAdapter {
 	 * @author Alex Kharbush
 	 */
 	
-	//TODO : I dont think this is the correct lookup for FDECL regular expression
-	public IFunctionArtifact runFunctionDeclareRegExQuery(String input){
+	public ZIArtifacts runFunctionDeclareRegExQuery(String input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction fdecl = qfst.lookupSymbol(FUNCTION.FDECL);
 			
 		
 		ZIValue IValueFromInput = new ZIValue(input);
 		
-		IFunctionArtifact result =(IFunctionArtifact) fdecl.execute(qfst, queryState, IValueFromInput.returnIValueArray());
+		ZIArtifacts result =new ZIArtifacts( fdecl.execute(qfst, queryState, IValueFromInput.returnIValueArray()));
 		
 		//Return Result
 		return result;
@@ -369,16 +360,29 @@ public class AtlasQueryAdapter {
 			
 		ZIValue IValueFromInput = new ZIValue(input);
 		
-		
 		IFunctionArtifact result = (IFunctionArtifact)FunctionsRegEX.execute(qfst, queryState, IValueFromInput.returnIValueArray());
 		
-		//TODO: cast result into funcitons and return functions
 		return result;
 	}
 
-	//TODO Needs to be reviewed
-	static Collection<Function> runLeavesQuery(){
-		return null;
+	/**
+	 *  x is a set of root functions.  For each root function, it calculates the forward call graph. 
+	 *   For each call graph, it collects the leaves (functions which do not call another function). 
+	 *    The answer is the set of all such leaves.  Input and output are both IArtifacts containing
+	 *     IFunctionArtifact.
+	 * @return
+	 */
+	static ZIArtifacts runLeavesQuery(ZIArtifacts input){
+		
+		// Set up the query function call in the Atlas query language
+		IQueryFunction Leaves = qfst.lookupSymbol(FUNCTION.LEAVES);
+		
+		ZIArtifacts result = new ZIArtifacts (Leaves.execute(qfst, queryState, input.returnIValueArray() ));
+		
+		
+		return result;
+		
+		
 	}
 
 	/**
@@ -387,19 +391,13 @@ public class AtlasQueryAdapter {
 	 * @param input - IFunctionArtifact
 	 * @author Alex Kharbush
 	 */
-	public IArtifact runReadByQuery(IFunctionArtifact input){
+	public ZIArtifacts runReadByQuery(ZFunction input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction readby = qfst.lookupSymbol(FUNCTION.READBY);
-			
-		//Setup the IValue array
-		IValue[] submit = new IValue[1];
 		
-	
-		submit[0] =  (IValue) input;
+		ZIArtifacts result = new ZIArtifacts (readby.execute(qfst, queryState, input.returnIValueArray() ));
 		
-		IArtifact result = (IArtifact)readby.execute(qfst, queryState, submit);
 		
-		//TODO: cast result into funcitons and return functions
 		return result;
 	}
 
@@ -474,7 +472,6 @@ public class AtlasQueryAdapter {
 	 * functions which are in the reverse call graph starting at function x
 	 * @return
 	 */
-	//TODO: make sure this is rcg
 	public IFunctionArtifact runReverseCallGraphQuery(IFunctionArtifact input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction rgc = qfst.lookupSymbol(FUNCTION.RCG);
@@ -574,13 +571,13 @@ public class AtlasQueryAdapter {
 	 * @param input - String input representing a regular expression
 	 * @author Alex Kharbush
 	 */
-	public IVariable runVariablesRegExQuery(String input){
+	public ZVariable runVariablesRegExQuery(String input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction vars = qfst.lookupSymbol(FUNCTION.VARIABLES);
 			
 		ZIValue IValueFromInput = new ZIValue(input);
 		
-		IVariable result = (IVariable)vars.execute(qfst, queryState, IValueFromInput);
+		ZVariable result = new ZVariable(vars.execute(qfst, queryState, IValueFromInput.returnIValueArray()));
 		
 		
 		return result;
