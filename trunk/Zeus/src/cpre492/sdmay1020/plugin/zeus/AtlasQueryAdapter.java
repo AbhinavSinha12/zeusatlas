@@ -135,7 +135,7 @@ public class AtlasQueryAdapter {
 		IValue[] submit = new IValue[1];
 		
 		//TODO need to setup a new IStringValue
-		//submit[0] =  new IStringValue(inputPath);
+		submit[0] =  new IStringValue(inputPath);
 		
 		//TODO is this a correct cast from IValue to IArtifacts
 		//IArtifacts result = (IArtifacts) def.execute(qfst, queryState, submit);
@@ -184,7 +184,7 @@ public class AtlasQueryAdapter {
 		// Set up the query function call in the Atlas query language
 		IQueryFunction arg = qfst.lookupSymbol(FUNCTION.ARG);
 			
-		//TODO: will this be able to handle multiple functions that are returned
+		// will this be able to handle multiple functions that are returned
 		IFunctionArtifact result= (IFunctionArtifact)arg.execute(qfst, queryState, input);
 		
 		//Return Result
@@ -499,6 +499,7 @@ public class AtlasQueryAdapter {
 		
 		
 		IFunctionArtifact result = (IFunctionArtifact)rgc.execute(qfst, queryState, submit);
+		
 		
 		//Return Result
 		return result;
