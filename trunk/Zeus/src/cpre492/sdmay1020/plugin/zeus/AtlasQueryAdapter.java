@@ -578,13 +578,9 @@ public class AtlasQueryAdapter {
 		// Set up the query function call in the Atlas query language
 		IQueryFunction vars = qfst.lookupSymbol(FUNCTION.VARIABLES);
 			
-		//Setup the IValue array
-		IValue[] submit = new IValue[1];
+		ZIValue IValueFromInput = new ZIValue(input);
 		
-		//TODO need to setup a new IStringValue
-		submit[0] =  new IStringValue(inputPath);
-		
-		IVariable result = (IVariable)vars.execute(qfst, queryState, submit);
+		IVariable result = (IVariable)vars.execute(qfst, queryState, IValueFromInput);
 		
 		
 		return result;
