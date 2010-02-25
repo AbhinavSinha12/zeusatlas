@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Atlas Sample Client Plug-in
+Bundle-SymbolicName: com.ensoftcorp.plugin.atlas.sample_client; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: com.ensoftcorp.plugin.atlas.sample_client.Activator
+Bundle-Vendor: EnSoft Corp. (www.ensoftcorp.com)
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.ensoftcorp.plugin.atlas.api;bundle-version="0.1.15"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
