@@ -6,9 +6,9 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: cpre492.sdmay1020.plugin.zeus.Zeus
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- RhinoJAR;bundle-version="1.0.0",
  com.ensoftcorp.plugin.atlas;bundle-version="0.3.4",
- com.ensoftcorp.plugin.atlas.api;bundle-version="0.3.4"
+ com.ensoftcorp.plugin.atlas.api;bundle-version="0.3.4",
+ org.mozilla.rhino;bundle-version="1.7.2"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.mozilla.javascript
