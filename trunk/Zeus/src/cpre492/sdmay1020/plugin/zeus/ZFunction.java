@@ -22,6 +22,12 @@ public class ZFunction extends Artifact {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public IValue[] returnIValueArray()
+	{
+		
+		return null;
+	}
 
 
 }
