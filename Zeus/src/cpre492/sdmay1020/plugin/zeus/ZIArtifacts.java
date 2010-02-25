@@ -16,6 +16,11 @@ public class ZIArtifacts implements java.lang.Iterable<Artifact> {
 		return null;
 	}
 	
+	public IValue[] returnZIArtifacts()
+	{
+		return null;
+	}
+	
 	
 
 }
