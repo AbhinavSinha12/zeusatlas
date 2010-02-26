@@ -22,16 +22,18 @@ public class ArtifactFactory {
 	
 	public static ITypeArtifact createType(String input)
 	{
+		QueryFactory qf = QueryFactory.instance;
 		
-		
-		return null;
+		return qf.createTypeArtifact(input);
 	}
 	
 	public static IVariableArtifact createVarible(String input)
 	{
 		
 		
-		return null;
+		QueryFactory qf = QueryFactory.instance;
+		
+		return qf.createVariableArtifact(input);
 	}
 	
 	/**
@@ -42,8 +44,9 @@ public class ArtifactFactory {
 	public static IMacroArtifact createMacro(String input)
 	{
 		
+		QueryFactory qf = QueryFactory.instance;
 		
-		return null;
+		return qf.createMacroArtifact(input);
 	}
 
 	//TODO : need to be able to create IArtifact set, called IArtifacts 
@@ -52,6 +55,8 @@ public class ArtifactFactory {
 	 */
 	public static IArtifacts createArtifacts()
 	{
-		return null;
+		IArtifacts retval = new IArtifacts();
+		
+		return retval;
 	}
 }
