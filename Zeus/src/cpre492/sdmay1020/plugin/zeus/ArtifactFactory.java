@@ -1,16 +1,23 @@
 package cpre492.sdmay1020.plugin.zeus;
 
+import com.ensoftcorp.plugin.atlas.query.api.QueryFactory;
 import com.ensoftcorp.plugin.atlas.query.lang.*;
 
 public class ArtifactFactory {
 	
-	
+	/**
+	 * Needs to be able to return 
+	 * @param input
+	 * @return
+	 */
 	public static IFunctionArtifact createFunction(String input)
 	{
 		
+		QueryFactory qf = QueryFactory.instance;
+		
+		return qf.createFunctionArtifact(input);
 		
 		
-		return null;
 	}
 	
 	public static ITypeArtifact createType(String input)
