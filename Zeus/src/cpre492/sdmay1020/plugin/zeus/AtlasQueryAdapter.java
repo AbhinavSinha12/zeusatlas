@@ -23,6 +23,10 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
 
+//TODO : change all the input to IValue
+//TODO : change all the results to IArtifacts
+
+
 /**
  * 
  * @author Kristina Gervais
@@ -126,19 +130,19 @@ public class AtlasQueryAdapter {
 	 * @author Alex Kharbush
 	 */
 	
-	public ZIArtifacts runDefQuery (String inputPath)
+	public IArtifacts runDefQuery (IValue input)
 	{
 		// Set up the query function call in the Atlas query language
 		IQueryFunction def = qfst.lookupSymbol(FUNCTION.DEF);
 			
 		//Create an IValue
-		ZIValue fromStringInput = new ZIValue(inputPath);
-	
-		ZIArtifacts result =new ZIArtifacts( def.execute(qfst, queryState, fromStringInput.returnIValueArray()));
+		IValue[] helper =  new IValue[1];
+		helper[0]= input;
+			
+		IArtifacts result = (IArtifacts) def.execute(qfst, queryState, helper);
 		
 		//Return statement
 		return result;
-		
 		
 	}
 	
@@ -151,7 +155,8 @@ public class AtlasQueryAdapter {
 	 * eg for (IQueryFunctionSymbolTable.FUNCTION c : IQueryFunctionSymbolTable.FUNCTION.values())
     System.out.println(c);
     
-	 * @return "an array containing the constants of this enum type, in the order they are declared" from the API
+	 * @return "an array containing the constants of this enum type, in the order they are declared"
+	 *  from the API
 	 * 
 	 * @author Alex Kharbush
 	 */
@@ -372,14 +377,13 @@ public class AtlasQueryAdapter {
 	 *     IFunctionArtifact.
 	 * @return
 	 */
-	static ZIArtifacts runLeavesQuery(ZIArtifacts input){
+	public ZIArtifacts runLeavesQuery(ZIArtifacts input){
 		
 		// Set up the query function call in the Atlas query language
 		IQueryFunction Leaves = qfst.lookupSymbol(FUNCTION.LEAVES);
 		
-		ZIArtifacts result = new ZIArtifacts (Leaves.execute(qfst, queryState, input.returnIValueArray() ));
-		
-		
+		ZIArtifacts result = new ZIArtifacts (Leaves.execute(qfst, queryState, input.returnZIArtifacts()));
+	
 		return result;
 		
 		
