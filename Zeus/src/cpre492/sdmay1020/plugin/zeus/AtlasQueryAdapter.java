@@ -142,7 +142,7 @@ public class AtlasQueryAdapter {
 	}
 	
 	/**
-	 * //TODO : this needs to be reviewed
+	 * 
 	 * 
 	 * Returns an array containing the constants of this enum type, in the order they are declared.
 	 * This method may be used to iterate over the constants as follows:
@@ -331,9 +331,23 @@ public class AtlasQueryAdapter {
 	}
 
 
-	//TODO : this needs to be reviewed
-	static IArtifacts runFunctionDeclareQuery(IValue input){
-		return null;
+	/**
+	 * This function is not listed in the Atlas documentation
+	 * @param input IValue
+	 * @return IArtifacts
+	 * @author Alex Kharbush
+	 */
+	public IArtifacts runFunctionDeclareQuery(IValue input){
+		IQueryFunction FunctionDeclare = qfst.lookupSymbol(FUNCTION.FDECL);
+		
+		IValue[] helper =  new IValue[1];
+		helper[0]= input;
+		
+		IArtifacts result = (IArtifacts) FunctionDeclare.execute(qfst, queryState, helper);
+
+		
+		
+		return result;
 	}
 
 	/**
@@ -358,9 +372,26 @@ public class AtlasQueryAdapter {
 		return result;
 	}
 	
-	//TODO Needs to be reviewed
-	static IArtifacts runFunctionsCastQuery(IValue input){
-		return null;
+	//TODO Needs to be reviewed - I dont think this works
+	/**
+	 * This Function is supposed to do a FunctionsCastQuery but I cant find the element
+	 * in the lookup table
+	 * @param input - IValue
+	 * @return result - IArtifacts
+	 * @author Alex Kharbush
+	 */
+	public IArtifacts runFunctionsCastQuery(IValue input){
+		
+		IQueryFunction FCQ = qfst.lookupSymbol(FUNCTION.CAST);
+		
+		IValue[] helper =  new IValue[1];
+		helper[0]= input;
+		
+		
+		IArtifacts result =(IArtifacts) FCQ.execute(qfst, queryState, helper);
+		
+		//Return Result
+		return result;
 	}
 
 	/**
