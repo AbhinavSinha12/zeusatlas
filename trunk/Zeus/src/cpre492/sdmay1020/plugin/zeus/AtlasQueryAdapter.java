@@ -16,15 +16,12 @@ import com.ensoftcorp.plugin.atlas.query.lang.IQueryFunctionSymbolTable.FUNCTION
  */
 public class AtlasQueryAdapter {
 	
-	private QueryFactory qf = null;
-	private IQueryState queryState = null;
-	private IQueryFunctionSymbolTable qfst = null;
+	private static QueryFactory qf = QueryFactory.instance;
+	private static IQueryState queryState = qf.createQueryState();
+	private static IQueryFunctionSymbolTable qfst = qf.createQueryFunctionSymbolTable();
 	
-	public AtlasQueryAdapter(){
-		qf = QueryFactory.instance;
-		queryState = qf.createQueryState();
-		qfst = qf.createQueryFunctionSymbolTable();
-	}
+	// private constructor prevents instantiating this object
+	private AtlasQueryAdapter(){}
 	
 	/**
 	 * Returns the artifact set resulting after the subtraction of the two input artifact sets
@@ -37,7 +34,7 @@ public class AtlasQueryAdapter {
 	 * @author Alex Kharbush
 	 * 
 	 */
-	public IArtifacts runMinusQuery(IValue input1, IValue input2)
+	public static IArtifacts runMinusQuery(IValue input1, IValue input2)
 	{
 		//Set up the query function call in the Atlas query language
 		IQueryFunction MINUS = qfst.lookupSymbol(FUNCTION.MINUS);
@@ -63,7 +60,7 @@ public class AtlasQueryAdapter {
 	 * @return result the result of the query in IValue form
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts runAndQuery(IValue input1, IValue input2)
+	public static IArtifacts runAndQuery(IValue input1, IValue input2)
 	{
 		//Set up the query function call in the Atlas query language
 		IQueryFunction AND = qfst.lookupSymbol(FUNCTION.AND);
@@ -88,7 +85,7 @@ public class AtlasQueryAdapter {
 	 * @return result the result of the query in IValue form
 	 * @param Alex Kharbush
 	 */
-	public IArtifacts runOrQuery (IValue input1, IValue input2)
+	public static IArtifacts runOrQuery (IValue input1, IValue input2)
 	{
 		// Set up the query function call in the Atlas query language
 		IQueryFunction OR = qfst.lookupSymbol(FUNCTION.OR);
@@ -115,7 +112,7 @@ public class AtlasQueryAdapter {
 	 * @author Alex Kharbush
 	 */
 	
-	public IArtifacts runDefQuery (IValue input)
+	public static IArtifacts runDefQuery (IValue input)
 	{
 		// Set up the query function call in the Atlas query language
 		IQueryFunction def = qfst.lookupSymbol(FUNCTION.DEF);
@@ -145,7 +142,7 @@ public class AtlasQueryAdapter {
 	 * 
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts runArgumentCastQuery(IValue input){
+	public static IArtifacts runArgumentCastQuery(IValue input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction argCast = qfst.lookupSymbol(FUNCTION.ARGCAST);
 			
@@ -165,7 +162,7 @@ public class AtlasQueryAdapter {
 	 * @return Functions called result
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts runArgumentQuery(IValue input ){
+	public static IArtifacts runArgumentQuery(IValue input ){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction arg = qfst.lookupSymbol(FUNCTION.ARG);
 			
@@ -188,7 +185,7 @@ public class AtlasQueryAdapter {
 	 * @return IArtifact - result
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts runArtifactsQuery(IValue input){
+	public static IArtifacts runArtifactsQuery(IValue input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction art = qfst.lookupSymbol(FUNCTION.ARTIFACTS);
 		
@@ -210,7 +207,7 @@ public class AtlasQueryAdapter {
 	 * @author Alex Kharbush
 	 */
 	
-	public IArtifacts runArtifactsRegQuery(IValue input){
+	public static IArtifacts runArtifactsRegQuery(IValue input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction Artifacts = qfst.lookupSymbol(FUNCTION.ARTIFACTS);
 		
@@ -232,7 +229,7 @@ public class AtlasQueryAdapter {
 	 * @return result - IFunctionArtifact
 	 * @Aurthor Alex Kharbush
 	 */
-	public IArtifacts runCalledByQuery(IValue input){
+	public static IArtifacts runCalledByQuery(IValue input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction callby = qfst.lookupSymbol(FUNCTION.CALLEDBY);
 			
@@ -256,7 +253,7 @@ public class AtlasQueryAdapter {
 	 * @param IFunctionArtiface - input
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts runCallGraphQuery(IValue input){
+	public static IArtifacts runCallGraphQuery(IValue input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction cg = qfst.lookupSymbol(FUNCTION.CG);
 			
@@ -279,7 +276,7 @@ public class AtlasQueryAdapter {
 	 * @author Alex Kharbush
 	 * 
 	 */
-	public IArtifacts runCallQuery(IValue input){
+	public static IArtifacts runCallQuery(IValue input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction call = qfst.lookupSymbol(FUNCTION.CALL);
 			
@@ -305,7 +302,7 @@ public class AtlasQueryAdapter {
 	 * @return result - ZIArtifacts
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts runCastQuery(IValue input){
+	public static IArtifacts runCastQuery(IValue input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction cast = qfst.lookupSymbol(FUNCTION.CAST);
 			
@@ -327,7 +324,7 @@ public class AtlasQueryAdapter {
 	 * @return IArtifacts
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts runFunctionDeclareQuery(IValue input){
+	public static IArtifacts runFunctionDeclareQuery(IValue input){
 		IQueryFunction FunctionDeclare = qfst.lookupSymbol(FUNCTION.FDECL);
 		
 		IValue[] helper =  new IValue[1];
@@ -348,7 +345,7 @@ public class AtlasQueryAdapter {
 	 * @author Alex Kharbush
 	 */
 	
-	public IArtifacts runFunctionDeclareRegExQuery(IValue input){
+	public static IArtifacts runFunctionDeclareRegExQuery(IValue input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction fdecl = qfst.lookupSymbol(FUNCTION.FDECL);
 			
@@ -370,7 +367,7 @@ public class AtlasQueryAdapter {
 	 * @return result - IArtifacts
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts runFunctionsCastQuery(IValue input){
+	public static IArtifacts runFunctionsCastQuery(IValue input){
 		
 		IQueryFunction FCQ = qfst.lookupSymbol(FUNCTION.CAST);
 		
@@ -390,7 +387,7 @@ public class AtlasQueryAdapter {
 	 * @param input - String
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts runFunctionsRegExQuery(IValue input){
+	public static IArtifacts runFunctionsRegExQuery(IValue input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction FunctionsRegEX = qfst.lookupSymbol(FUNCTION.FUNCTIONS);
 		IValue[] helper =  new IValue[1];
@@ -408,7 +405,7 @@ public class AtlasQueryAdapter {
 	 *     IFunctionArtifact.
 	 * @return
 	 */
-	public IArtifacts runLeavesQuery(IValue input){
+	public static IArtifacts runLeavesQuery(IValue input){
 		
 		// Set up the query function call in the Atlas query language
 		IQueryFunction Leaves = qfst.lookupSymbol(FUNCTION.LEAVES);
@@ -429,7 +426,7 @@ public class AtlasQueryAdapter {
 	 * @param input - IFunctionArtifact
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts runReadByQuery(IValue input){
+	public static IArtifacts runReadByQuery(IValue input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction readby = qfst.lookupSymbol(FUNCTION.READBY);
 		
@@ -448,7 +445,7 @@ public class AtlasQueryAdapter {
 	 * function pointer initialization)
 	 * @return
 	 */
-	public IArtifacts runReadQuery(IValue input ){
+	public static IArtifacts runReadQuery(IValue input ){
 		
 		// Set up the query function call in the Atlas query language
 		IQueryFunction read = qfst.lookupSymbol(FUNCTION.READ);
@@ -472,7 +469,7 @@ public class AtlasQueryAdapter {
 	 * @param input - IArtifact
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts runReferencedByQuery(IValue input){
+	public static IArtifacts runReferencedByQuery(IValue input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction refby = qfst.lookupSymbol(FUNCTION.REFBY);
 			
@@ -492,7 +489,7 @@ public class AtlasQueryAdapter {
 	 * @param input - IArtifact 
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts runReferenceQuery(IValue input){
+	public static IArtifacts runReferenceQuery(IValue input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction ref = qfst.lookupSymbol(FUNCTION.REF);
 
@@ -513,7 +510,7 @@ public class AtlasQueryAdapter {
 	 * functions which are in the reverse call graph starting at function x
 	 * @return
 	 */
-	public IArtifacts runReverseCallGraphQuery(IValue input){
+	public static IArtifacts runReverseCallGraphQuery(IValue input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction rgc = qfst.lookupSymbol(FUNCTION.RCG);
 			
@@ -538,7 +535,7 @@ public class AtlasQueryAdapter {
 	 * @param input - IFunctionArtifact
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts  runRootsQuery(IValue input){
+	public static IArtifacts  runRootsQuery(IValue input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction roots = qfst.lookupSymbol(FUNCTION.ROOTS);
 			
@@ -563,7 +560,7 @@ public class AtlasQueryAdapter {
 	 * @param input - IArtifacts
 	 * @author Alex Kharbush
 	 */
-	public  IArtifacts runTypesQuery(IValue input){
+	public static IArtifacts runTypesQuery(IValue input){
 		
 		// Set up the query function call in the Atlas query language
 		IQueryFunction types = qfst.lookupSymbol(FUNCTION.TYPES);
@@ -590,7 +587,7 @@ public class AtlasQueryAdapter {
 	 * @param input - IArtifacts
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts runVariablesQuery(IArtifacts input){
+	public static IArtifacts runVariablesQuery(IArtifacts input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction varibles = qfst.lookupSymbol(FUNCTION.VARIABLES);
 			
@@ -612,7 +609,7 @@ public class AtlasQueryAdapter {
 	 * @param input - String input representing a regular expression
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts runVariablesRegExQuery(IValue input){
+	public static IArtifacts runVariablesRegExQuery(IValue input){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction vars = qfst.lookupSymbol(FUNCTION.VARIABLES);
 			
@@ -634,7 +631,7 @@ public class AtlasQueryAdapter {
 	 * 
 	 * @author Alex Kharbush
 	 */
-	public IArtifacts runWriteQuery (IValue input){
+	public static IArtifacts runWriteQuery (IValue input){
 		
 		// Set up the query function call in the Atlas query language
 		IQueryFunction write = qfst.lookupSymbol(FUNCTION.WRITE);
@@ -663,7 +660,7 @@ public class AtlasQueryAdapter {
 	 * pretty much the same as WriteQuery except the result should be artifacts
 	 * still need to work on return values do they need to be anything other then ivalues 
 	 */
-	public IArtifacts runWrittenByQuery( IValue input ){
+	public static IArtifacts runWrittenByQuery( IValue input ){
 			
 		//create the writtenby query function
 		IQueryFunction writtenby = qfst.lookupSymbol(FUNCTION.WRITTENBY);
@@ -678,110 +675,5 @@ public class AtlasQueryAdapter {
 		
 		return results;
 	}
-
-	/********************* Sample Code from ATLAS-SAMPLE-CLIENT SampleAction.java *******************/
-	/*
-		public void run(IAction action) {
-
-			try {
-				
-				QueryFactory qf = QueryFactory.instance;
-				IQueryState queryState = qf.createQueryState();
-				IQueryFunctionSymbolTable qfst = qf.createQueryFunctionSymbolTable();
-				
-//				callsToFreebuf(qf, queryState, qfst);
-
-				
-				String [] headerFiles = new String[] {
-					"net.h",
-					"ether.h",
-					"disk.h",
-					"arp.h",
-					"bufpool.h",
-					"mem.h",
-					"sem.h"
-				};
-				
-				for (String headerFile : headerFiles) {
-					displayHeaderFileRelationships(qf, queryState, qfst, headerFile);
-				}
-				
-				
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-//				MessageDialog.openError(window.getShell(), "Error", "Unexpected error while running query...");
-			}
-
-		}
-
-		private void callsToFreebuf(QueryFactory qf, IQueryState queryState,
-				IQueryFunctionSymbolTable qfst) {
-			
-			// call(f:freebuf)
-			IFunctionArtifact function = qf.createFunctionArtifact("freebuf");
-			IArtifacts artifacts = qf.createArtifacts();
-			artifacts.add(function);
-			IQueryFunction call = qfst.lookupSymbol(FUNCTION.CALL);
-			IValue result = call.execute(qfst, queryState, new IValue[] {artifacts});
-			
-			showResult(result);
-		}
-
-		private void displayHeaderFileRelationships(QueryFactory qf,
-				IQueryState queryState, IQueryFunctionSymbolTable qfst,
-				String headerFile) {
-			
-			// roughly equivalent to:
-			// #x = ref(def(<headerFile>))
-			// graph(leaves=#x, highlights=#x)
-			
-			IStringValue sv = qf.createStringValue(headerFile);
-			IQueryFunction def = qfst.lookupSymbol(FUNCTION.DEF);
-			IQueryFunction ref = qfst.lookupSymbol(FUNCTION.REF);
-			IValue result2 = def.execute(qfst, queryState, new IValue[] {sv});
-			IValue result3 = ref.execute(qfst, queryState, new IValue[] {result2});
-			
-			
-			IArtifacts roots = QueryFactory.instance.createArtifacts();
-			IArtifacts leaves = QueryFactory.instance.createArtifacts();
-			IArtifacts omissions = QueryFactory.instance.createArtifacts();
-			IArtifacts highlights = QueryFactory.instance.createArtifacts();
-			IArtifacts simplify = QueryFactory.instance.createArtifacts();
-			IArtifacts center = QueryFactory.instance.createArtifacts();
-			
-			leaves = (IArtifacts) result3;
-			highlights = (IArtifacts) result3;
-			
-			GraphUI.instance.showGraph(headerFile, roots, leaves, omissions, highlights, simplify, center);
-		}
-
-		private void showResult(IValue result) {
-			if (result instanceof IArtifacts) {
-				IArtifacts artifacts = (IArtifacts) result;
-				
-				StringBuilder s = new StringBuilder();
-				
-				for (IArtifact a : artifacts) {
-					s.append(a.getName());
-					s.append("\n");
-				}
-				
-//				MessageDialog.openInformation(window.getShell(), "Atlas Query Result", "Artifacts:\n" + s.toString());
-				
-			} else if (result instanceof IVariable) {
-				// not really possible at this time - query language only returns artifacts
-				IVariable v = (IVariable) result;
-//				MessageDialog.openInformation(window.getShell(), "Atlas Query Result", "Variable: " + v.getName());
-				
-			} else if (result instanceof IStringValue) {
-				// not really possible at this time - query language only returns artifacts
-				IStringValue s = (IStringValue) result;
-//				MessageDialog.openInformation(window.getShell(), "Atlas Query Result", "StringValue: " + s.getValue());
-			}
-		}
-*/		
-/********************* Sample Code from ATLAS-SAMPLE-CLIENT SampleAction.java *******************/
-
 	
 }
