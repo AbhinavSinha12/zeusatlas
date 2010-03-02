@@ -49,13 +49,30 @@ public class ArtifactFactory {
 		return qf.createMacroArtifact(input);
 	}
 
-	//TODO : need to be able to create IArtifact set, called IArtifacts 
+	
 	/**
-	 * 
+	 * This method will use the Quer
+	 * @return
 	 */
 	public static IArtifacts createArtifacts()
 	{
-		IArtifacts retval = new IArtifacts();
+		QueryFactory qf = QueryFactory.instance;
+		
+		IArtifacts retval = qf.createArtifacts();
+		
+		return retval;
+	}
+	
+	/**
+	 * 
+	 * @param input
+	 * @return
+	 */
+	public static IStringValue createString(String input)
+	{
+		QueryFactory qf = QueryFactory.instance;
+		
+		IStringValue retval = qf.createStringValue(input);
 		
 		return retval;
 	}
