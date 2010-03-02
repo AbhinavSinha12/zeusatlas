@@ -37,9 +37,11 @@ public class ArtifactFactory {
 	}
 	
 	/**
-	 * We will not be implementing this
-	 * @param input
-	 * @return
+	 * Creates an Atlas Macro Artifact to use as input in script execution
+	 * 
+	 * @note We will not be supporting this
+	 * @param input - String representing MACRO name
+	 * @return an Atlas Macro Artifact
 	 */
 	public static IMacroArtifact createMacro(String input)
 	{
@@ -51,7 +53,7 @@ public class ArtifactFactory {
 
 	
 	/**
-	 * This method will use the Quer
+	 * 
 	 * @return
 	 */
 	public static IArtifacts createArtifacts()
