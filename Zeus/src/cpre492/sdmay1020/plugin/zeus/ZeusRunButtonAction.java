@@ -10,9 +10,14 @@ import org.mozilla.javascript.ContextFactory;
 import org.mozilla.javascript.ImporterTopLevel;
 import org.mozilla.javascript.Scriptable;
 
+
 public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 
 	private IWorkbenchWindow window;
+	
+	/*Import String for all the classes within Zeus that will be called by the input script
+	 * enabling the script author to use 'with(Zeus){ ... } instead of importing all the class individually */
+	private String zeusImport = "var Zeus = JavaImporter(Packages.cpre492.sdmay1020.plugin.zeus.ArtifactFactory, Packages.cpre492.sdmay1020.plugin.zeus.AtlasQueryAdapter);";
 	
 	/** 
 	 * The constructor
@@ -35,8 +40,10 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 	@Override
 	public void run(IAction action) {
 		//TODO: get scriptString from file system or eclipse editor
+
 		//scriptString: The  script, as a single string
-		String scriptString = "java.lang.System.out.println(\"Hello world! This came from javascript!\")";
+		String scriptString = zeusImport + "with(Zeus){var set = ArtifactFactory.createArtifacts(); set.add(ArtifactFactory.createFunction(\"dswrite\")); var r1 = AtlasQueryAdapter.runCalledByQuery(set);ArtifactFactory.showResult(r1);}";
+			//"java.lang.System.out.println(\"Hello world! This came from javascript!\")";
 			
 		try {
       // create a private ContextFactory that uses this plug-in's class loader
