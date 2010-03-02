@@ -78,6 +78,8 @@ public class ArtifactFactory {
 		
 		return retval;
 	}
+	
+	
 	public static void showResult(IValue result) {
 		if (result instanceof IArtifacts) {
 			IArtifacts artifacts = (IArtifacts) result;

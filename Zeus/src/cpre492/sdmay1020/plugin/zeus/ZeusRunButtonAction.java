@@ -42,7 +42,9 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 		//TODO: get scriptString from file system or eclipse editor
 
 		//scriptString: The  script, as a single string
-		String scriptString = zeusImport + "with(Zeus){var set = ArtifactFactory.createArtifacts(); set.add(ArtifactFactory.createFunction(\"dswrite\")); var r1 = AtlasQueryAdapter.runCalledByQuery(set);ArtifactFactory.showResult(r1);}";
+		String scriptString = zeusImport + "with(Zeus){var set = ArtifactFactory.createArtifacts();" +
+				" set.add(ArtifactFactory.createFunction(\"dswrite\")); " +
+				"var r1 = AtlasQueryAdapter.runCalledByQuery(set);ArtifactFactory.showResult(r1);}";
 			//"java.lang.System.out.println(\"Hello world! This came from javascript!\")";
 			
 		try {
