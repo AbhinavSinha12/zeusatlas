@@ -1,26 +1,13 @@
 package cpre492.sdmay1020.plugin.zeus;
 
-import java.util.*;
-
 import com.ensoftcorp.plugin.atlas.query.api.QueryFactory;
-import com.ensoftcorp.plugin.atlas.query.lang.IArtifact;
 import com.ensoftcorp.plugin.atlas.query.lang.IArtifacts;
-import com.ensoftcorp.plugin.atlas.query.lang.IFunctionArtifact;
 import com.ensoftcorp.plugin.atlas.query.lang.IQueryFunction;
 import com.ensoftcorp.plugin.atlas.query.lang.IQueryFunctionSymbolTable;
 import com.ensoftcorp.plugin.atlas.query.lang.IQueryState;
-import com.ensoftcorp.plugin.atlas.query.lang.IStringValue;
-import com.ensoftcorp.plugin.atlas.query.lang.ITypeArtifact;
 import com.ensoftcorp.plugin.atlas.query.lang.IValue;
-import com.ensoftcorp.plugin.atlas.query.lang.IVariable;
 import com.ensoftcorp.plugin.atlas.query.lang.IQueryFunctionSymbolTable.FUNCTION;
-import com.ensoftcorp.plugin.atlas.ui.api.GraphUI;
 
-import org.eclipse.jface.action.IAction;
-import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
 /**
  * 
@@ -39,14 +26,17 @@ public class AtlasQueryAdapter {
 		qfst = qf.createQueryFunctionSymbolTable();
 	}
 	
-/**
- * This Wrapper Function will take the subtraction of two queries
- * @param input1 the first input of IValue
- * @param input2 the second input of IValue
- * @return result the result of the query in IValue form
- * @author Alex Kharbush
- * 
- */
+	/**
+	 * Returns the artifact set resulting after the subtraction of the two input artifact sets
+	 * 		input1 - input2
+	 * 
+	 * @param input1 - the set from which to subtract
+	 * @param input2 - the set to subtract
+	 * @return the artifact set resulting from input1 - input2
+	 * 
+	 * @author Alex Kharbush
+	 * 
+	 */
 	public IArtifacts runMinusQuery(IValue input1, IValue input2)
 	{
 		//Set up the query function call in the Atlas query language
