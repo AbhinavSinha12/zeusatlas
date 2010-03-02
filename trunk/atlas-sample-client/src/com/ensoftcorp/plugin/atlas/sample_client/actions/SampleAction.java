@@ -51,22 +51,9 @@ public class SampleAction implements IWorkbenchWindowActionDelegate {
 			IQueryState queryState = qf.createQueryState();
 			IQueryFunctionSymbolTable qfst = qf.createQueryFunctionSymbolTable();
 			
-//			callsToFreebuf(qf, queryState, qfst);
-
+			callsToFreebuf(qf, queryState, qfst);
 			
-			String [] headerFiles = new String[] {
-				"net.h",
-				"ether.h",
-				"disk.h",
-				"arp.h",
-				"bufpool.h",
-				"mem.h",
-				"sem.h"
-			};
-			
-			for (String headerFile : headerFiles) {
-				displayHeaderFileRelationships(qf, queryState, qfst, headerFile);
-			}
+//			example2(qf, queryState, qfst);
 			
 			
 			
@@ -75,6 +62,23 @@ public class SampleAction implements IWorkbenchWindowActionDelegate {
 			MessageDialog.openError(window.getShell(), "Error", "Unexpected error while running query...");
 		}
 
+	}
+
+	private void example2(QueryFactory qf, IQueryState queryState,
+			IQueryFunctionSymbolTable qfst) {
+		String [] headerFiles = new String[] {
+			"net.h",
+			"ether.h",
+			"disk.h",
+			"arp.h",
+			"bufpool.h",
+			"mem.h",
+			"sem.h"
+		};
+		
+		for (String headerFile : headerFiles) {
+			displayHeaderFileRelationships(qf, queryState, qfst, headerFile);
+		}
 	}
 
 	private void callsToFreebuf(QueryFactory qf, IQueryState queryState,
