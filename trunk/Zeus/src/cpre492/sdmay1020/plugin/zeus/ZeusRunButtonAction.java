@@ -1,11 +1,15 @@
 package cpre492.sdmay1020.plugin.zeus;
 
 import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.texteditor.IDocumentProvider;
+import org.eclipse.ui.texteditor.ITextEditor;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.ContextFactory;
@@ -74,18 +78,22 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 		
 	}
 
-	/*public String getScript(IAction action) {
+	public String getScript(IAction action) {
+		//Get the active editor
 		IEditorPart editor =  PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 		if (editor instanceof ITextEditor) {
+			//Get the DocumentProvider and EditorInput for the active editor
 		  IDocumentProvider docProvider = ((ITextEditor)editor).getDocumentProvider();
 		  IEditorInput editorInput = ((ITextEditor)editor).getEditorInput();
+		  //Get the Document for the active editor
 		  IDocument scriptDocument = docProvider.getDocument(editorInput);
 		  return scriptDocument.get();
 		}
 		else {
-		// TODO Not a valid editor
+			// TODO Not a valid editor
+			return "";
 		}
-	}*/
+	}
 	
 	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
