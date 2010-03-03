@@ -46,6 +46,7 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 	@Override
 	public void run(IAction action) {
 		//TODO: get scriptString from file system or eclipse editor
+		System.out.println(getScript());
 		
 		//scriptString: The script, as a single string
 		String scriptString = zeusImport + "with(Zeus){var set = ArtifactFactory.createArtifacts();" +
@@ -78,7 +79,7 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 		
 	}
 
-	public String getScript(IAction action) {
+	public String getScript() {
 		//Get the active editor
 		IEditorPart editor =  PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 		if (editor instanceof ITextEditor) {
