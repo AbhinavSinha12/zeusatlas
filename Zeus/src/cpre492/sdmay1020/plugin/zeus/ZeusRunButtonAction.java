@@ -2,8 +2,10 @@ package cpre492.sdmay1020.plugin.zeus;
 
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.ContextFactory;
@@ -40,8 +42,8 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 	@Override
 	public void run(IAction action) {
 		//TODO: get scriptString from file system or eclipse editor
-
-		//scriptString: The  script, as a single string
+		
+		//scriptString: The script, as a single string
 		String scriptString = zeusImport + "with(Zeus){var set = ArtifactFactory.createArtifacts();" +
 				" set.add(ArtifactFactory.createFunction(\"dswrite\")); " +
 				"var r1 = AtlasQueryAdapter.runCalledByQuery(set);ArtifactFactory.showResult(r1);}";
@@ -72,6 +74,19 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 		
 	}
 
+	/*public String getScript(IAction action) {
+		IEditorPart editor =  PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
+		if (editor instanceof ITextEditor) {
+		  IDocumentProvider docProvider = ((ITextEditor)editor).getDocumentProvider();
+		  IEditorInput editorInput = ((ITextEditor)editor).getEditorInput();
+		  IDocument scriptDocument = docProvider.getDocument(editorInput);
+		  return scriptDocument.get();
+		}
+		else {
+		// TODO Not a valid editor
+		}
+	}*/
+	
 	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		// TODO Auto-generated method stub
