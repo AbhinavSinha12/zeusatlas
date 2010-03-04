@@ -45,40 +45,9 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 
 	@Override
 	public void run(IAction action) {
-		//TODO: get scriptString from file system or eclipse editor
-		System.out.println(getScript());
 		
 		//scriptString: The script, as a single string
-		String scriptString = zeusImport + "with(Zeus){var headerArray = [];" +
-		 "headerArray[0] = ArtifactFactory.createString(\"dir.h\"); " +
-		 "headerArray[1] = ArtifactFactory.createString(\"lfile.h\"); " +
-		 "headerArray[2] = ArtifactFactory.createString(\"disk.h\"); " +
-		 "headerArray[3] = ArtifactFactory.createString(\"ether.h\"); " +
-		 "headerArray[4] = ArtifactFactory.createString(\"net.h\"); " +
-		 "headerArray[5] = ArtifactFactory.createString(\"proc.h\"); " +
-		 "headerArray[6] = ArtifactFactory.createString(\"mem.h\"); " +
-		 "var refArray = [];	" +
-		 "for(i=0;i<7;i++){refArray[i] = AtlasQueryAdapter.runReferenceQuery(headerArray[i]); }" +
-		 "var rcgArray = [];" +
-		 "for(i=0;i<7;i++){rcgArray[i] = AtlasQueryAdapter.runReverseCallGraphQuery(refArray[i]); }" +
-		 "var indRefArray = [];" +
-		 "for(i=0;i<7;i++){indRefArray[i] = AtlasQueryAdapter.runMinusQuery(rcgArray[i], refArray[i]); }" +
-		 "var oaArray = [];" +
-		 "for(i=0;i<7;i++){oaArray[i] = AtlasQueryAdapter.runMinusQuery(" +
-		 "AtlasQueryAdapter.runCalledByQuery(rcgArray[i]), rcgArray[i]);}" +
-		 "var andArray = [];for(i=0;i<7;i++){for(j=i+1;j<7;j++){" +
-		 "andArray = AtlasQueryAdapter.runAndQuery(refArray[i], refArray[j]);}}" +
-		 "for(i=0;i<7;i++){ArtifactFactory.showResult(headerArray[i]);" +
-		 "ArtifactFactory.showResult(refArray[i]);" +
-		 "ArtifactFactory.showResult(rcgArray[i]);" +
-		 "ArtifactFactory.showResult(indRefArray[i]);" +
-		 "ArtifactFactory.showResult(oaArray[i]);" +
-		 "ArtifactFactory.showResult(andArray[i]);}}";
-
-		/*	"with(Zeus){var set = ArtifactFactory.createArtifacts();" +
-			" set.add(ArtifactFactory.createFunction(\"dswrite\")); " +
-			"var r1 = AtlasQueryAdapter.runCalledByQuery(set);ArtifactFactory.showResult(r1);}"; */
-		//"java.lang.System.out.println(\"Hello world! This came from javascript!\")";
+		String scriptString = zeusImport + getScript();
 			
 		try {
       // create a private ContextFactory that uses this plug-in's class loader
