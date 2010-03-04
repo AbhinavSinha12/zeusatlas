@@ -47,10 +47,7 @@ public class AtlasQueryAdapter {
 		submit[1] = input2;
 		
 		//This is where the call to atlas is actually made, we will pass in the submit IValue array and get back an IValue
-		IArtifacts result = (IArtifacts)MINUS.execute(qfst, queryState, submit);
-		
-		//Return statement
-		return result;
+		return (IArtifacts)MINUS.execute(qfst, queryState, submit);
 	}
 	
 	/**
@@ -76,10 +73,8 @@ public class AtlasQueryAdapter {
 		submit[1] = input2;
 		
 		//This is where the call to atlas is actually made, we will pass in the submit IValue array and get back an IValue
-		IArtifacts result = (IArtifacts)AND.execute(qfst, queryState, submit);
+		return  (IArtifacts)AND.execute(qfst, queryState, submit);
 		
-		//Return statement
-		return result;
 	}
 	
 	/**
@@ -105,10 +100,7 @@ public class AtlasQueryAdapter {
 		submit[1] = input2;
 		
 		//This is where the call to atlas is actually made, we will pass in the submit IValue array and get back an IValue
-		IArtifacts result = (IArtifacts)OR.execute(qfst, queryState, submit);
-		
-		//Return statement
-		return result;
+		return (IArtifacts)OR.execute(qfst, queryState, submit);
 	}
 	
 	
@@ -129,10 +121,8 @@ public class AtlasQueryAdapter {
 		IValue[] helper =  new IValue[1];
 		helper[0]= input;
 			
-		IArtifacts result = (IArtifacts) def.execute(qfst, queryState, helper);
-		
-		//Return statement
-		return result;
+		return  (IArtifacts) def.execute(qfst, queryState, helper);
+	
 		
 	}
 	
@@ -158,10 +148,8 @@ public class AtlasQueryAdapter {
 		
 		submit[0] = input;
 		
-		IArtifacts result =(IArtifacts) argCast.execute(qfst, queryState, submit);
-		
-	
-		return result;
+		return (IArtifacts) argCast.execute(qfst, queryState, submit);
+
 	}
 
 	/**
@@ -179,10 +167,9 @@ public class AtlasQueryAdapter {
 		helper[0]= input;
 		
 		// will this be able to handle multiple functions that are returned
-		IArtifacts result=  (IArtifacts)arg.execute(qfst, queryState, helper);
+		return  (IArtifacts)arg.execute(qfst, queryState, helper);
 		
-		//Return Result
-		return result;
+	
 	}
 
 
@@ -200,10 +187,7 @@ public class AtlasQueryAdapter {
 		IValue[] helper =  new IValue[1];
 		helper[0]= input;
 		//This is where the art command is actually made, we will pass the submit IValue[] and get back a set of IArtifacts
-		IArtifacts result = (IArtifacts) art.execute(qfst, queryState, helper );
-		
-		//Return Result
-		return result;
+		return  (IArtifacts) art.execute(qfst, queryState, helper );
 	}
 
 	/**
@@ -225,10 +209,8 @@ public class AtlasQueryAdapter {
 	
 		
 		//This is where the artifacts command is sent to atlas, we pass submit[] to it
-		IArtifacts result = (IArtifacts)Artifacts.execute(qfst, queryState,helper );
+		return  (IArtifacts)Artifacts.execute(qfst, queryState,helper );
 		
-		//Return result
-		return result;
 	}
 
 	/**
@@ -249,10 +231,8 @@ public class AtlasQueryAdapter {
 		
 	
 		//Send submit to atlas
-		IArtifacts result = (IArtifacts)callby.execute(qfst, queryState, submit);
+		return  (IArtifacts)callby.execute(qfst, queryState, submit);
 		
-		//Return Result
-		return result;
 	}
 
 	/**
@@ -271,10 +251,8 @@ public class AtlasQueryAdapter {
 		//Fill the first value of the IValue array with an IFunctionArtifact
 		submit[0] =  (IValue) input;
 		
-		IArtifacts result = (IArtifacts)cg.execute(qfst, queryState, submit);
-		
-		//Return Result
-		return result;
+		return  (IArtifacts)cg.execute(qfst, queryState, submit);
+	
 	}
 
 	/**
@@ -295,10 +273,8 @@ public class AtlasQueryAdapter {
 		//Fill the first value of the IValue array with an IFunctionArtifact
 		submit[0] =  (IValue) input;
 		
-		IArtifacts result = (IArtifacts)call.execute(qfst, queryState, submit);
+		return (IArtifacts)call.execute(qfst, queryState, submit);
 		
-		//Return Result
-		return result;
 	}
 	
 	
@@ -320,9 +296,8 @@ public class AtlasQueryAdapter {
 		
 		// make the Atlas query call #x = write(n);
 		// where #x is 'result' and n is 'input'
-		IArtifacts result = (IArtifacts) cast.execute(qfst, queryState, helper);
+		return  (IArtifacts) cast.execute(qfst, queryState, helper);
 		
-		return result;
 	}
 
 
@@ -338,11 +313,9 @@ public class AtlasQueryAdapter {
 		IValue[] helper =  new IValue[1];
 		helper[0]= input;
 		
-		IArtifacts result = (IArtifacts) FunctionDeclare.execute(qfst, queryState, helper);
+		return (IArtifacts) FunctionDeclare.execute(qfst, queryState, helper);
 
-		
-		
-		return result;
+
 	}
 
 	/**
@@ -361,10 +334,7 @@ public class AtlasQueryAdapter {
 		helper[0]= input;
 		
 		
-		IArtifacts result =(IArtifacts) fdecl.execute(qfst, queryState, helper);
-		
-		//Return Result
-		return result;
+		return (IArtifacts) fdecl.execute(qfst, queryState, helper);
 	}
 	
 	//TODO Needs to be reviewed - I dont think this works
@@ -383,10 +353,9 @@ public class AtlasQueryAdapter {
 		helper[0]= input;
 		
 		
-		IArtifacts result =(IArtifacts) FCQ.execute(qfst, queryState, helper);
+		return (IArtifacts) FCQ.execute(qfst, queryState, helper);
 		
-		//Return Result
-		return result;
+
 	}
 
 	/**
@@ -401,9 +370,8 @@ public class AtlasQueryAdapter {
 		IValue[] helper =  new IValue[1];
 		helper[0]= input;
 		
-		IArtifacts result = (IArtifacts)FunctionsRegEX.execute(qfst, queryState, helper);
-		
-		return result;
+		return  (IArtifacts)FunctionsRegEX.execute(qfst, queryState, helper);
+
 	}
 
 	/**
@@ -421,9 +389,7 @@ public class AtlasQueryAdapter {
 		IValue[] helper =  new IValue[1];
 		helper[0]= input;
 		
-		IArtifacts result = (IArtifacts) Leaves.execute(qfst, queryState, helper);
-	
-		return result;
+		return (IArtifacts) Leaves.execute(qfst, queryState, helper);
 		
 		
 	}
@@ -441,10 +407,8 @@ public class AtlasQueryAdapter {
 		IValue[] helper =  new IValue[1];
 		helper[0]= input;
 		
-		IArtifacts result = (IArtifacts)(readby.execute(qfst, queryState, helper));
+		return  (IArtifacts)(readby.execute(qfst, queryState, helper));
 		
-		
-		return result;
 	}
 
 	/**
@@ -464,11 +428,8 @@ public class AtlasQueryAdapter {
 	
 		submit[0] =  input;
 		
-		IArtifacts result =(IArtifacts) read.execute(qfst, queryState, submit);
-		
-		//Return Result
-		return result;
-		
+		return (IArtifacts) read.execute(qfst, queryState, submit);
+	
 	}
 
 	/**
@@ -485,10 +446,9 @@ public class AtlasQueryAdapter {
 		
 		
 		submit[0] =  (IValue)input;
-		IArtifacts result = (IArtifacts)refby.execute(qfst, queryState, submit);
+		return (IArtifacts)refby.execute(qfst, queryState, submit);
 		
-		//Return Result
-		return result;
+
 	}
 
 	/**
@@ -508,10 +468,9 @@ public class AtlasQueryAdapter {
 		submit[0] =  (IValue)input;
 		
 		
-		IArtifacts result = (IArtifacts)ref.execute(qfst, queryState, submit);
+		return (IArtifacts)ref.execute(qfst, queryState, submit);
 		
-		//Return result
-		return result;	
+
 		}
 
 	/**
@@ -529,11 +488,9 @@ public class AtlasQueryAdapter {
 		submit[0] =  (IValue)input;
 		
 		
-		IArtifacts result = (IArtifacts)rgc.execute(qfst, queryState, submit);
+		return  (IArtifacts)rgc.execute(qfst, queryState, submit);
 		
-		
-		//Return Result
-		return result;
+
 	}
 
 	/**
@@ -556,10 +513,8 @@ public class AtlasQueryAdapter {
 		
 		
 		
-		IArtifacts result =(IArtifacts) roots.execute(qfst, queryState, submit);
-		
-		//Return Results
-		return result;
+		return (IArtifacts) roots.execute(qfst, queryState, submit);
+	
 	}
 
 	/**
@@ -581,10 +536,9 @@ public class AtlasQueryAdapter {
 		submit[0] =  (IValue)input;
 		
 		
-		IArtifacts result = (IArtifacts) types.execute(qfst, queryState, submit);
+		return  (IArtifacts) types.execute(qfst, queryState, submit);
 		
-		//Return Result
-		return result;
+
 	}
 
 
@@ -605,10 +559,8 @@ public class AtlasQueryAdapter {
 		
 		submit[0] =  (IValue)input;
 		
-		IArtifacts result = (IArtifacts) varibles.execute(qfst, queryState, submit);
-		
-		//Return Result
-		return result;
+		return  (IArtifacts) varibles.execute(qfst, queryState, submit);
+	
 	}
 
 	/**
@@ -624,10 +576,8 @@ public class AtlasQueryAdapter {
 		IValue[] helper =  new IValue[1];
 		helper[0]= input;
 		
-		IArtifacts result = (IArtifacts)vars.execute(qfst, queryState, helper);
-		
-		
-		return result;
+		return  (IArtifacts)vars.execute(qfst, queryState, helper);
+
 	}
 
 	/**
@@ -650,11 +600,9 @@ public class AtlasQueryAdapter {
 		//Set the value in the array to the input
 		submit[0]= (IValue)input;
 		
-		//
-		IArtifacts result = (IArtifacts)write.execute(qfst, queryState, submit);
+		return  (IArtifacts)write.execute(qfst, queryState, submit);
 		
-		//Return the Result
-		return result;
+
 	}
 
 	/**
@@ -678,10 +626,10 @@ public class AtlasQueryAdapter {
 		submit[0]= (IValue)input;
 		
 		//execute the function and save the results into the ivalue named results
-		IArtifacts results = (IArtifacts)writtenby.execute(qfst, queryState, submit);
+		return  (IArtifacts)writtenby.execute(qfst, queryState, submit);
 		
 		
-		return results;
+		
 	}
 	
 }
