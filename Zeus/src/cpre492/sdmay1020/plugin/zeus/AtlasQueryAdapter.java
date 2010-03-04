@@ -337,26 +337,6 @@ public class AtlasQueryAdapter {
 		return (IArtifacts) fdecl.execute(qfst, queryState, helper);
 	}
 	
-	//TODO Needs to be reviewed - I dont think this works
-	/**
-	 * This Function is supposed to do a FunctionsCastQuery but I cant find the element
-	 * in the lookup table
-	 * @param input - IValue
-	 * @return result - IArtifacts
-	 * @author Alex Kharbush
-	 */
-	public static IArtifacts runFunctionsCastQuery(IValue input){
-		
-		IQueryFunction FCQ = qfst.lookupSymbol(FUNCTION.CAST);
-		
-		IValue[] helper =  new IValue[1];
-		helper[0]= input;
-		
-		
-		return (IArtifacts) FCQ.execute(qfst, queryState, helper);
-		
-
-	}
 
 	/**
 	 * functions whose names match the given regular expression  (from the set of all defined functions)
