@@ -51,7 +51,7 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 		String scriptString = zeusImport + getScript();
 			
 		try {
-      // create a private ContextFactory that uses this plug-in's class loader
+			// create a private ContextFactory that uses this plug-in's class loader
 			ContextFactory cf = new ContextFactory();
 			cf.initApplicationClassLoader(Zeus.class.getClassLoader());
 			
@@ -60,11 +60,15 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 			cx.setLanguageVersion(Context.VERSION_1_7);
 			Scriptable scope = new ImporterTopLevel(cx);
 			
-			// if the script string is compilable, run script 
-			if(cx.stringIsCompilableUnit(scriptString))
+			// if the script string is not compilable, display message box 
+			if(!cx.stringIsCompilableUnit(scriptString))
 			{
-				Object result = cx.evaluateString(scope, scriptString, "script", 1, null);
+				MessageDialog.openInformation(window.getShell(), "Script Error", "Unable to compile script.");
 			}
+			
+			// run the script
+			Object result = cx.evaluateString(scope, scriptString, "script", 1, null);
+			
 			//Don't need to print result at the moment, but could uncomment for debugging purposes
 			//System.out.println(Context.toString(result));
 	  } catch(Exception e) {
@@ -80,7 +84,7 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 	      Context.exit();
 	  }
 		
-		MessageDialog.openInformation(window.getShell(), "Hello World!", "Sample Script Completed.");		
+		MessageDialog.openInformation(window.getShell(), "Hello World!", "Sample Script Completed.");
 	}
 
 	public String getScript() {
