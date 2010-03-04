@@ -55,10 +55,13 @@ public class AtlasQueryAdapter {
 	
 	/**
 	 * This wrapper Function will take the "and" of two queries
-	 * @param input1 the first input of a query
-	 * @param input2 the second input of a query
-	 * @return result the result of the query in IValue form
+	 * 
+	 * @param input1 the starting query, this will be added to the second query
+	 * @param input2 the added query, this will be added to the first query
+	 * @return result the result of the and query of input1 and input2 in IValue form
+	 * 
 	 * @author Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts runAndQuery(IValue input1, IValue input2)
 	{
@@ -68,6 +71,7 @@ public class AtlasQueryAdapter {
 		//Setup the IValue array
 		IValue[] submit = new IValue[2];
 		
+		//Add the elements to the array
 		submit[0] = input1;
 		submit[1] = input2;
 		
@@ -80,10 +84,13 @@ public class AtlasQueryAdapter {
 	
 	/**
 	 * This wrapper Function will take the "or" of two queries
+	 * 
 	 * @param input1 the first input of a query
 	 * @param input2 the second input of a query
 	 * @return result the result of the query in IValue form
+	 * 
 	 * @param Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts runOrQuery (IValue input1, IValue input2)
 	{
@@ -93,6 +100,7 @@ public class AtlasQueryAdapter {
 		//Setup the IValue array
 		IValue[] submit = new IValue[2];
 		
+		//Add the input elements to the array
 		submit[0] = input1;
 		submit[1] = input2;
 		
