@@ -75,8 +75,8 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 		  	if(e instanceof RhinoException)
 		  	{
 		  		RhinoException re = (RhinoException) e;
-		  		System.out.println(re.toString());
-		  		System.out.println(re.lineNumber() + " - " + re.lineSource());
+		  		System.out.println("\n" + re.toString());
+		  		System.out.println("(" + re.lineNumber() + ", " + re.columnNumber() + ") " + re.lineSource());
 		  	}
 		  	else
 		  		System.out.println(e.toString());
