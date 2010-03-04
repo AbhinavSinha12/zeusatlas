@@ -13,14 +13,20 @@ with(Zeus){
 	headerArray[5] = ArtifactFactory.createString("proc.h"); 
 	headerArray[6] = ArtifactFactory.createString("mem.h"); 
 
+	var defArray = [];	
+	for(i=0;i<7;i++){
+		defArray[i] = AtlasQueryAdapter.runDefQuery(headerArray[i]); 
+	}
+
+	
 	var refArray = [];	
 	for(i=0;i<7;i++){
-		refArray[i] = AtlasQueryAdapter.runReferenceQuery(headerArray[i]); 
+		refArray[i] = AtlasQueryAdapter.runReferenceQuery(defArray[i]); 
 	}
 	
 	var rcgArray = [];
 	for(i=0;i<7;i++){
-		rcgArray[i] = AtlasQueryAdapter.runRCGQuery(refArray[i]); 
+		rcgArray[i] = AtlasQueryAdapter.runReverseCallGraphQuery(refArray[i]); 
 	}
 	
 	var indRefArray = [];
@@ -37,15 +43,17 @@ with(Zeus){
 	for(i=0;i<7;i++){
 		for(j=i+1;j<7;j++){
 			andArray = AtlasQueryAdapter.runAndQuery(refArray[i], refArray[j]);
+		}
 	}
-	for(i=0;i<7;i++){
-		ArtifactFactory.showResult(headerArray[i]);
-		ArtifactFactory.showResult(refArray[i]);
-		ArtifactFactory.showResult(rcgArray[i]);
-		ArtifactFactory.showResult(indRefArray[i]);
-		ArtifactFactory.showResult(oaArray[i]);
-		ArtifactFactory.showResult(andArray[i]);
-	}
+
+	ArtifactFactory.showResult("Header File Array", headerArray);
+	ArtifactFactory.showResult("Def Array", defArray);
+	ArtifactFactory.showResult("Ref Array", refArray);
+	ArtifactFactory.showResult("RCG Array", rcgArray);
+	ArtifactFactory.showResult("IndRef Array", indRefArray);
+	ArtifactFactory.showResult("OA Array", oaArray);
+	ArtifactFactory.showResult("AND Array", andArray);
+
 }
 
 

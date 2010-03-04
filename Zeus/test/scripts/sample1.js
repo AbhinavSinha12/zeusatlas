@@ -7,6 +7,6 @@ with(Zeus){
 	var set = ArtifactFactory.createArtifacts(); 
 	set.add(ArtifactFactory.createFunction("dswrite")); 
 	var r1 = AtlasQueryAdapter.runCalledByQuery(set);
-	ArtifactFactory.showResult(r1);
+	ArtifactFactory.showResult("Called By dswrite", r1);
 
 }
