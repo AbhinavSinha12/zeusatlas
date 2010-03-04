@@ -133,8 +133,7 @@ public class AtlasQueryAdapter {
 	 * This method may be used to iterate over the constants as follows:
 	 * 
 	 * eg for (IQueryFunctionSymbolTable.FUNCTION c : IQueryFunctionSymbolTable.FUNCTION.values())
-    System.out.println(c);
-    
+	 * System.out.println(c);
 	 * @return "an array containing the constants of this enum type, in the order they are declared"
 	 *  from the API
 	 * 
@@ -190,28 +189,6 @@ public class AtlasQueryAdapter {
 		return  (IArtifacts) art.execute(qfst, queryState, helper );
 	}
 
-	/**
-	 *  artifacts (functions,variables,types)  whose names match the given regular expression 
-	 *  (equivalent to the union of the last three)
-	 *  @param String  - input
-	 * @return IArtifacts - result
-	 * 
-	 * @author Alex Kharbush
-	 */
-	
-	public static IArtifacts runArtifactsRegQuery(IValue input){
-		// Set up the query function call in the Atlas query language
-		IQueryFunction Artifacts = qfst.lookupSymbol(FUNCTION.ARTIFACTS);
-		
-		IValue[] helper =  new IValue[1];
-		helper[0]= input;
-		
-	
-		
-		//This is where the artifacts command is sent to atlas, we pass submit[] to it
-		return  (IArtifacts)Artifacts.execute(qfst, queryState,helper );
-		
-	}
 
 	/**
 	 * functions which are called by x where  x is a set of functions
@@ -318,25 +295,6 @@ public class AtlasQueryAdapter {
 
 	}
 
-	/**
-	 * declared function whose names match the given regular expression 
-	 * (useful because some functions are declared but not defined)
-	 * @return result - IFunctionArtifact
-	 * @param input - String that is a regular expression
-	 * @author Alex Kharbush
-	 */
-	
-	public static IArtifacts runFunctionDeclareRegExQuery(IValue input){
-		// Set up the query function call in the Atlas query language
-		IQueryFunction fdecl = qfst.lookupSymbol(FUNCTION.FDECL);
-			
-		IValue[] helper =  new IValue[1];
-		helper[0]= input;
-		
-		
-		return (IArtifacts) fdecl.execute(qfst, queryState, helper);
-	}
-	
 
 	/**
 	 * functions whose names match the given regular expression  (from the set of all defined functions)
@@ -543,23 +501,7 @@ public class AtlasQueryAdapter {
 	
 	}
 
-	/**
-	 * variables whose names match the given regular expression (from the set of all variables)
-	 * @return result - IVarible
-	 * @param input - String input representing a regular expression
-	 * @author Alex Kharbush
-	 */
-	public static IArtifacts runVariablesRegExQuery(IValue input){
-		// Set up the query function call in the Atlas query language
-		IQueryFunction vars = qfst.lookupSymbol(FUNCTION.VARIABLES);
-			
-		IValue[] helper =  new IValue[1];
-		helper[0]= input;
-		
-		return  (IArtifacts)vars.execute(qfst, queryState, helper);
-
-	}
-
+	
 	/**
 	 * @param input - IArtifact
 	 * @return result - IFunctionArtiface
