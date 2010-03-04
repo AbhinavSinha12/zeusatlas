@@ -14,6 +14,7 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.ContextFactory;
 import org.mozilla.javascript.ImporterTopLevel;
+import org.mozilla.javascript.RhinoException;
 import org.mozilla.javascript.Scriptable;
 
 
@@ -58,20 +59,28 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 			Context cx = cf.enterContext();
 			cx.setLanguageVersion(Context.VERSION_1_7);
 			Scriptable scope = new ImporterTopLevel(cx);
-
-			// run script 
-			Object result = cx.evaluateString(scope, scriptString, "<cmd>", 1, null);
+			
+			// if the script string is compilable, run script 
+			if(cx.stringIsCompilableUnit(scriptString))
+			{
+				Object result = cx.evaluateString(scope, scriptString, "script", 1, null);
+			}
 			//Don't need to print result at the moment, but could uncomment for debugging purposes
 			//System.out.println(Context.toString(result));
 	  } catch(Exception e) {
-	  		System.out.println(e.toString());
+		  	if(e instanceof RhinoException)
+		  	{
+		  		RhinoException re = (RhinoException) e;
+		  		System.out.println(re.toString());
+		  		System.out.println(re.lineNumber() + " - " + re.lineSource());
+		  	}
+		  	else
+		  		System.out.println(e.toString());
 	  } finally {
 	      Context.exit();
 	  }
 		
-		MessageDialog.openInformation(window.getShell(), "Hello World!", "Sample Script Completed.");
-		
-		
+		MessageDialog.openInformation(window.getShell(), "Hello World!", "Sample Script Completed.");		
 	}
 
 	public String getScript() {
