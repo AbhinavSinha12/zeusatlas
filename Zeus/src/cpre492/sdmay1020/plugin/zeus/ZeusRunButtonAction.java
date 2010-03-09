@@ -23,27 +23,36 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 	private IWorkbenchWindow window;
 	
 	/*Import String for all the classes within Zeus that will be called by the input script
-	 * enabling the script author to use 'with(Zeus){ ... } instead of importing all the class individually */
-	private String zeusImport = "var Zeus = JavaImporter(Packages.cpre492.sdmay1020.plugin.zeus.ArtifactFactory, Packages.cpre492.sdmay1020.plugin.zeus.AtlasQueryAdapter);";
+	 * enabling the script author to use 'with(Zeus){ ... } instead of importing all the class individually 
+	 * final keyword -> means value is constant(can't change)*/
+	private final String zeusImport = "var Zeus = JavaImporter(Packages.cpre492.sdmay1020.plugin.zeus.ArtifactFactory, " +
+																"Packages.cpre492.sdmay1020.plugin.zeus.AtlasQueryAdapter);";
 	
 	/** 
 	 * The constructor
 	 */
-	public ZeusRunButtonAction(){
-		
-	}
+	public ZeusRunButtonAction(){ }
 	
+	/**
+	 * Disposes this action delegate so garbage collection can occur.
+	 */
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
-
+		// do nothing - no references to itself to unhook so garbage collection can occur.
 	}
 
+	/**
+	 * Initializes this action delegate with the workbench window it will work in.
+	 */
 	@Override
 	public void init(IWorkbenchWindow window) {
 		this.window = window;
 	}
 
+	/**
+	 * Reads the text in the active editor and parses and executes the JavaScript
+	 * in the editor. This is launched by clicking the Zeus Run Button. (Lightning Bolt Icon)
+	 */
 	@Override
 	public void run(IAction action) {
 		
@@ -61,33 +70,40 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 			Scriptable scope = new ImporterTopLevel(cx);
 			
 			// if the script string is not compilable, display message box 
-			if(!cx.stringIsCompilableUnit(scriptString))
-			{
+			if(!cx.stringIsCompilableUnit(scriptString)){
 				MessageDialog.openInformation(window.getShell(), "Script Error", "Unable to compile script.");
 			}
 			
-			// run the script
-			Object result = cx.evaluateString(scope, scriptString, "script", 1, null);
-			
-			//Don't need to print result at the moment, but could uncomment for debugging purposes
-			//System.out.println(Context.toString(result));
-	  } catch(Exception e) {
-		  	if(e instanceof RhinoException)
-		  	{
-		  		RhinoException re = (RhinoException) e;
-		  		System.out.println("\n" + re.toString());
-		  		System.out.println("(" + re.lineNumber() + ", " + re.columnNumber() + ") " + re.lineSource());
-		  	}
-		  	else
-		  		System.out.println(e.toString());
-	  } finally {
+			// run the script - if invalid input, this will throw an exception
+			cx.evaluateString(scope, scriptString, "script", 1, null);
+
+	  } catch(RhinoException re) {// Invalid JavaScript
+		  	// tell user what (first) error occurred -> helps with debugging input 
+		    System.out.println("\n" + re.toString());
+		    // tell user where (first) error occurred -> helps with debugging input 
+		    System.out.println("(" + re.lineNumber() + ", " + re.columnNumber() + ") " + re.lineSource());
+	  } catch(Exception e){
+	  		System.out.println(e.toString());
+	  }finally {
 	      Context.exit();
 	  }
-		
-		MessageDialog.openInformation(window.getShell(), "Hello World!", "Sample Script Completed.");
 	}
 
-	public String getScript() {
+	/**
+	 * Notifies this action delegate that the selection in the workbench has changed.
+	 */
+	@Override
+	public void selectionChanged(IAction action, ISelection selection) {
+		// do nothing, action is not dependent on the selection
+	}
+
+	
+	/*
+	 * Obtains the text in the active Eclipse editor and returns it as a String object. An empty
+	 * String object is returned if a valid editor does not exist.
+	 */
+	private String getScript() {
+		String retValue = "";
 		//Get the active editor
 		IEditorPart editor =  PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 		if (editor instanceof ITextEditor) {
@@ -96,18 +112,8 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 		  IEditorInput editorInput = ((ITextEditor)editor).getEditorInput();
 		  //Get the Document for the active editor
 		  IDocument scriptDocument = docProvider.getDocument(editorInput);
-		  return scriptDocument.get();
+		  retValue = scriptDocument.get();
 		}
-		else {
-			// TODO Not a valid editor
-			return "";
-		}
+		return retValue;
 	}
-	
-	@Override
-	public void selectionChanged(IAction action, ISelection selection) {
-		// TODO Auto-generated method stub
-
-	}
-
 }
