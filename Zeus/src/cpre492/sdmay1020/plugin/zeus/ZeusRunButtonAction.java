@@ -101,8 +101,9 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 	/*
 	 * Obtains the text in the active Eclipse editor and returns it as a String object. An empty
 	 * String object is returned if a valid editor does not exist.
+	 * protected - data encapsulation & testing ability
 	 */
-	private String getScript() {
+	protected String getScript() {
 		String retValue = "";
 		//Get the active editor
 		IEditorPart editor =  PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
