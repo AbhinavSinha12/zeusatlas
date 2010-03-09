@@ -12,6 +12,7 @@ import com.ensoftcorp.plugin.atlas.query.lang.IQueryFunctionSymbolTable.FUNCTION
 /**
  * 
  * @author Kristina Gervais
+ * @author Alex Kharbush
  *
  */
 public class AtlasQueryAdapter {
@@ -55,7 +56,7 @@ public class AtlasQueryAdapter {
 	 * 
 	 * @param input1 the starting query, this will be added to the second query
 	 * @param input2 the added query, this will be added to the first query
-	 * @return result the result of the and query of input1 and input2 in IValue form
+	 * @return result the result of the and query of input1 and input2 in IArtifacts form
 	 * 
 	 * @author Alex Kharbush
 	 * 
@@ -80,9 +81,9 @@ public class AtlasQueryAdapter {
 	/**
 	 * This wrapper Function will take the "or" of two queries
 	 * 
-	 * @param input1 the first input of a query
-	 * @param input2 the second input of a query
-	 * @return result the result of the query in IValue form
+	 * @param input1 The first section of a query to be or'd
+	 * @param input2 The second section of a query to be or'd
+	 * @return result the result of the or query in IArtifacts form
 	 * 
 	 * @param Alex Kharbush
 	 * 
@@ -105,12 +106,17 @@ public class AtlasQueryAdapter {
 	
 	
 	/**
+	 * 
 	 * This wrapper function will return the artifacts which are defined in path(e.g. artifacts defined in a header file),
-	 * path is a string representing part of a file path, e.g. "includes/disk.h"
-	 * @param inputPath - a String representing part of a file path
+	 * path is an IValue representing part of a file path, e.g. "includes/disk.h"
+	 * 
+	 * @param inputPath - an IValue representing the file path
 	 * @return result - IArtifacts that result from the query
+	 * 
 	 * @author Alex Kharbush
+	 * 
 	 */
+	
 	
 	public static IArtifacts runDefQuery (IValue input)
 	{
@@ -121,6 +127,7 @@ public class AtlasQueryAdapter {
 		IValue[] helper =  new IValue[1];
 		helper[0]= input;
 			
+		//Return the casted IValue into an IArtifact object
 		return  (IArtifacts) def.execute(qfst, queryState, helper);
 	
 		
@@ -134,6 +141,9 @@ public class AtlasQueryAdapter {
 	 * 
 	 * eg for (IQueryFunctionSymbolTable.FUNCTION c : IQueryFunctionSymbolTable.FUNCTION.values())
 	 * System.out.println(c);
+	 * 
+	 * @param - input, an IValue that will have its arguments cast
+	 * 
 	 * @return "an array containing the constants of this enum type, in the order they are declared"
 	 *  from the API
 	 * 
@@ -152,16 +162,20 @@ public class AtlasQueryAdapter {
 	}
 
 	/**
-	 * functions which pass x as an argument to another function, x is a set of types
-	 * @param Input - Iartifacts
-	 * @return Functions called result
+	 * 
+	 * Functions which pass x as an argument to another function, x is a set of types
+	 * 
+	 * @param Input - An IValue that represents a set of types 
+	 * @return IArtifacts that are the functions that pass input as an argument
+	 * 
 	 * @author Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts runArgumentQuery(IValue input ){
 		// Set up the query function call in the Atlas query language
 		IQueryFunction arg = qfst.lookupSymbol(FUNCTION.ARG);
 			
-
+		//Set up the input array for arg.execute
 		IValue[] helper =  new IValue[1];
 		helper[0]= input;
 		
@@ -174,9 +188,12 @@ public class AtlasQueryAdapter {
 
 	
 	/**
-	 * filters artifacts by kind (e.g. return only variables from the set x)
-	 * @param IArtifact - input
-	 * @return IArtifact - result
+	 * 
+	 * Filters artifacts by kind (e.g. return only variables from the set x)
+	 * 
+	 * @param input - an IValue that represents a set of artifact that will have its artifacts filtered out
+	 * @return IArtifacts - result of the filtering
+	 * 
 	 * @author Alex Kharbush
 	 */
 	public static IArtifacts runArtifactsQuery(IValue input){
@@ -185,16 +202,21 @@ public class AtlasQueryAdapter {
 		
 		IValue[] helper =  new IValue[1];
 		helper[0]= input;
+		
 		//This is where the art command is actually made, we will pass the submit IValue[] and get back a set of IArtifacts
 		return  (IArtifacts) art.execute(qfst, queryState, helper );
 	}
 
 
 	/**
-	 * functions which are called by x where  x is a set of functions
-	 * @param input - IFunctionArtifact
-	 * @return result - IFunctionArtifact
+	 * 
+	 * Functions which are called by x where  x is a set of functions
+	 * 
+	 * @param input - An IValue that represents a set of functions
+	 * @return result - An IArtifacts that represents the functions that are called by the input
+	 * 
 	 * @Aurthor Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts runCalledByQuery(IValue input){
 		// Set up the query function call in the Atlas query language
@@ -205,7 +227,6 @@ public class AtlasQueryAdapter {
 		
 		//Fill the first value of the IValue array with an IFunctionArtifact
 		submit[0] =  (IValue) input;
-		
 	
 		//Send submit to atlas
 		return  (IArtifacts)callby.execute(qfst, queryState, submit);
@@ -213,10 +234,14 @@ public class AtlasQueryAdapter {
 	}
 
 	/**
-	 * functions which are in the call graph starting at function x
-	 * @return IFunctionArtifact - result
-	 * @param IFunctionArtiface - input
+	 * 
+	 * Functions which are in the call graph starting at function x
+	 * 
+	 * @param input - An IValue that represents the starting function of a call graph
+	 * @return result - An IArtifacts object that represents the functions in the call graph starting at the input function/IValue
+	 *  
 	 * @author Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts runCallGraphQuery(IValue input){
 		// Set up the query function call in the Atlas query language
@@ -233,9 +258,12 @@ public class AtlasQueryAdapter {
 	}
 
 	/**
-	 *  * functions which call x where x is a set of functions
-	 * @return result - IFunctionArtifact
-	 * @param input - IFunctionArtifact
+	 * 
+	 * Functions which call x where x is a set of functions
+	 * 
+	 * @param input - An IValue that represents a set of functions
+	 * @return result - IArtifacts that represents functions that call the input set of functions
+	 * 
 	 * @author Alex Kharbush
 	 * 
 	 */
@@ -256,12 +284,16 @@ public class AtlasQueryAdapter {
 	
 	
 	/**
+	 * 
 	 *   x is a set of types.  cast(myType) will return the functions which contain a cast to "myType". 
 	 *    More specifically, input is IArtifacts containing ITypeArtifact, 
 	 *    returning IArtifacts containing IFunctionAritfact.
-	 * @param input ZIArtifacts
-	 * @return result - ZIArtifacts
+	 * 
+	 * @param input - An IValue that represents a set of types
+	 * @return result - an IArtifacts object that is a cast of the input
+	 * 
 	 * @author Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts runCastQuery(IValue input){
 		// Set up the query function call in the Atlas query language
@@ -279,10 +311,14 @@ public class AtlasQueryAdapter {
 
 
 	/**
+	 * 
 	 * This function is not listed in the Atlas documentation
-	 * @param input IValue
-	 * @return IArtifacts
+	 * 
+	 * @param input - An IValue
+	 * @return an IArtifacts object
+	 * 
 	 * @author Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts runFunctionDeclareQuery(IValue input){
 		IQueryFunction FunctionDeclare = qfst.lookupSymbol(FUNCTION.FDECL);
@@ -297,10 +333,14 @@ public class AtlasQueryAdapter {
 
 
 	/**
-	 * functions whose names match the given regular expression  (from the set of all defined functions)
-	 * @return result - IFunctionArtifact
-	 * @param input - String
+	 * 
+	 * Functions whose names match the given regular expression  (from the set of all defined functions)
+	 * 
+	 * @return result - An IArtifacts object that is a set of functions whos names mactch the given input
+	 * @param input - An IValue that represents a reguler expression. 
+	 * 
 	 * @author Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts runFunctionsRegExQuery(IValue input){
 		// Set up the query function call in the Atlas query language
@@ -313,11 +353,17 @@ public class AtlasQueryAdapter {
 	}
 
 	/**
+	 * 
 	 *  x is a set of root functions.  For each root function, it calculates the forward call graph. 
 	 *   For each call graph, it collects the leaves (functions which do not call another function). 
-	 *    The answer is the set of all such leaves.  Input and output are both IArtifacts containing
-	 *     IFunctionArtifact.
-	 * @return
+	 *   The answer is the set of all such leaves.  Input and output are both IArtifacts containing
+	 *   IFunctionArtifact.
+	 *     
+	 * @param input - An Ivalue that represents a set of root functions
+	 * @return An IArtifacts object that contains a set of leave functions
+	 * 
+	 * @author Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts runLeavesQuery(IValue input){
 		
@@ -333,10 +379,14 @@ public class AtlasQueryAdapter {
 	}
 
 	/**
-	 * artifacts which are read by x where x is a set of functions
-	 * @return result - IArtifact
-	 * @param input - IFunctionArtifact
+	 * 
+	 * Artifacts which are read by x where x is a set of functions
+	 * 
+	 * @return result - IArtifacts wish is filled with artifact that are read by the input
+	 * @param input - An IValue that represents a set of functions
+	 * 
 	 * @author Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts runReadByQuery(IValue input){
 		// Set up the query function call in the Atlas query language
@@ -350,10 +400,16 @@ public class AtlasQueryAdapter {
 	}
 
 	/**
+	 * 
 	 * read(x): functions which read x where x is a set of variables, 
 	 * types or functions (reads of function addresses are useful for finding 
 	 * function pointer initialization)
-	 * @return
+	 * 
+	 * @param input - An IValue that represents a set of varibles
+	 * @return An IArtifacts object that represents a set of functions that read the input
+	 * 
+	 * @author Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts runReadQuery(IValue input ){
 		
@@ -371,10 +427,14 @@ public class AtlasQueryAdapter {
 	}
 
 	/**
-	 * artifacts which are read or written by x, equivalent to "readby(x) or write(x)"
-	 * @return result - IArtifacts
-	 * @param input - IArtifact
+	 * 
+	 * Artifacts which are read or written by x, equivalent to "readby(x) or write(x)"
+	 * 
+	 * @param input - An IValue that is a set of artifacts
+	 * @return An IArtifacts object that represents artifacts that are read or written by the input
+	 * 
 	 * @author Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts runReferencedByQuery(IValue input){
 		// Set up the query function call in the Atlas query language
@@ -390,10 +450,14 @@ public class AtlasQueryAdapter {
 	}
 
 	/**
-	 * functions which read or write x, equivalent to "read(x) or write(x)"
-	 * @return result - IFunctionArtifact
-	 * @param input - IArtifact 
+	 * 
+	 * Functions which read or write x, equivalent to "read(x) or write(x)"
+	 * 
+	 * @param input - An IValue that represents a set of artifacts
+	 * @return result - An IArtifacts object that represents functions that read or write the to/from the input.
+	 *  
 	 * @author Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts runReferenceQuery(IValue input){
 		// Set up the query function call in the Atlas query language
@@ -412,8 +476,14 @@ public class AtlasQueryAdapter {
 		}
 
 	/**
-	 * functions which are in the reverse call graph starting at function x
-	 * @return
+	 * 
+	 * Functions which are in the reverse call graph starting at function x
+	 * 
+	 * @param input - An IValue that is the starting function for the reverse call graph
+	 * @return An IArtifacts object that is a set of functions in the reverse call graph of the input 
+	 * 
+	 * @author Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts runReverseCallGraphQuery(IValue input){
 		// Set up the query function call in the Atlas query language
@@ -432,11 +502,15 @@ public class AtlasQueryAdapter {
 	}
 
 	/**
-	 * functions which are roots of the reverse call graph starting at leaf function x leaves(x)   
-	 *  functions which are leaves of the call graph starting at root function x
-	 * @return Result - IFunctionArtifact
-	 * @param input - IFunctionArtifact
+	 * 
+	 * Functions which are roots of the reverse call graph starting at leaf function x leaves(x)
+	 * functions which are leaves of the call graph starting at root function x
+	 * 
+	 * @param input - An IValue that represents a set of leaf functions
+	 * @return Result - An IArtifacts object that are the roots of the reverse call graph starting at the root
+	 * 
 	 * @author Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts  runRootsQuery(IValue input){
 		// Set up the query function call in the Atlas query language
@@ -445,8 +519,6 @@ public class AtlasQueryAdapter {
 		
 		//Setup the IValue array
 		IValue[] submit = new IValue[1];
-		
-		
 		submit[0] =  (IValue)input;
 		
 		
@@ -456,10 +528,14 @@ public class AtlasQueryAdapter {
 	}
 
 	/**
-	 * filters artifacts by kind 
-	 * @return result - Types
-	 * @param input - IArtifacts
+	 * 
+	 * Filters artifacts by kind 
+	 * 
+	 * @param input - An IValue that represents a set of artifacts
+	 * @return An IArtifact object that are types of the input.
+	 * 
 	 * @author Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts runTypesQuery(IValue input){
 		
@@ -473,7 +549,7 @@ public class AtlasQueryAdapter {
 		
 		submit[0] =  (IValue)input;
 		
-		
+		//return statement
 		return  (IArtifacts) types.execute(qfst, queryState, submit);
 		
 
@@ -482,9 +558,12 @@ public class AtlasQueryAdapter {
 
 
 	/**
-	 * filters artifacts by kind 
-	 * @return result - IVarible
-	 * @param input - IArtifacts
+	 * 
+	 * Filters artifacts by kind 
+	 * 
+	 * @param input - An IValue that is a set
+	 * @return An IArtifacts object that represents all the variables in the set
+	 * 
 	 * @author Alex Kharbush
 	 */
 	public static IArtifacts runVariablesQuery(IArtifacts input){
@@ -503,13 +582,14 @@ public class AtlasQueryAdapter {
 
 	
 	/**
-	 * @param input - IArtifact
-	 * @return result - IFunctionArtiface
 	 * 
-	 * functions which write x where x is a set of variables or types
-	 * I would think that each call to a wrapper class will return an IValue
+	 * Functions which write x where x is a set of variables or type
+	 *
+	 * @param input - An IValue that represents a set of variables or types
+	 * @return result - An IArtifacts object the represents a set of functions
 	 * 
 	 * @author Alex Kharbush
+	 * 
 	 */
 	public static IArtifacts runWriteQuery (IValue input){
 		
@@ -528,15 +608,14 @@ public class AtlasQueryAdapter {
 	}
 
 	/**
-	 * artifacts which are written by x where x is a set of functions
 	 * 
-	 * @param input - IfunctionArtifact
-	 * @return result - IArtifacts
+	 * Artifacts which are written by x where x is a set of functions
+	 * 
+	 * @param input - An IValue that represents a set of functions
+	 * @return result - IArtifacts that is a set of artifacts.
 	 * 
 	 * @author Alex Kharbush
-	 * 
-	 * pretty much the same as WriteQuery except the result should be artifacts
-	 * still need to work on return values do they need to be anything other then ivalues 
+	 *  
 	 */
 	public static IArtifacts runWrittenByQuery( IValue input ){
 			
