@@ -15,7 +15,7 @@ public class Zeus extends AbstractUIPlugin {
 	// The shared instance
 	private static Zeus plugin;
 	
-	/**
+	/*
 	 * The constructor
 	 */
 	public Zeus() {
