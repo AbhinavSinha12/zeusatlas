@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="net.sf.wdte.js.core"
+   name="%pluginName"
+   version="0.0.9"
+   provider-name="%providerName"
+   class="net.sf.wdte.js.core.JSCorePlugin">
+
+   <runtime>
+      <library name="net.sf.wdte.js.core.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+   <requires>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.swt"/>
+   </requires>
+
+   <extension point="org.eclipse.team.core.fileTypes">
+      <fileTypes type="text" extension="js"/>
+   </extension>
+
+</plugin>
