@@ -52,6 +52,7 @@ public class ZeusTest {
 		IQueryState queryState = qf.createQueryState();
 		IQueryFunctionSymbolTable qfst = qf.createQueryFunctionSymbolTable();
 		
+		
 		IStringValue sv = qf.createStringValue("net.h");
 		IQueryFunction def = qfst.lookupSymbol(FUNCTION.DEF);
 		IQueryFunction ref = qfst.lookupSymbol(FUNCTION.REF);
