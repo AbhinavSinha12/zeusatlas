@@ -26,7 +26,7 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 	 * enabling the script author to use 'with(Zeus){ ... } instead of importing all the class individually 
 	 * final keyword -> means value is constant(can't change)*/
 	private final String zeusImport = "var Zeus = JavaImporter(Packages.cpre492.sdmay1020.plugin.zeus.ArtifactFactory, " +
-																"Packages.cpre492.sdmay1020.plugin.zeus.AtlasQueryAdapter" +
+																"Packages.cpre492.sdmay1020.plugin.zeus.AtlasQueryAdapter," +
 																"Packages.cpre492.sdmay1020.plugin.zeus.OutputResults);";
 	
 	/** 
