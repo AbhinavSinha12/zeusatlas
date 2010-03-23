@@ -14,45 +14,33 @@ with(Zeus){
 	headerArray[6] = ArtifactFactory.createString("mem.h"); 
 
 	var defArray = [];	
+	var refArray = [];
+	var rcgArray = [];
+	var indRefArray = [];
+	var oaArray = [];
+	var andArray = [];
+
 	for(i=0;i<7;i++){
 		defArray[i] = AtlasQueryAdapter.runDefQuery(headerArray[i]); 
-	}
-
-	
-	var refArray = [];	
-	for(i=0;i<7;i++){
 		refArray[i] = AtlasQueryAdapter.runReferenceQuery(defArray[i]); 
-	}
-	
-	var rcgArray = [];
-	for(i=0;i<7;i++){
 		rcgArray[i] = AtlasQueryAdapter.runReverseCallGraphQuery(refArray[i]); 
-	}
-	
-	var indRefArray = [];
-	for(i=0;i<7;i++){
 		indRefArray[i] = AtlasQueryAdapter.runMinusQuery(rcgArray[i], refArray[i]); 
-	}
-	
-	var oaArray = [];
-	for(i=0;i<7;i++){
 		oaArray[i] = AtlasQueryAdapter.runMinusQuery(AtlasQueryAdapter.runCalledByQuery(rcgArray[i]), rcgArray[i]); 
 	}
 	
-	var andArray = [];
 	for(i=0;i<7;i++){
 		for(j=i+1;j<7;j++){
 			andArray = AtlasQueryAdapter.runAndQuery(refArray[i], refArray[j]);
 		}
 	}
 
-	ArtifactFactory.showResult("Header File Array", headerArray);
-	ArtifactFactory.showResult("Def Array", defArray);
-	ArtifactFactory.showResult("Ref Array", refArray);
-	ArtifactFactory.showResult("RCG Array", rcgArray);
-	ArtifactFactory.showResult("IndRef Array", indRefArray);
-	ArtifactFactory.showResult("OA Array", oaArray);
-	ArtifactFactory.showResult("AND Array", andArray);
+	OutputResults.toTextFile("Header File Array", headerArray);
+	OutputResults.toTextFile("Def Array", defArray);
+	OutputResults.toTextFile("Ref Array", refArray);
+	OutputResults.toTextFile("RCG Array", rcgArray);
+	OutputResults.toTextFile("IndRef Array", indRefArray);
+	OutputResults.toTextFile("OA Array", oaArray);
+	OutputResults.toTextFile("AND Array", andArray);
 
 }
 
