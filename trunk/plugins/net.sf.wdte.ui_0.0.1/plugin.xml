@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="net.sf.wdte.ui"
+   name="%pluginName"
+   version="0.0.1"
+   provider-name="%providerName"
+   class="net.sf.wdte.ui.WebUI">
+
+   <runtime>
+      <library name="wdtui.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+   <requires>
+      <import plugin="net.sf.wdte.core"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.osgi"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+   </requires>
+
+
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="%preferencePageName"
+            class="net.sf.wdte.ui.preferences.EmptyPreferencePage"
+            id="net.sf.wdte.ui.preferencePage">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="%viewCategoryName"
+            id="net.sf.wdte.ui.views">
+      </category>
+      <view
+            name="%previewViewName"
+            icon="icons/full/cview16/preview.gif"
+            category="net.sf.wdte.ui.views"
+            fastViewWidthRatio="66"
+            class="net.sf.wdte.ui.views.preview.BrowserPreview"
+            id="net.sf.wdte.ui.views.browserPreview">
+      </view>
+   </extension>
+
+</plugin>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="net.sf.wdte.core"
+   name="Web Development Tools Core"
+   version="0.0.1"
+   provider-name="WDTE Project"
+   class="net.sf.wdte.core.WebCore">
+
+   <runtime>
+      <library name="webcore.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.text"/>
+   </requires>
+
+
+</plugin>

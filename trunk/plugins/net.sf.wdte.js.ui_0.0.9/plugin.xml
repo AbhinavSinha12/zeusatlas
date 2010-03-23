@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="net.sf.wdte.js.ui"
+   name="%pluginName"
+   version="0.0.9"
+   provider-name="%providerName"
+   class="net.sf.wdte.js.ui.JSUIPlugin">
+
+   <runtime>
+      <library name="net.sf.wdte.js.ui.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+   <requires>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="net.sf.wdte.ui"/>
+      <import plugin="net.sf.wdte.js.core" version="0.0.9" match="greaterOrEqual" export="true"/>
+   </requires>
+
+
+   <extension
+         point="org.eclipse.ui.views">
+       <view
+            name="%classesViewName"
+            icon="icons/js.gif"
+            category="net.sf.wdte.ui.views"
+            class="net.sf.wdte.js.ui.views.JSClassesView"
+            id="net.sf.wdte.js.ui.views.JSClassesView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="%editorPreferencePageName"
+            category="net.sf.wdte.ui.preferencePage"
+            class="net.sf.wdte.js.ui.preferences.JavaScriptPreferencePage"
+            id="net.sf.wdte.js.ui.preferences.JavaScriptPreferencePage">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="%editorName"
+            icon="icons/js.gif"
+            extensions="js"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            class="net.sf.wdte.js.ui.editors.JSEditor"
+            id="net.sf.wdte.js.ui.editors.JSEditor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.TaskList"
+               relationship="right"
+               id="net.sf.wdte.js.ui.views.JSClassesView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>
