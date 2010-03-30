@@ -7,13 +7,18 @@ with(Zeus){
 
 var graphme = ArtifactFactory.createFunction("getbuf");
 
-var stuff = ArtifactFactory.createArtifacts();
 
+var stuff = ArtifactFactory.createArtifacts();
+var empty = ArtifactFactory.createArtifacts();
 stuff.add(graphme);
+
 
 var graphmept2 = AtlasQueryAdapter.calledBy(stuff);
 
 var name = "testme";
 
-OutputResults.showGraph(graphmept2);
+OutputResults.showGraph(name, graphmept2, empty);
+
 }
+
+
