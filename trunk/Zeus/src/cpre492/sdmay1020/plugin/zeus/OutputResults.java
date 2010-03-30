@@ -94,11 +94,16 @@ public class OutputResults {
 	 * @param title - the title to display in the graph view heading
 	 * @param roots - the set of noeds that will be root nodes in the graph
 	 * @param leaves - the set of nodes that will be leaf nodes in the graph
+	 * @param omissions - the set of nodes that will be omissions nodes in the graph
+	 * @param highlights - the set of nodes that will be highlights nodes in the graph
+	 * @param simplify - the set of nodes that will be simplify nodes in the graph
+	 * @param center - the set of nodes that will be center nodes in the graph
+	 * 
 	 * @author Tina Gervais
+	 * @author Alex Kharbush
 	 */
-	public static void showGraph(String title, IArtifacts roots, IArtifacts leaves) {
-		//TODO: Verify implementation	GraphUI.instance.showGraph(title, roots, leaves, omissions, highlights, simplify, center);
-		IArtifacts emptyset = QueryFactory.instance.createArtifacts();
-		GraphUI.instance.showGraph(title, roots, leaves, emptyset, emptyset, emptyset, emptyset);
+	public static void showGraph(String title, IArtifacts roots, IArtifacts leaves, IArtifacts omissions,IArtifacts highlights, IArtifacts simplify, IArtifacts center) {
+		
+		GraphUI.instance.showGraph(title, roots, leaves, omissions, highlights, simplify, center);
 	}
 }
