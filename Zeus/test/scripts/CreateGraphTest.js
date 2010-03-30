@@ -17,7 +17,7 @@ var graphmept2 = AtlasQueryAdapter.calledBy(stuff);
 
 var name = "testme";
 
-OutputResults.showGraph(name, graphmept2, empty);
+OutputResults.showGraph(name, graphmept2, empty,empty, empty,empty,empty);
 
 }
 
