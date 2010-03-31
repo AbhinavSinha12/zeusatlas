@@ -4,11 +4,33 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.ensoftcorp.plugin.atlas.query.lang.IArtifacts;
+
 public class AtlasQueryAdapterTest {
 
+	/**
+	 * For this test we will create two IArtifacts.
+	 * The first IArtifacts will have 2 items
+	 * The second IArtifacts will have one item
+	 * We will subtract the second set from the first
+	 */
 	@Test
-	public void testRunMinusQuery() {
-		fail("Not yet implemented");
+	public void testMinus() {
+		
+		IArtifacts setWithTwoArtifacts = ArtifactFactory.createArtifacts();
+		//need to add two items to this
+		
+		setWithTwoArtifacts.add(ArtifactFactory.createFunction("getbuf"));
+		setWithTwoArtifacts.add(ArtifactFactory.createFunction("freebuf"));
+		
+		IArtifacts setWithOneArtifact =ArtifactFactory.createArtifacts();
+		setWithTwoArtifacts.add(ArtifactFactory.createFunction("getbuf"));
+		
+		IArtifacts result = AtlasQueryAdapter.minus(setWithTwoArtifacts, setWithOneArtifact);
+		
+		assertTrue(result.size() == 1);
+		
+		//fail("Not yet implemented");
 	}
 
 	@Test
