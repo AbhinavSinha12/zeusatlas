@@ -1,3 +1,4 @@
+//Imports
 	
 //var Zeus = JavaImporter(Packages.cpre492.sdmay1020.plugin.zeus.ArtifactFactory, 
 //						Packages.cpre492.sdmay1020.plugin.zeus.AtlasQueryAdapter,
@@ -5,19 +6,29 @@
 
 with(Zeus){
 
-var graphme = ArtifactFactory.createFunction("getbuf");
+//Creation of an IFunctionArtifact
+var IFunctionArtifact = ArtifactFactory.createFunction("getbuf");
 
+//Create an IArtifacts object
+var IArtifacts = ArtifactFactory.createArtifacts();
 
-var stuff = ArtifactFactory.createArtifacts();
+//Create an empty IArtifacts object
+//We will use this to pas into showGraph
 var empty = ArtifactFactory.createArtifacts();
-stuff.add(graphme);
 
+//Add the IFunctionArtirfact to the collection IArtifacts
+IArtifacts.add(IFunctionArtifact);
 
-var graphmept2 = AtlasQueryAdapter.calledby(stuff);
+//create an IArtifactFunction that holds the result of "calledby(getbuf)"
+var Results = AtlasQueryAdapter.calledby(IArtifacts);
 
-var name = "testme";
+//Name of the graph
+var name = "Graph Test";
 
-OutputResults.showGraph(name, graphmept2, empty,empty, empty,empty,empty);
+//Pass the name and Results to the graph
+//NOTE : we pass the name first, then pass the results as the root node,
+//and finally pass the empty IArtifacts set to the showgraph
+OutputResults.showGraph(name, Results, empty,empty, empty,empty,empty);
 
 }
 
