@@ -13,7 +13,7 @@ var empty = ArtifactFactory.createArtifacts();
 stuff.add(graphme);
 
 
-var graphmept2 = AtlasQueryAdapter.calledBy(stuff);
+var graphmept2 = AtlasQueryAdapter.calledby(stuff);
 
 var name = "testme";
 
