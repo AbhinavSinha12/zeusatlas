@@ -2,8 +2,11 @@ package cpre492.sdmay1020.plugin.zeus;
 
 import static org.junit.Assert.*;
 
+import java.util.Iterator;
+
 import org.junit.Test;
 
+import com.ensoftcorp.plugin.atlas.query.lang.IArtifact;
 import com.ensoftcorp.plugin.atlas.query.lang.IArtifacts;
 
 public class AtlasQueryAdapterTest {
@@ -16,6 +19,8 @@ public class AtlasQueryAdapterTest {
 	 */
 	@Test
 	public void testMinus() {
+	
+		/*
 		
 		IArtifacts setWithTwoArtifacts = ArtifactFactory.createArtifacts();
 		//need to add two items to this
@@ -23,18 +28,65 @@ public class AtlasQueryAdapterTest {
 		setWithTwoArtifacts.add(ArtifactFactory.createFunction("getbuf"));
 		setWithTwoArtifacts.add(ArtifactFactory.createFunction("freebuf"));
 		
+		//System.out.println(setWithTwoArtifacts.size());
+		
+		Iterator<IArtifact> pointer =  setWithTwoArtifacts.iterator();
+		
+		
+		while(pointer.hasNext())
+		{
+			IArtifact current = pointer.next();
+			
+			System.out.println(current.getName());
+		}
+		
+		
+		
 		IArtifacts setWithOneArtifact =ArtifactFactory.createArtifacts();
-		setWithTwoArtifacts.add(ArtifactFactory.createFunction("getbuf"));
+		setWithOneArtifact.add(ArtifactFactory.createFunction("getbuf"));
 		
 		IArtifacts result = AtlasQueryAdapter.minus(setWithTwoArtifacts, setWithOneArtifact);
 		
-		assertTrue(result.size() == 1);
+		System.out.println("hello " + result.size());
 		
-		//fail("Not yet implemented");
+	pointer =  result.iterator();
+		
+		
+		while(pointer.hasNext())
+		{
+			IArtifact current = pointer.next();
+			
+			System.out.println(current.getName());
+		}
+		
+		*/
+		
+		//System.out.println(setWithTwoArtifacts.size());
+		//System.out.println(setWithOneArtifact.size());
+		
+		
+		//assertTrue(result.size() == 1);
+		
+		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testRunAndQuery() {
+		
+		
+		
+		IArtifacts input1 = ArtifactFactory.createArtifacts();
+		IArtifacts input2= ArtifactFactory.createArtifacts();
+	
+		input1.add(ArtifactFactory.createFunction("getbuf"));
+		input2.add(ArtifactFactory.createFunction("freebuf"));
+		
+		IArtifacts result = AtlasQueryAdapter.and(input1, input2);
+		
+		
+		System.out.println(result.size());
+		
+		
 		fail("Not yet implemented");
 	}
 
