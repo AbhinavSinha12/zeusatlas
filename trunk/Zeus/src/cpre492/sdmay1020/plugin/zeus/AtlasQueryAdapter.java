@@ -184,7 +184,59 @@ public class AtlasQueryAdapter {
 		
 	
 	}
+	
+	/**
+	 * 
+	 * Functions which pass the type t or global variable g to function f,
+	 *  where f is from the set F, and t or g is from set A
+	 * 
+	 * @param input1 - An IValue that represents a function
+	 * @param input2 - An IValue that represents a set
+	 * @return - An IArtifacts that is the functions that pass the 
+	 *    type t or global var to function f
+	 * 
+	 * @author Alex Kharbush
+	 * 
+	 */
+	public static IArtifacts arg (IValue input1, IValue input2)
+	{
+		
+		// Set up the query function call in the Atlas query language
+		IQueryFunction OR = qfst.lookupSymbol(FUNCTION.ARG);
+			
+		//Setup the IValue array
+		IValue[] submit = new IValue[2];
+		
+		//Add the input elements to the array
+		submit[0] = input1;
+		submit[1] = input2;
+		
+		//This is where the call to atlas is actually made, we will pass in the submit IValue array and get back an IValue
+		return (IArtifacts)OR.execute(qfst, queryState, submit);
+	}
 
+	
+	/**
+	 * Global variables and types which have been passed to a function f in set F 
+	 * 
+	 * @param input - The function that have been passed to a function
+	 * @return An IArtifacts object that represents the global varibles
+	 * 
+	 * @author Alex Kharbush
+	 */
+	public static IArtifacts argto(IValue input)
+	{
+		
+		// Set up the query function call in the Atlas query language
+		IQueryFunction art = qfst.lookupSymbol(FUNCTION.ARGTO);
+		
+		IValue[] helper =  new IValue[1];
+		helper[0]= input;
+		
+		//This is where the art command is actually made, we will pass the submit IValue[] and get back a set of IArtifacts
+		return  (IArtifacts) art.execute(qfst, queryState, helper );
+		
+	}
 
 	
 	/**
