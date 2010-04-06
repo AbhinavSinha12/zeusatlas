@@ -61,17 +61,19 @@ public class AtlasQueryAdapter {
 	 * @author Alex Kharbush
 	 * 
 	 */
-	public static IArtifacts and(IValue input1, IValue input2)
+	public static IArtifacts and(IValue ... input)
 	{
 		//Set up the query function call in the Atlas query language
 		IQueryFunction AND = qfst.lookupSymbol(FUNCTION.AND);
-			
+		 
+
 		//Setup the IValue array
-		IValue[] submit = new IValue[2];
+		IValue[] submit = new IValue[input.length];
 		
 		//Add the elements to the array
-		submit[0] = input1;
-		submit[1] = input2;
+		for(int i = 0; i <input.length; i++){
+			submit[i] = input[i];
+		}		
 		
 		//This is where the call to atlas is actually made, we will pass in the submit IValue array and get back an IValue
 		return  (IArtifacts)AND.execute(qfst, queryState, submit);
@@ -182,7 +184,6 @@ public class AtlasQueryAdapter {
 		// will this be able to handle multiple functions that are returned
 		return  (IArtifacts)arg.execute(qfst, queryState, helper);
 		
-	
 	}
 	
 	/**
