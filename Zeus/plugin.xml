@@ -51,5 +51,15 @@
             </command>
          </menu>
       </menuContribution>
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu">
+         <command
+               commandId="Zeus.Run"
+               icon="icons/ZeusIcon.PNG"
+               label="Run Zeus"
+               style="push"
+               tooltip="Run a query script">
+         </command>
+      </menuContribution>
    </extension>
 </plugin>
