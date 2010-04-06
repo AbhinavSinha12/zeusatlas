@@ -1,49 +1,52 @@
 package cpre492.sdmay1020.plugin.zeus;
 
-
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IHandler;
 import org.eclipse.core.commands.IHandlerListener;
 import org.eclipse.core.filesystem.EFS;
 import org.eclipse.core.filesystem.IFileStore;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.FileDialog;
+import org.eclipse.swt.widgets.Shell;
 
-import javax.swing.*;
-import java.io.File;
 
 public class OpenHandler implements IHandler {
 
-	JFileChooser fc;
-
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		fc = new JFileChooser();
-		int returnVal = fc.showOpenDialog(null);
-
-		if(returnVal == JFileChooser.APPROVE_OPTION){
-			File file = fc.getSelectedFile();
-
-			if (file.exists() && file.isFile()) {
-			    IFileStore fileStore = EFS.getLocalFileSystem().getStore(file.toURI());
-			    IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-			 
-			    try {
-			        IDE.openEditorOnFileStore( page, fileStore );
-			    } catch ( PartInitException e ) {
-			        //Exception handling
-			    }
-			} else {
-			    //File does not exist
-			}
-			
-		} else{
-			//Open Canceled by user
+		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+		Shell shell = window.getShell();
+		FileDialog fd = new FileDialog(shell, SWT.OPEN);
+		fd.setText("Open");
+        fd.setFilterPath("C:/");
+        String[] filterExt = { "*.js", "*.*" };
+        fd.setFilterExtensions(filterExt);
+		String name = fd.open();
+		if (name == null)
+		    return null;
+		IFileStore fileStore = EFS.getLocalFileSystem().getStore((IPath) new Path(name));
+		if (!fileStore.fetchInfo().isDirectory() && fileStore.fetchInfo().exists()) {			
+			IWorkbenchPage page = window.getActivePage();
+		    try {
+		        IDE.openEditorOnFileStore(page, fileStore);
+		    } catch (PartInitException e) {
+		        /* some code */
+		    }
+		    return null;
 		}
-		return null;
+		else
+		{
+			//File does not exist
+			return null;
+		}
 	}	
 
 	@Override
