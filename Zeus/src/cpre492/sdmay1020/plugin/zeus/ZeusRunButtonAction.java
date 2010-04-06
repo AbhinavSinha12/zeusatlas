@@ -27,7 +27,10 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 	 * final keyword -> means value is constant(can't change)*/
 	private final String zeusImport = "var Zeus = JavaImporter(Packages.cpre492.sdmay1020.plugin.zeus.ArtifactFactory, " +
 																"Packages.cpre492.sdmay1020.plugin.zeus.AtlasQueryAdapter," +
-																"Packages.cpre492.sdmay1020.plugin.zeus.OutputResults);";
+																"Packages.cpre492.sdmay1020.plugin.zeus.OutputResults);" + 
+																"var aq = AtlasQueryAdapter;" + 
+																"var af = ArtifactFactory;" + 
+																"var or = OutputResults;";
 	
 	/** 
 	 * The constructor
