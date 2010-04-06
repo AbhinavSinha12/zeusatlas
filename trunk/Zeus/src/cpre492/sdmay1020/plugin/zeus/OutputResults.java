@@ -1,5 +1,7 @@
 package cpre492.sdmay1020.plugin.zeus;
 
+import java.io.File;
+
 import com.ensoftcorp.plugin.atlas.query.api.QueryFactory;
 import com.ensoftcorp.plugin.atlas.query.lang.IArtifact;
 import com.ensoftcorp.plugin.atlas.query.lang.IArtifacts;
@@ -21,6 +23,9 @@ public class OutputResults {
 	 * @author Tina Gervais
 	 */
 	public static void toTextFile(String header, IValue... result) {
+		//IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject("Zeus");
+		//IFile outFile = p.getFile("output/output.txt");
+		
 		System.out.println(header+"\n");
 		for(IValue r : result){
 			if (r instanceof IArtifacts) {
