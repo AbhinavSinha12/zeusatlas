@@ -1,6 +1,20 @@
 package cpre492.sdmay1020.plugin.zeus;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IPath;
+import org.w3c.dom.DOMImplementation;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import com.ensoftcorp.plugin.atlas.query.api.QueryFactory;
 import com.ensoftcorp.plugin.atlas.query.lang.IArtifact;
@@ -23,10 +37,28 @@ public class OutputResults {
 	 * @author Tina Gervais
 	 */
 	public static void toTextFile(String header, IValue... result) {
-		//IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject("Zeus");
-		//IFile outFile = p.getFile("output/output.txt");
+		//Create an output txt file in the current workspace
+		IPath p = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.txt");
+		File outFile = p.toFile();
+		if(!outFile.exists())
+		{
+			try {
+				outFile.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		FileOutputStream fOutStream = null;
+		try {
+			fOutStream = new FileOutputStream(outFile);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		PrintWriter out = new PrintWriter(fOutStream, true);
 		
-		System.out.println(header+"\n");
+		out.println(header+"\n");
 		for(IValue r : result){
 			if (r instanceof IArtifacts) {
 				IArtifacts artifacts = (IArtifacts) r;
@@ -37,20 +69,20 @@ public class OutputResults {
 					s.append(a.getName());
 					s.append("\n  ");
 				}		
-				System.out.println("Artifacts:\n  " + s.toString());
+				out.println("Artifacts:\n  " + s.toString());
 				
 			} else if (r instanceof IVariable) {
 				// not really possible at this time - query language only returns artifacts
 				IVariable v = (IVariable) r;
-				System.out.println("Variable: " + v.getName());
+				out.println("Variable: " + v.getName());
 				
 			} else if (r instanceof IStringValue) {
 				// not really possible at this time - query language only returns artifacts
 				IStringValue s = (IStringValue) r;
-				System.out.println("StringValue: " + s.getValue());
+				out.println("StringValue: " + s.getValue());
 			}
 		}
-		System.out.println("\n");
+		out.println("\n");
 	}
 	
 	// TODO switch method to print to a file instead of the console
@@ -64,7 +96,18 @@ public class OutputResults {
 	 * @author Tina Gervais
 	 */
 	public static void toXMLFile(String header, IValue... result) {
-		System.out.println(header+"\n");
+		DocumentBuilderFactory df = DocumentBuilderFactory.newInstance();
+		DocumentBuilder db = null;
+		try {
+			db = df.newDocumentBuilder();
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		DOMImplementation di = db.getDOMImplementation();
+		Document doc = di.createDocument(null, "OUTPUT", null);
+		Element root = doc.getDocumentElement();
+		
 		for(IValue r : result){
 			if (r instanceof IArtifacts) {
 				IArtifacts artifacts = (IArtifacts) r;
@@ -75,20 +118,19 @@ public class OutputResults {
 					s.append(a.getName());
 					s.append("\n  ");
 				}		
-				System.out.println("Artifacts:\n  " + s.toString());
+				//out.println("Artifacts:\n  " + s.toString());
 				
 			} else if (r instanceof IVariable) {
 				// not really possible at this time - query language only returns artifacts
 				IVariable v = (IVariable) r;
-				System.out.println("Variable: " + v.getName());
+				//out.println("Variable: " + v.getName());
 				
 			} else if (r instanceof IStringValue) {
 				// not really possible at this time - query language only returns artifacts
 				IStringValue s = (IStringValue) r;
-				System.out.println("StringValue: " + s.getValue());
+				//out.println("StringValue: " + s.getValue());
 			}
 		}
-		System.out.println("\n");
 	}
 	
 	// TODO switch method to print to a file instead of the console
