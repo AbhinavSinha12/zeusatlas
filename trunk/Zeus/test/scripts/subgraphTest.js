@@ -23,18 +23,26 @@ var empty = ArtifactFactory.createArtifacts();
 IArtifacts.add(IFAGetBuf);
 IArtifacts2.add(IFAFreeBuf);
 
+//or them together into a base
+var base = AtlasQueryAdapter.or(IArtifacts, IArtifacts2);
 
+//find the rcg of the base
+var rcg = AtlasQueryAdapter.rcg(base);
 
-//create an IArtifactFunction that holds the result of "calledby(getbuf)"
-var Results = AtlasQueryAdapter.leaves(IArtifacts);
+//find the roots of the base
+var roots = AtlasQueryAdapter.roots(rcg);
 
-//create an IArtifactFunction that holds the result of "calledby(getbuf)"
-var Results2 = AtlasQueryAdapter.leaves(IArtifacts2);
+//manual input, will work on later
+var functions = new Array();
+functions[0] = AtlasQueryAdapter.functions("ds.*");
+functions[1] = AtlasQueryAdapter.functions("ls.*");
+functions[2] = AtlasQueryAdapter.functions("ib.*");
 
+//for loop to go threw array
+for (x in functions)
+{
 
-//or them together
-var Results3 = AtlasQueryAdapter.or(Results, Results2);
-
+var dstop = AtlasQueryAdapter.and(roots, functions[x]);
 
 //use refby on getbuff
 //needs to make an array of types
@@ -46,8 +54,8 @@ var name = "Graph Test";
 //Pass the name and Results to the graph
 //NOTE : we pass the name first, then pass the results as the root node,
 //and finally pass the empty IArtifacts set to the showgraph
-OutputResults.showGraph(name, Results, empty,empty, empty,empty,empty);
-
+OutputResults.showGraph(name, dstop, base,empty, empty,empty,empty);
+}
 }
 
 
