@@ -42,7 +42,7 @@ functions[2] = AtlasQueryAdapter.functions("ib.*");
 for (x in functions)
 {
 
-var dstop = AtlasQueryAdapter.and(roots, functions[x]);
+var top = AtlasQueryAdapter.and(roots, functions[x]);
 
 //use refby on getbuff
 //needs to make an array of types
@@ -54,7 +54,7 @@ var name = "Graph Test";
 //Pass the name and Results to the graph
 //NOTE : we pass the name first, then pass the results as the root node,
 //and finally pass the empty IArtifacts set to the showgraph
-OutputResults.showGraph(name, dstop, base,empty, empty,empty,empty);
+OutputResults.showGraph(name, top, base,empty, empty,empty,empty);
 }
 }
 
