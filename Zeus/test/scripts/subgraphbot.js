@@ -1,9 +1,3 @@
-//Imports
-	
-//var Zeus = JavaImporter(Packages.cpre492.sdmay1020.plugin.zeus.ArtifactFactory, 
-//						Packages.cpre492.sdmay1020.plugin.zeus.AtlasQueryAdapter,
-//                      Packages.cpre492.sdmay1020.plugin.zeus.OutputResults );
-
 with(Zeus){
 
 //Creation of an IFunctionArtifact
@@ -32,10 +26,10 @@ var rcg = AtlasQueryAdapter.rcg(base);
 var call = AtlasQueryAdapter.call(base);
 
 //manual input, will work on later
-var functions = new Array();
-functions[0] = AtlasQueryAdapter.functions("ds.*");
-functions[1] = AtlasQueryAdapter.functions("ls.*");
-functions[2] = AtlasQueryAdapter.functions("ib.*");
+var functions = [];
+functions[0] = AtlasQueryAdapter.functions(ArtifactFactory.createString("ds.*"));
+functions[1] = AtlasQueryAdapter.functions(ArtifactFactory.createString("ls.*"));
+functions[2] = AtlasQueryAdapter.functions(ArtifactFactory.createString("ib.*"));
 
 //for loop to go threw array
 for (x in functions)
