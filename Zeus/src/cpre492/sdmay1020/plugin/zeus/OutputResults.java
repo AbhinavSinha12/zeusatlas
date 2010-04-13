@@ -5,16 +5,28 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.StringWriter;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.TransformerFactoryConfigurationError;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import com.ensoftcorp.plugin.atlas.query.api.QueryFactory;
 import com.ensoftcorp.plugin.atlas.query.lang.IArtifact;
@@ -40,20 +52,19 @@ public class OutputResults {
 		//Create an output txt file in the current workspace
 		IPath p = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.txt");
 		File outFile = p.toFile();
-		if(!outFile.exists())
+		if(outFile.exists())
 		{
-			try {
-				outFile.createNewFile();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			outFile.delete();
+		}
+		try {
+			outFile.createNewFile();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		FileOutputStream fOutStream = null;
 		try {
 			fOutStream = new FileOutputStream(outFile);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		PrintWriter out = new PrintWriter(fOutStream, true);
@@ -85,8 +96,6 @@ public class OutputResults {
 		out.println("\n");
 	}
 	
-	// TODO switch method to print to a file instead of the console
-	
 	/**
 	 * toXMLFile creates an XML file displaying the type and name of the input IValue (or IValue array) in an
 	 * easy to read table format
@@ -96,44 +105,116 @@ public class OutputResults {
 	 * @author Tina Gervais
 	 */
 	public static void toXMLFile(String header, IValue... result) {
+		IPath p = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.xml");
 		DocumentBuilderFactory df = DocumentBuilderFactory.newInstance();
 		DocumentBuilder db = null;
 		try {
 			db = df.newDocumentBuilder();
 		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		DOMImplementation di = db.getDOMImplementation();
-		Document doc = di.createDocument(null, "OUTPUT", null);
-		Element root = doc.getDocumentElement();
-		
-		for(IValue r : result){
-			if (r instanceof IArtifacts) {
-				IArtifacts artifacts = (IArtifacts) r;
-				
-				StringBuilder s = new StringBuilder();
-				
-				for (IArtifact a : artifacts) {
-					s.append(a.getName());
-					s.append("\n  ");
-				}		
-				//out.println("Artifacts:\n  " + s.toString());
-				
-			} else if (r instanceof IVariable) {
-				// not really possible at this time - query language only returns artifacts
-				IVariable v = (IVariable) r;
-				//out.println("Variable: " + v.getName());
-				
-			} else if (r instanceof IStringValue) {
-				// not really possible at this time - query language only returns artifacts
-				IStringValue s = (IStringValue) r;
-				//out.println("StringValue: " + s.getValue());
+		File outFile = p.toFile();
+		Document xmldoc = null;
+		if(outFile.exists())
+		{
+			try {
+				xmldoc = db.parse(outFile);	
+			} catch (SAXException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
 		}
+		else
+		{
+			DOMImplementation di = db.getDOMImplementation();
+			xmldoc = di.createDocument(null, "OUTPUT", null);
+		}
+		
+		if(xmldoc != null)
+		{
+			Element root = xmldoc.getDocumentElement();
+			Element elem = xmldoc.getElementById(header);
+			
+			if(elem == null)
+			{
+				elem = xmldoc.createElement("ROW");
+				elem.setAttribute("ID", header);
+				elem.setIdAttribute("ID", true);
+			}
+
+			for(IValue r : result){
+				if (r instanceof IArtifacts) {
+					IArtifacts artifacts = (IArtifacts) r;
+					
+					StringBuilder s = new StringBuilder();
+					Node c = null;
+					
+					for (IArtifact a : artifacts) {
+						s.append(a.getName());
+						s.append("\n  ");
+					}
+					
+					c = xmldoc.createTextNode(s.toString());
+					elem.appendChild(c);
+					//out.println("Artifacts:\n  " + s.toString());
+					
+				} else if (r instanceof IVariable) {
+					// not really possible at this time - query language only returns artifacts
+					IVariable v = (IVariable) r;
+					//out.println("Variable: " + v.getName());
+					
+				} else if (r instanceof IStringValue) {
+					// not really possible at this time - query language only returns artifacts
+					IStringValue s = (IStringValue) r;
+					//out.println("StringValue: " + s.getValue());
+				}
+			}
+			
+			root.appendChild(elem);
+			
+			Transformer transformer = null;
+			try {
+				transformer = TransformerFactory.newInstance().newTransformer();
+			} catch (TransformerConfigurationException e2) {
+				e2.printStackTrace();
+			} catch (TransformerFactoryConfigurationError e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
+			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+			//initialize StreamResult with File object to save to file
+			StreamResult output = new StreamResult(new StringWriter());
+			DOMSource source = new DOMSource(xmldoc);
+			try {
+				transformer.transform(source, output);
+			} catch (TransformerException e1) {
+				e1.printStackTrace();
+			}
+
+			String xmlString = output.getWriter().toString();
+			
+			if(outFile.exists())
+			{
+				outFile.delete();
+			}
+			try {
+				outFile.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			FileOutputStream fOutStream = null;
+			try {
+				fOutStream = new FileOutputStream(outFile);
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			PrintWriter out = new PrintWriter(fOutStream, true);
+			
+			out.println(xmlString);
+		}
 	}
-	
-	// TODO switch method to print to a file instead of the console
 	
 	/**
 	 * showGraph creates a graph in the Atlas Graph View of the input
