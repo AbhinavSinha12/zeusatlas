@@ -94,6 +94,8 @@ public class OutputResults {
 			}
 		}
 		out.println("\n");
+		
+		out.close();
 	}
 	
 	/**
@@ -162,11 +164,15 @@ public class OutputResults {
 				} else if (r instanceof IVariable) {
 					// not really possible at this time - query language only returns artifacts
 					IVariable v = (IVariable) r;
+					Node c = xmldoc.createTextNode(v.getName());
+					elem.appendChild(c);
 					//out.println("Variable: " + v.getName());
 					
 				} else if (r instanceof IStringValue) {
 					// not really possible at this time - query language only returns artifacts
 					IStringValue s = (IStringValue) r;
+					Node c = xmldoc.createTextNode(s.getValue());
+					elem.appendChild(c);
 					//out.println("StringValue: " + s.getValue());
 				}
 			}
@@ -179,7 +185,6 @@ public class OutputResults {
 			} catch (TransformerConfigurationException e2) {
 				e2.printStackTrace();
 			} catch (TransformerFactoryConfigurationError e2) {
-				// TODO Auto-generated catch block
 				e2.printStackTrace();
 			}
 			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
@@ -213,6 +218,7 @@ public class OutputResults {
 			PrintWriter out = new PrintWriter(fOutStream, true);
 			
 			out.println(xmlString);
+			out.close();
 		}
 	}
 	
