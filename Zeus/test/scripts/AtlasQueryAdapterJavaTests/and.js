@@ -23,7 +23,7 @@ var empty = ArtifactFactory.createArtifacts();
 IArtifacts.add(IFunctionArtifact);
 IArtifacts2.add(IFunctionArtifact);
 
-//create an IArtifactFunction that holds the result of "calledby(getbuf)"
+//create an IArtifactFunction that holds the and of the two artifacts
 var Results = AtlasQueryAdapter.and(IArtifacts, IArtifacts2);
 
 //Name of the graph
