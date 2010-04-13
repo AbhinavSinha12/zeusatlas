@@ -157,21 +157,24 @@ public class OutputResults {
 						s.append("\n  ");
 					}
 					
-					c = xmldoc.createTextNode(s.toString());
+					c = xmldoc.createElement("COLUMN");
+					c.appendChild(xmldoc.createTextNode(s.toString()));
 					elem.appendChild(c);
 					//out.println("Artifacts:\n  " + s.toString());
 					
 				} else if (r instanceof IVariable) {
 					// not really possible at this time - query language only returns artifacts
 					IVariable v = (IVariable) r;
-					Node c = xmldoc.createTextNode(v.getName());
+					Node c = xmldoc.createElement("COLUMN");
+					c.appendChild(xmldoc.createTextNode(v.getName()));
 					elem.appendChild(c);
 					//out.println("Variable: " + v.getName());
 					
 				} else if (r instanceof IStringValue) {
 					// not really possible at this time - query language only returns artifacts
 					IStringValue s = (IStringValue) r;
-					Node c = xmldoc.createTextNode(s.getValue());
+					Node c = xmldoc.createElement("COLUMN");
+					c.appendChild(xmldoc.createTextNode(s.getValue()));
 					elem.appendChild(c);
 					//out.println("StringValue: " + s.getValue());
 				}
