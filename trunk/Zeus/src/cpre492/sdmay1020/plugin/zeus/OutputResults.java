@@ -24,8 +24,6 @@ import org.eclipse.core.runtime.IPath;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import com.ensoftcorp.plugin.atlas.query.api.QueryFactory;
@@ -38,6 +36,10 @@ import com.ensoftcorp.plugin.atlas.ui.api.GraphUI;
 
 public class OutputResults {
 
+	static IPath outPathTxt = null;
+	static File outFileTxt = null;
+	static IPath outPathXML = null;
+	static File outFileXML = null;
 	// TODO switch method to print to a file instead of the console
 	
 	/**
@@ -50,20 +52,24 @@ public class OutputResults {
 	 */
 	public static void toTextFile(String header, IValue... result) {
 		//Create an output txt file in the current workspace
-		IPath p = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.txt");
-		File outFile = p.toFile();
-		if(outFile.exists())
+		if(outPathTxt == null)
 		{
-			outFile.delete();
+			outPathTxt = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.txt");
+			outFileTxt = outPathTxt.toFile();
+			if(outFileTxt.exists())
+			{
+				outFileTxt.delete();
+			}
+			try {
+				outFileTxt.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-		try {
-			outFile.createNewFile();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 		FileOutputStream fOutStream = null;
 		try {
-			fOutStream = new FileOutputStream(outFile);
+			fOutStream = new FileOutputStream(outFileTxt);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -107,7 +113,16 @@ public class OutputResults {
 	 * @author Tina Gervais
 	 */
 	public static void toXMLFile(String header, IValue... result) {
-		IPath p = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.xml");
+		if(outPathXML == null)
+		{
+			outPathXML = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.xml");
+			outFileXML = outPathXML.toFile();
+			if(outFileXML.exists())
+			{
+				outFileXML.delete();
+			}
+		}
+		
 		DocumentBuilderFactory df = DocumentBuilderFactory.newInstance();
 		DocumentBuilder db = null;
 		try {
@@ -115,12 +130,11 @@ public class OutputResults {
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
 		}
-		File outFile = p.toFile();
 		Document xmldoc = null;
-		if(outFile.exists())
+		if(outFileXML.exists())
 		{
 			try {
-				xmldoc = db.parse(outFile);	
+				xmldoc = db.parse(outFileXML);	
 			} catch (SAXException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
@@ -130,19 +144,53 @@ public class OutputResults {
 		else
 		{
 			DOMImplementation di = db.getDOMImplementation();
-			xmldoc = di.createDocument(null, "OUTPUT", null);
+			xmldoc = di.createDocument(null, "Workbook", null);
+			
+			Element root = xmldoc.getDocumentElement();
+			root.setAttribute("xmlns", "urn:schemas-microsoft-com:office:spreadsheet");
+			root.setAttribute("xmlns:o", "urn:schemas-microsoft-com:office:office");
+			root.setAttribute("xmlns:x", "urn:schemas-microsoft-com:office:excel");
+			root.setAttribute("xmlns:ss", "urn:schemas-microsoft-com:office:spreadsheet");
+			root.setAttribute("xmlns:html", "http://www.w3.org/TR/REC-html40");
+			
+			Element c1 = xmldoc.createElement("Styles");
+			Element c2 = xmldoc.createElement("Style");
+			c2.setAttribute("ss:ID", "s62");
+			Element c3 = xmldoc.createElement("Alignment");
+			c3.setAttribute("ss:WrapText", "1");
+			
+			c2.appendChild(c3);
+			c1.appendChild(c2);
+			root.appendChild(c1);
+			
+			c1 = xmldoc.createElement("Worksheet");
+			c1.setAttribute("ss:Name", "Output");
+			c2 = xmldoc.createElement("Table");
+			c2.setAttribute("ID", "TableRoot");
+			c2.setIdAttribute("ID", true);
+			c1.appendChild(c2);
+			root.appendChild(c1);
 		}
 		
 		if(xmldoc != null)
 		{
-			Element root = xmldoc.getDocumentElement();
+			Element tableRoot = xmldoc.getElementById("TableRoot");
 			Element elem = xmldoc.getElementById(header);
 			
 			if(elem == null)
 			{
-				elem = xmldoc.createElement("ROW");
+				elem = xmldoc.createElement("Row");
 				elem.setAttribute("ID", header);
 				elem.setIdAttribute("ID", true);
+				
+				Element c = xmldoc.createElement("Cell");
+				c.setAttribute("ss:StyleID", "s62");
+				Element c2 = xmldoc.createElement("Data");
+				c2.setAttribute("ss:Type", "String");
+				
+				c2.appendChild(xmldoc.createTextNode(header));
+				c.appendChild(c2);
+				elem.appendChild(c);
 			}
 
 			for(IValue r : result){
@@ -150,37 +198,48 @@ public class OutputResults {
 					IArtifacts artifacts = (IArtifacts) r;
 					
 					StringBuilder s = new StringBuilder();
-					Node c = null;
 					
 					for (IArtifact a : artifacts) {
 						s.append(a.getName());
-						s.append("\n  ");
 					}
 					
-					c = xmldoc.createElement("COLUMN");
-					c.appendChild(xmldoc.createTextNode(s.toString()));
+					Element c = xmldoc.createElement("Cell");
+					c.setAttribute("ss:StyleID", "s62");
+					Element c2 = xmldoc.createElement("Data");
+					c2.setAttribute("ss:Type", "String");
+					
+					c2.appendChild(xmldoc.createTextNode(s.toString()));
+					c.appendChild(c2);
 					elem.appendChild(c);
 					//out.println("Artifacts:\n  " + s.toString());
 					
 				} else if (r instanceof IVariable) {
 					// not really possible at this time - query language only returns artifacts
 					IVariable v = (IVariable) r;
-					Node c = xmldoc.createElement("COLUMN");
-					c.appendChild(xmldoc.createTextNode(v.getName()));
+					Element c = xmldoc.createElement("Cell");
+					Element c2 = xmldoc.createElement("Data");
+					c2.setAttribute("ss:Type", "String");
+					
+					c2.appendChild(xmldoc.createTextNode(v.getName()));
+					c.appendChild(c2);
 					elem.appendChild(c);
 					//out.println("Variable: " + v.getName());
 					
 				} else if (r instanceof IStringValue) {
 					// not really possible at this time - query language only returns artifacts
 					IStringValue s = (IStringValue) r;
-					Node c = xmldoc.createElement("COLUMN");
-					c.appendChild(xmldoc.createTextNode(s.getValue()));
+					Element c = xmldoc.createElement("Cell");
+					Element c2 = xmldoc.createElement("Data");
+					c2.setAttribute("ss:Type", "String");
+					
+					c2.appendChild(xmldoc.createTextNode(s.getValue()));
+					c.appendChild(c2);
 					elem.appendChild(c);
 					//out.println("StringValue: " + s.getValue());
 				}
 			}
 			
-			root.appendChild(elem);
+			tableRoot.appendChild(elem);
 			
 			Transformer transformer = null;
 			try {
@@ -203,18 +262,18 @@ public class OutputResults {
 
 			String xmlString = output.getWriter().toString();
 			
-			if(outFile.exists())
+			if(outFileXML.exists())
 			{
-				outFile.delete();
+				outFileXML.delete();
 			}
 			try {
-				outFile.createNewFile();
+				outFileXML.createNewFile();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			FileOutputStream fOutStream = null;
 			try {
-				fOutStream = new FileOutputStream(outFile);
+				fOutStream = new FileOutputStream(outFileXML);
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
