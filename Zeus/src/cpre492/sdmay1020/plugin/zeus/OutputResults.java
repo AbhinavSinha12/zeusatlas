@@ -40,7 +40,6 @@ public class OutputResults {
 	static File outFileTxt = null;
 	static IPath outPathXML = null;
 	static File outFileXML = null;
-	// TODO switch method to print to a file instead of the console
 	
 	/**
 	 * toTextFile prints the type and name of the input IValue (or IValue array) in an
@@ -115,14 +114,17 @@ public class OutputResults {
 	public static void toXMLFile(String header, IValue... result) {
 		if(outPathXML == null)
 		{
+			//first time run, initialize global variables
 			outPathXML = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.xml");
 			outFileXML = outPathXML.toFile();
+			//delete the old output file if it exists
 			if(outFileXML.exists())
 			{
 				outFileXML.delete();
 			}
 		}
 		
+		//initialize xml document
 		DocumentBuilderFactory df = DocumentBuilderFactory.newInstance();
 		DocumentBuilder db = null;
 		try {
@@ -133,6 +135,7 @@ public class OutputResults {
 		Document xmldoc = null;
 		if(outFileXML.exists())
 		{
+			//try to parse the old xml file
 			try {
 				xmldoc = db.parse(outFileXML);	
 			} catch (SAXException e) {
@@ -143,9 +146,11 @@ public class OutputResults {
 		}
 		else
 		{
+			//create new xml document
 			DOMImplementation di = db.getDOMImplementation();
 			xmldoc = di.createDocument(null, "Workbook", null);
 			
+			//initialize the document for excel
 			Element root = xmldoc.getDocumentElement();
 			root.setAttribute("xmlns", "urn:schemas-microsoft-com:office:spreadsheet");
 			root.setAttribute("xmlns:o", "urn:schemas-microsoft-com:office:office");
@@ -172,116 +177,110 @@ public class OutputResults {
 			root.appendChild(c1);
 		}
 		
-		if(xmldoc != null)
-		{
-			Element tableRoot = xmldoc.getElementById("TableRoot");
-			Element elem = xmldoc.getElementById(header);
-			
-			if(elem == null)
-			{
-				elem = xmldoc.createElement("Row");
-				elem.setAttribute("ID", header);
-				elem.setIdAttribute("ID", true);
+		Element tableRoot = (Element)xmldoc.getElementsByTagName("Table").item(0);
+		Element elem = xmldoc.createElement("Row");
+		elem.setAttribute("ID", header);
+		elem.setIdAttribute("ID", true);
+		
+		Element child = xmldoc.createElement("Cell");
+		child.setAttribute("ss:StyleID", "s62");
+		Element child2 = xmldoc.createElement("Data");
+		child2.setAttribute("ss:Type", "String");
+		
+		child.appendChild(xmldoc.createTextNode(header));
+		child.appendChild(child2);
+		elem.appendChild(child);
+
+		for(IValue r : result){
+			if (r instanceof IArtifacts) {
+				IArtifacts artifacts = (IArtifacts) r;
+				
+				StringBuilder s = new StringBuilder();
+				
+				for (IArtifact a : artifacts) {
+					s.append(a.getName() + " ");
+				}
 				
 				Element c = xmldoc.createElement("Cell");
 				c.setAttribute("ss:StyleID", "s62");
 				Element c2 = xmldoc.createElement("Data");
 				c2.setAttribute("ss:Type", "String");
 				
-				c2.appendChild(xmldoc.createTextNode(header));
+				c2.appendChild(xmldoc.createTextNode(s.toString()));
 				c.appendChild(c2);
 				elem.appendChild(c);
+				//out.println("Artifacts:\n  " + s.toString());
+				
+			} else if (r instanceof IVariable) {
+				// not really possible at this time - query language only returns artifacts
+				IVariable v = (IVariable) r;
+				Element c = xmldoc.createElement("Cell");
+				c.setAttribute("ss:StyleID", "s62");
+				Element c2 = xmldoc.createElement("Data");
+				c2.setAttribute("ss:Type", "String");
+				
+				c2.appendChild(xmldoc.createTextNode(v.getName()));
+				c.appendChild(c2);
+				elem.appendChild(c);
+				//out.println("Variable: " + v.getName());
+				
+			} else if (r instanceof IStringValue) {
+				// not really possible at this time - query language only returns artifacts
+				IStringValue s = (IStringValue) r;
+				Element c = xmldoc.createElement("Cell");
+				c.setAttribute("ss:StyleID", "s62");
+				Element c2 = xmldoc.createElement("Data");
+				c2.setAttribute("ss:Type", "String");
+				
+				c2.appendChild(xmldoc.createTextNode(s.getValue()));
+				c.appendChild(c2);
+				elem.appendChild(c);
+				//out.println("StringValue: " + s.getValue());
 			}
-
-			for(IValue r : result){
-				if (r instanceof IArtifacts) {
-					IArtifacts artifacts = (IArtifacts) r;
-					
-					StringBuilder s = new StringBuilder();
-					
-					for (IArtifact a : artifacts) {
-						s.append(a.getName());
-					}
-					
-					Element c = xmldoc.createElement("Cell");
-					c.setAttribute("ss:StyleID", "s62");
-					Element c2 = xmldoc.createElement("Data");
-					c2.setAttribute("ss:Type", "String");
-					
-					c2.appendChild(xmldoc.createTextNode(s.toString()));
-					c.appendChild(c2);
-					elem.appendChild(c);
-					//out.println("Artifacts:\n  " + s.toString());
-					
-				} else if (r instanceof IVariable) {
-					// not really possible at this time - query language only returns artifacts
-					IVariable v = (IVariable) r;
-					Element c = xmldoc.createElement("Cell");
-					Element c2 = xmldoc.createElement("Data");
-					c2.setAttribute("ss:Type", "String");
-					
-					c2.appendChild(xmldoc.createTextNode(v.getName()));
-					c.appendChild(c2);
-					elem.appendChild(c);
-					//out.println("Variable: " + v.getName());
-					
-				} else if (r instanceof IStringValue) {
-					// not really possible at this time - query language only returns artifacts
-					IStringValue s = (IStringValue) r;
-					Element c = xmldoc.createElement("Cell");
-					Element c2 = xmldoc.createElement("Data");
-					c2.setAttribute("ss:Type", "String");
-					
-					c2.appendChild(xmldoc.createTextNode(s.getValue()));
-					c.appendChild(c2);
-					elem.appendChild(c);
-					//out.println("StringValue: " + s.getValue());
-				}
-			}
-			
-			tableRoot.appendChild(elem);
-			
-			Transformer transformer = null;
-			try {
-				transformer = TransformerFactory.newInstance().newTransformer();
-			} catch (TransformerConfigurationException e2) {
-				e2.printStackTrace();
-			} catch (TransformerFactoryConfigurationError e2) {
-				e2.printStackTrace();
-			}
-			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-
-			//initialize StreamResult with File object to save to file
-			StreamResult output = new StreamResult(new StringWriter());
-			DOMSource source = new DOMSource(xmldoc);
-			try {
-				transformer.transform(source, output);
-			} catch (TransformerException e1) {
-				e1.printStackTrace();
-			}
-
-			String xmlString = output.getWriter().toString();
-			
-			if(outFileXML.exists())
-			{
-				outFileXML.delete();
-			}
-			try {
-				outFileXML.createNewFile();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			FileOutputStream fOutStream = null;
-			try {
-				fOutStream = new FileOutputStream(outFileXML);
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			}
-			PrintWriter out = new PrintWriter(fOutStream, true);
-			
-			out.println(xmlString);
-			out.close();
 		}
+		
+		tableRoot.appendChild(elem);
+		
+		Transformer transformer = null;
+		try {
+			transformer = TransformerFactory.newInstance().newTransformer();
+		} catch (TransformerConfigurationException e2) {
+			e2.printStackTrace();
+		} catch (TransformerFactoryConfigurationError e2) {
+			e2.printStackTrace();
+		}
+		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+		//initialize StreamResult with File object to save to file
+		StreamResult output = new StreamResult(new StringWriter());
+		DOMSource source = new DOMSource(xmldoc);
+		try {
+			transformer.transform(source, output);
+		} catch (TransformerException e1) {
+			e1.printStackTrace();
+		}
+
+		String xmlString = output.getWriter().toString();
+		
+		if(outFileXML.exists())
+		{
+			outFileXML.delete();
+		}
+		try {
+			outFileXML.createNewFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		FileOutputStream fOutStream = null;
+		try {
+			fOutStream = new FileOutputStream(outFileXML);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		PrintWriter out = new PrintWriter(fOutStream, true);
+		
+		out.println(xmlString);
+		out.close();
 	}
 	
 	/**

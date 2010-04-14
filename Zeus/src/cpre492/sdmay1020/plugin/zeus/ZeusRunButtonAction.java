@@ -86,6 +86,7 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 		    System.out.println("\n" + re.toString());
 		    // tell user where (first) error occurred -> helps with debugging input 
 		    System.out.println("(" + re.lineNumber() + ", " + re.columnNumber() + ") " + re.lineSource());
+		    //re.printStackTrace(System.out);
 	  } catch(Exception e){
 	  		System.out.println(e.toString());
 	  }finally {
