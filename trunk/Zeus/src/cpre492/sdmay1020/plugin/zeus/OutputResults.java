@@ -24,6 +24,7 @@ import org.eclipse.core.runtime.IPath;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.ProcessingInstruction;
 import org.xml.sax.SAXException;
 
 import com.ensoftcorp.plugin.atlas.query.api.QueryFactory;
@@ -36,9 +37,9 @@ import com.ensoftcorp.plugin.atlas.ui.api.GraphUI;
 
 public class OutputResults {
 
-	static IPath outPathTxt = null;
+	static IPath outPathTxt = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.txt");
 	static File outFileTxt = null;
-	static IPath outPathXML = null;
+	static IPath outPathXML = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.xml");
 	static File outFileXML = null;
 	
 	/**
@@ -51,9 +52,8 @@ public class OutputResults {
 	 */
 	public static void toTextFile(String header, IValue... result) {
 		//Create an output txt file in the current workspace
-		if(outPathTxt == null)
+		if(outFileTxt == null)
 		{
-			outPathTxt = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.txt");
 			outFileTxt = outPathTxt.toFile();
 			if(outFileTxt.exists())
 			{
@@ -112,10 +112,9 @@ public class OutputResults {
 	 * @author Tina Gervais
 	 */
 	public static void toXMLFile(String header, IValue... result) {
-		if(outPathXML == null)
+		if(outFileXML == null)
 		{
 			//first time run, initialize global variables
-			outPathXML = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.xml");
 			outFileXML = outPathXML.toFile();
 			//delete the old output file if it exists
 			if(outFileXML.exists())
@@ -148,10 +147,14 @@ public class OutputResults {
 		{
 			//create new xml document
 			DOMImplementation di = db.getDOMImplementation();
-			xmldoc = di.createDocument(null, "Workbook", null);
+			xmldoc = di.createDocument("urn:schemas-microsoft-com:office:spreadsheet", "Workbook", null);
 			
 			//initialize the document for excel
 			Element root = xmldoc.getDocumentElement();
+			
+			ProcessingInstruction pi = xmldoc.createProcessingInstruction("mso-application", "progid=\"Excel.Sheet\"");
+			root.appendChild(pi);
+			
 			root.setAttribute("xmlns", "urn:schemas-microsoft-com:office:spreadsheet");
 			root.setAttribute("xmlns:o", "urn:schemas-microsoft-com:office:office");
 			root.setAttribute("xmlns:x", "urn:schemas-microsoft-com:office:excel");
@@ -187,7 +190,7 @@ public class OutputResults {
 		Element child2 = xmldoc.createElement("Data");
 		child2.setAttribute("ss:Type", "String");
 		
-		child.appendChild(xmldoc.createTextNode(header));
+		child2.appendChild(xmldoc.createTextNode(header));
 		child.appendChild(child2);
 		elem.appendChild(child);
 
