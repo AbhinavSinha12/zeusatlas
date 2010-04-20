@@ -8,6 +8,7 @@ with(Zeus){
 
 //Creation of an IFunctionArtifact
 var IFunctionArtifact = ArtifactFactory.createFunction("getbuf");
+var IType = ArtifactFactory.createType("pt");
 
 //Create an IArtifacts object
 var IArtifacts = ArtifactFactory.createArtifacts();
@@ -17,18 +18,19 @@ var IArtifacts = ArtifactFactory.createArtifacts();
 var empty = ArtifactFactory.createArtifacts();
 
 //Add the IFunctionArtirfact to the collection IArtifacts
-IArtifacts.add(IFunctionArtifact);
+IArtifacts.add(IType);
 
-//create an IArtifactFunction that holds the result of "calledby(getbuf)"
+//create an IArtifactFunction that holds the result
 var Results = AtlasQueryAdapter.types(IArtifacts);
 
 //Name of the graph
-var name = "Graph Test";
+var name = "Types";
 
 //Pass the name and Results to the graph
 //NOTE : we pass the name first, then pass the results as the root node,
 //and finally pass the empty IArtifacts set to the showgraph
 OutputResults.showGraph(name, Results, empty,empty, empty,empty,empty);
+OutputResults.toTextFile(name, Results);
 
 }
 
