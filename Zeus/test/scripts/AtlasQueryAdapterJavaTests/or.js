@@ -23,17 +23,16 @@ var empty = ArtifactFactory.createArtifacts();
 IArtifacts.add(IFunctionArtifact);
 IArtifacts2.add(IFunctionArtifact);
 
-//create an IArtifactFunction that holds the result of "calledby(getbuf)"
+//create an IArtifactFunction that holds the result
 var Results = AtlasQueryAdapter.or(IArtifacts, IArtifacts2);
 
 //Name of the graph
-var name = "Graph Test";
+var name = "OR";
 
 //Pass the name and Results to the graph
 //NOTE : we pass the name first, then pass the results as the root node,
 //and finally pass the empty IArtifacts set to the showgraph
-OutputResults.showGraph(name, Results, empty,empty, empty,empty,empty);
-
+OutputResults.toTextFile(name, Results);
 }
 
 
