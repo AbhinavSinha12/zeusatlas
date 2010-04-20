@@ -39,6 +39,8 @@ public class OutputResults {
 
 	static IPath outPathTxt = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.txt");
 	static File outFileTxt = null;
+	static FileOutputStream fOutStream = null;
+	static PrintWriter fout = null;
 	static IPath outPathXML = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.xml");
 	static File outFileXML = null;
 	
@@ -64,43 +66,41 @@ public class OutputResults {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+				
+			try {
+				fOutStream = new FileOutputStream(outFileTxt);
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			fout = new PrintWriter(fOutStream, true);
 		}
 		
-		FileOutputStream fOutStream = null;
-		try {
-			fOutStream = new FileOutputStream(outFileTxt);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		PrintWriter out = new PrintWriter(fOutStream, true);
-		
-		out.println(header+"\n");
+		fout.println(header+"\n");
 		for(IValue r : result){
 			if (r instanceof IArtifacts) {
 				IArtifacts artifacts = (IArtifacts) r;
 				
 				StringBuilder s = new StringBuilder();
+				s.append(artifacts.size() + " ");
 				
 				for (IArtifact a : artifacts) {
 					s.append(a.getName());
 					s.append("\n  ");
 				}		
-				out.println("Artifacts:\n  " + s.toString());
+				fout.println("Artifacts:\n  " + s.toString());
 				
 			} else if (r instanceof IVariable) {
 				// not really possible at this time - query language only returns artifacts
 				IVariable v = (IVariable) r;
-				out.println("Variable: " + v.getName());
+				fout.println("Variable: " + v.getName());
 				
 			} else if (r instanceof IStringValue) {
 				// not really possible at this time - query language only returns artifacts
 				IStringValue s = (IStringValue) r;
-				out.println("StringValue: " + s.getValue());
+				fout.println("StringValue: " + s.getValue());
 			}
 		}
-		out.println("\n");
-		
-		out.close();
+		fout.println("\n");
 	}
 	
 	/**
@@ -199,6 +199,7 @@ public class OutputResults {
 				IArtifacts artifacts = (IArtifacts) r;
 				
 				StringBuilder s = new StringBuilder();
+				s.append(artifacts.size() + " ");
 				
 				for (IArtifact a : artifacts) {
 					s.append(a.getName() + " ");
