@@ -19,7 +19,7 @@ var empty = ArtifactFactory.createArtifacts();
 //Add the IFunctionArtirfact to the collection IArtifacts
 IArtifacts.add(IFunctionArtifact);
 
-//create an IArtifactFunction that holds the result of "calledby(getbuf)"
+//create an IArtifactFunction that holds the result
 var Results = AtlasQueryAdapter.refby(IArtifacts);
 
 //Name of the graph
@@ -29,7 +29,7 @@ var name = "Graph Test";
 //NOTE : we pass the name first, then pass the results as the root node,
 //and finally pass the empty IArtifacts set to the showgraph
 OutputResults.showGraph(name, Results, empty,empty, empty,empty,empty);
-
+OutputResults.toTextFile(name, Results);
 }
 
 
