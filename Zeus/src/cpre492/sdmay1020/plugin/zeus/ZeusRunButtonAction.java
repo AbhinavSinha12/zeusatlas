@@ -95,7 +95,7 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 	  
 	  //Reset output file variables with null to overwrite files on next run click
 	  OutputResults.outFileTxt = null;
-	  OutputResults.outFileXML = null;
+	  OutputResults.outFileXML = null;	  
 	}
 
 	/**
