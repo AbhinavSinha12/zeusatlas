@@ -3,6 +3,7 @@ package cpre492.sdmay1020.plugin.zeus;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -81,12 +82,15 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 			// run the script - if invalid input, this will throw an exception
 			cx.evaluateString(scope, scriptString, "script", 1, null);
 
-	  } catch(RhinoException re) {// Invalid JavaScript
+	  } catch(RhinoException re) {// Invalid JavaScript input
+		  	Shell shell = window.getShell();
+		  	StringBuilder s = new StringBuilder();
 		  	// tell user what (first) error occurred -> helps with debugging input 
-		    System.out.println("\n" + re.toString());
+		    s.append("\n" + re.toString());
 		    // tell user where (first) error occurred -> helps with debugging input 
-		    System.out.println("(" + re.lineNumber() + ", " + re.columnNumber() + ") " + re.lineSource());
+		    s.append("\n(Line " + re.lineNumber() + ", Col " + re.columnNumber() + ") Src: " + re.lineSource());
 		    //re.printStackTrace(System.out);
+		    MessageDialog.openInformation(shell, "Error", s.toString());
 	  } catch(Exception e){
 	  		System.out.println(e.toString());
 	  }finally {
