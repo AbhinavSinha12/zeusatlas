@@ -1,88 +1,81 @@
-	
-//var Zeus = JavaImporter(Packages.cpre492.sdmay1020.plugin.zeus.ArtifactFactory, 
-//						Packages.cpre492.sdmay1020.plugin.zeus.AtlasQueryAdapter);
+var headerArray = [];
+headerArray[0] = af.createString("dir.h"); 
+headerArray[1] = af.createString("lfile.h"); 
+headerArray[2] = af.createString("disk.h"); 
+headerArray[3] = af.createString("ether.h"); 
+headerArray[4] = af.createString("net.h"); 
+headerArray[5] = af.createString("proc.h"); 
+headerArray[6] = af.createString("mem.h"); 
 
-with(Zeus){
+var defArray = [];	
+var refArray = [];
+var rcgArray = [];
+var indRefArray = [];
+var oaArray = [];
+var andArray = [];
+var indAndArray = [];
 
-	var headerArray = [];
-	headerArray[0] = ArtifactFactory.createString("dir.h"); 
-	headerArray[1] = ArtifactFactory.createString("lfile.h"); 
-	headerArray[2] = ArtifactFactory.createString("disk.h"); 
-	headerArray[3] = ArtifactFactory.createString("ether.h"); 
-	headerArray[4] = ArtifactFactory.createString("net.h"); 
-	headerArray[5] = ArtifactFactory.createString("proc.h"); 
-	headerArray[6] = ArtifactFactory.createString("mem.h"); 
-
-	var defArray = [];	
-	var refArray = [];
-	var rcgArray = [];
-	var indRefArray = [];
-	var oaArray = [];
-	var andArray = [];
-	var indAndArray = [];
-
-	for(i=0;i<7;i++){
-		defArray[i] = AtlasQueryAdapter.def(headerArray[i]); 
-		refArray[i] = AtlasQueryAdapter.ref(defArray[i]); 
-		rcgArray[i] = AtlasQueryAdapter.rcg(refArray[i]); 
-		indRefArray[i] = AtlasQueryAdapter.minus(rcgArray[i], refArray[i]); 
-		oaArray[i] = AtlasQueryAdapter.minus(AtlasQueryAdapter.calledby(rcgArray[i]), rcgArray[i]); 
-	}
-	var count = 0;
-	for(i=0;i<7;i++){
-		for(j=i+1;j<7;j++){
-			andArray[count] = AtlasQueryAdapter.and(refArray[i], refArray[j]);
-			indAndArray[count] = AtlasQueryAdapter.and(indRefArray[i], indRefArray[j]);
-			count++;
-		}
-	}
-
-	indAndArray[count] = AtlasQueryAdapter.and(indAndArray[16], indAndArray[18]);
-	
-	var intersectInd = AtlasQueryAdapter.and(indRefArray);
-	var intersectIndDirLfileANDDisk = AtlasQueryAdapter.and(indRefArray[0], indRefArray[1], indRefArray[2]);
-	var intersectOA = AtlasQueryAdapter.and(oaArray);
-	var intersect5OA = AtlasQueryAdapter.and(oaArray[0], oaArray[1], oaArray[2], oaArray[3], oaArray[4]);
-	var intersect5Ind = AtlasQueryAdapter.and(indRefArray[0], indRefArray[1], indRefArray[2], indRefArray[3], indRefArray[4]);
-	
-	var read = ArtifactFactory.createArtifacts();
-	var write = ArtifactFactory.createArtifacts();
-	read.add(ArtifactFactory.createFunction("read"));
-	write.add(ArtifactFactory.createFunction("write"));
-	var callRead = AtlasQueryAdapter.call(read);
-	var callWrite = AtlasQueryAdapter.call(write);
-	var callReadANDWrite = AtlasQueryAdapter.and(callRead, callWrite);
-	var calledByRead = AtlasQueryAdapter.calledby(read);
-	var calledByWrite = AtlasQueryAdapter.calledby(write);
-
-	var readString = ArtifactFactory.createString(".*read");
-	var writeSting = ArtifactFactory.createString(".*write");
-	var readFns = AtlasQueryAdapter.functions(readString);
-	var writeFns = AtlasQueryAdapter.functions(writeSting);
-	
-	
-	OutputResults.toTextFile("Header File Array", headerArray);
-	OutputResults.toTextFile("Def Array", defArray);
-	OutputResults.toTextFile("Ref Array", refArray);
-	OutputResults.toTextFile("RCG Array", rcgArray);
-	OutputResults.toTextFile("IndRef Array", indRefArray);
-	OutputResults.toTextFile("OA Array", oaArray);
-	OutputResults.toTextFile("AND Array", andArray);
-    OutputResults.toTextFile("IndAND Array", indAndArray);
-	OutputResults.toTextFile("Ind Intersection", intersectInd);
-	OutputResults.toTextFile("Ind dir, lfile, and disk Intersection", intersectIndDirLfileANDDisk);
-	OutputResults.toTextFile("OA Intersection", intersectOA);
-	OutputResults.toTextFile("OA 5 Intersection", intersect5OA);
-	OutputResults.toTextFile("Ind 5 Intersection", intersect5Ind);
-	OutputResults.toTextFile("Call Read", callRead);
-	OutputResults.toTextFile("Call Write", callWrite);
-	OutputResults.toTextFile("Call Read and Write", callReadANDWrite);
-	OutputResults.toTextFile("CalledBy Read", calledByRead);
-	OutputResults.toTextFile("CalledBy Write", calledByWrite);
-	OutputResults.toTextFile("Read Functions", readFns);
-	OutputResults.toTextFile("Write Functions", writeFns);
-
+for(i=0;i<7;i++){
+	defArray[i] = aq.def(headerArray[i]); 
+	refArray[i] = aq.ref(defArray[i]); 
+	rcgArray[i] = aq.rcg(refArray[i]); 
+	indRefArray[i] = aq.minus(rcgArray[i], refArray[i]); 
+	oaArray[i] = aq.minus(aq.calledby(rcgArray[i]), rcgArray[i]); 
 }
+var count = 0;
+for(i=0;i<7;i++){
+	for(j=i+1;j<7;j++){
+		andArray[count] = aq.and(refArray[i], refArray[j]);
+		indAndArray[count] = aq.and(indRefArray[i], indRefArray[j]);
+		count++;
+	}
+}
+
+indAndArray[count] = aq.and(indAndArray[16], indAndArray[18]);
+
+var intersectInd = aq.and(indRefArray);
+var intersectIndDirLfileANDDisk = aq.and(indRefArray[0], indRefArray[1], indRefArray[2]);
+var intersectOA = aq.and(oaArray);
+var intersect5OA = aq.and(oaArray[0], oaArray[1], oaArray[2], oaArray[3], oaArray[4]);
+var intersect5Ind = aq.and(indRefArray[0], indRefArray[1], indRefArray[2], indRefArray[3], indRefArray[4]);
+
+var read = af.createArtifacts();
+var write = af.createArtifacts();
+read.add(af.createFunction("read"));
+write.add(af.createFunction("write"));
+var callRead = aq.call(read);
+var callWrite = aq.call(write);
+var callReadANDWrite = aq.and(callRead, callWrite);
+var calledByRead = aq.calledby(read);
+var calledByWrite = aq.calledby(write);
+
+var readString = af.createString(".*read");
+var writeSting = af.createString(".*write");
+var readFns = aq.functions(readString);
+var writeFns = aq.functions(writeSting);
+
+
+or.toTextFile("Header File Array", headerArray);
+or.toTextFile("Def Array", defArray);
+or.toTextFile("Ref Array", refArray);
+or.toTextFile("RCG Array", rcgArray);
+or.toTextFile("IndRef Array", indRefArray);
+or.toTextFile("OA Array", oaArray);
+or.toTextFile("AND Array", andArray);
+or.toTextFile("IndAND Array", indAndArray);
+or.toTextFile("Ind Intersection", intersectInd);
+or.toTextFile("Ind dir, lfile, and disk Intersection", intersectIndDirLfileANDDisk);
+or.toTextFile("OA Intersection", intersectOA);
+or.toTextFile("OA 5 Intersection", intersect5OA);
+or.toTextFile("Ind 5 Intersection", intersect5Ind);
+or.toTextFile("Call Read", callRead);
+or.toTextFile("Call Write", callWrite);
+or.toTextFile("Call Read and Write", callReadANDWrite);
+or.toTextFile("CalledBy Read", calledByRead);
+or.toTextFile("CalledBy Write", calledByWrite);
+or.toTextFile("Read Functions", readFns);
+or.toTextFile("Write Functions", writeFns);
+
 
 
 //#dirData = def(“dir.h”)
