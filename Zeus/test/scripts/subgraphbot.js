@@ -51,6 +51,3 @@ var name = "Graph Test";
 //and finally pass the empty IArtifacts set to the showgraph
 or.showGraph(name, roots, base,empty, empty,empty,empty);
 }
-}
-
-
