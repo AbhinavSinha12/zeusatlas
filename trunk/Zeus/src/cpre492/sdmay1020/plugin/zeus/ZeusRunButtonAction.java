@@ -24,14 +24,13 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 	private IWorkbenchWindow window;
 	
 	/*Import String for all the classes within Zeus that will be called by the input script
-	 * enabling the script author to use 'with(Zeus){ ... } instead of importing all the class individually 
+	 * and aliases enabling the script author to use 'aq', 'af', and 'or' instead of the full
+	 * class names 
 	 * final keyword -> means value is constant(can't change)*/
-	private final String zeusImport = "importPackage(Packages.cpre492.sdmay1020.plugin.zeus.ArtifactFactory);" +
-										"importPackage(Packages.cpre492.sdmay1020.plugin.zeus.AtlasQueryAdapter);" +
-										"importPackage(Packages.cpre492.sdmay1020.plugin.zeus.OutputResults);" +
-										"var aq = Packages.cpre492.sdmay1020.plugin.zeus.AtlasQueryAdapter;" + 
-										"var af = Packages.cpre492.sdmay1020.plugin.zeus.ArtifactFactory;" + 
-										"var or = Packages.cpre492.sdmay1020.plugin.zeus.OutputResults;";
+	private final String zeusImport = "importPackage(Packages.cpre492.sdmay1020.plugin.zeus);" +
+										"aq = Packages.cpre492.sdmay1020.plugin.zeus.AtlasQueryAdapter;" + 
+										"af = Packages.cpre492.sdmay1020.plugin.zeus.ArtifactFactory;" + 
+										"or = Packages.cpre492.sdmay1020.plugin.zeus.OutputResults;";
 	
 	/** 
 	 * The constructor
