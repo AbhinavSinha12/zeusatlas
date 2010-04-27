@@ -30,7 +30,7 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 	private final String zeusImport = "importPackage(Packages.cpre492.sdmay1020.plugin.zeus);" +
 										"aq = Packages.cpre492.sdmay1020.plugin.zeus.AtlasQueryAdapter;" + 
 										"af = Packages.cpre492.sdmay1020.plugin.zeus.ArtifactFactory;" + 
-										"or = Packages.cpre492.sdmay1020.plugin.zeus.OutputResults;";
+										"out = Packages.cpre492.sdmay1020.plugin.zeus.OutputResults;";
 	
 	/** 
 	 * The constructor

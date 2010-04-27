@@ -55,26 +55,26 @@ var readFns = aq.functions(readString);
 var writeFns = aq.functions(writeSting);
 
 
-or.toTextFile("Header File Array", headerArray);
-or.toTextFile("Def Array", defArray);
-or.toTextFile("Ref Array", refArray);
-or.toTextFile("RCG Array", rcgArray);
-or.toTextFile("IndRef Array", indRefArray);
-or.toTextFile("OA Array", oaArray);
-or.toTextFile("AND Array", andArray);
-or.toTextFile("IndAND Array", indAndArray);
-or.toTextFile("Ind Intersection", intersectInd);
-or.toTextFile("Ind dir, lfile, and disk Intersection", intersectIndDirLfileANDDisk);
-or.toTextFile("OA Intersection", intersectOA);
-or.toTextFile("OA 5 Intersection", intersect5OA);
-or.toTextFile("Ind 5 Intersection", intersect5Ind);
-or.toTextFile("Call Read", callRead);
-or.toTextFile("Call Write", callWrite);
-or.toTextFile("Call Read and Write", callReadANDWrite);
-or.toTextFile("CalledBy Read", calledByRead);
-or.toTextFile("CalledBy Write", calledByWrite);
-or.toTextFile("Read Functions", readFns);
-or.toTextFile("Write Functions", writeFns);
+out.toTextFile("Header File Array", headerArray);
+out.toTextFile("Def Array", defArray);
+out.toTextFile("Ref Array", refArray);
+out.toTextFile("RCG Array", rcgArray);
+out.toTextFile("IndRef Array", indRefArray);
+out.toTextFile("OA Array", oaArray);
+out.toTextFile("AND Array", andArray);
+out.toTextFile("IndAND Array", indAndArray);
+out.toTextFile("Ind Intersection", intersectInd);
+out.toTextFile("Ind dir, lfile, and disk Intersection", intersectIndDirLfileANDDisk);
+out.toTextFile("OA Intersection", intersectOA);
+out.toTextFile("OA 5 Intersection", intersect5OA);
+out.toTextFile("Ind 5 Intersection", intersect5Ind);
+out.toTextFile("Call Read", callRead);
+out.toTextFile("Call Write", callWrite);
+out.toTextFile("Call Read and Write", callReadANDWrite);
+out.toTextFile("CalledBy Read", calledByRead);
+out.toTextFile("CalledBy Write", calledByWrite);
+out.toTextFile("Read Functions", readFns);
+out.toTextFile("Write Functions", writeFns);
 
 
 

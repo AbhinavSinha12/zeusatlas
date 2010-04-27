@@ -27,7 +27,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.ProcessingInstruction;
 import org.xml.sax.SAXException;
 
-import com.ensoftcorp.plugin.atlas.query.api.QueryFactory;
 import com.ensoftcorp.plugin.atlas.query.lang.IArtifact;
 import com.ensoftcorp.plugin.atlas.query.lang.IArtifacts;
 import com.ensoftcorp.plugin.atlas.query.lang.IStringValue;
@@ -51,6 +50,7 @@ public class OutputResults {
 	 * @param header - The header string that is printed before the result values
 	 * @param result - The query results to print (can be a single IValue or an array of IValue objects)
 	 * @author Tina Gervais
+	 * @author Cole Anagnost
 	 */
 	public static void toTextFile(String header, IValue... result) {
 		//Create an output txt file in the current workspace
@@ -81,13 +81,13 @@ public class OutputResults {
 				IArtifacts artifacts = (IArtifacts) r;
 				
 				StringBuilder s = new StringBuilder();
-				s.append(artifacts.size() + " ");
+				s.append(artifacts.size() + ":\n  ");
 				
 				for (IArtifact a : artifacts) {
 					s.append(a.getName());
 					s.append("\n  ");
 				}		
-				fout.println("Artifacts:\n  " + s.toString());
+				fout.println("Artifacts  " + s.toString());
 				
 			} else if (r instanceof IVariable) {
 				// not really possible at this time - query language only returns artifacts
@@ -110,6 +110,7 @@ public class OutputResults {
 	 * @param header - The header string that is printed before the result values
 	 * @param result - The query results to print (can be a single IValue or an array of IValue objects)
 	 * @author Tina Gervais
+	 * @author Cole Anagnost
 	 */
 	public static void toXMLFile(String header, IValue... result) {
 		if(outFileXML == null)
@@ -199,7 +200,7 @@ public class OutputResults {
 				IArtifacts artifacts = (IArtifacts) r;
 				
 				StringBuilder s = new StringBuilder();
-				s.append(artifacts.size() + " ");
+				s.append(" ("+ artifacts.size() + ") ");
 				
 				for (IArtifact a : artifacts) {
 					s.append(a.getName() + " ");
@@ -291,12 +292,12 @@ public class OutputResults {
 	 * showGraph creates a graph in the Atlas Graph View of the input
 	 * 
 	 * @param title - the title to display in the graph view heading
-	 * @param roots - the set of noeds that will be root nodes in the graph
+	 * @param roots - the set of nodes that will be root nodes in the graph
 	 * @param leaves - the set of nodes that will be leaf nodes in the graph
-	 * @param omissions - the set of nodes that will be omissions nodes in the graph
-	 * @param highlights - the set of nodes that will be highlights nodes in the graph
-	 * @param simplify - the set of nodes that will be simplify nodes in the graph
-	 * @param center - the set of nodes that will be center nodes in the graph
+	 * @param omissions - the set of nodes that will not be shown in the graph
+	 * @param highlights - the set of nodes that will be highlighted in the graph
+	 * @param simplify - the set of nodes whose relationships will be simplified in the graph (extra nodes will not be shown)
+	 * @param center - the set of nodes that will be centered in the graph
 	 * 
 	 * @author Tina Gervais
 	 * @author Alex Kharbush
