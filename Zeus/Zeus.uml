@@ -1,0 +1,1643 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:JavaProfile_1="http:///_aZXakH6MEdmbwasWWc4yvw.profile.uml2" xmlns:Meta="http:///schemas/Meta/1" xmlns:Omondo_1="http:///_zrN_0SUoEdmNXYQzyImvfA.profile.uml2" xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///_aZXakH6MEdmbwasWWc4yvw.profile.uml2 platform:/plugin/com.omondo.uml.core/profiles/Java.profile.uml#_aZhLlH6MEdmbwasWWc4yvw http:///schemas/Meta/1 platform:/plugin/com.omondo.uml.core/profiles/Meta.profile.uml#_kycnUIE4EduiecUdqhZMrw http:///_zrN_0SUoEdmNXYQzyImvfA.profile.uml2 platform:/plugin/com.omondo.uml.core/profiles/Omondo.profile.uml#_zrN_1iUoEdmNXYQzyImvfA http://www.eclipse.org/uml2/schemas/Standard/1 platform:/plugin/org.eclipse.uml2.uml.resources/profiles/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w">
+  <uml:Model xmi:id="_lCDHwFIDEd-fJs9_MReiaA" name="Zeus">
+    <eAnnotations xmi:id="_1hR6UlIDEd-fJs9_MReiaA" source="General" references="_1hR6UVIDEd-fJs9_MReiaA _27WEkFIDEd-fJs9_MReiaA _4IgbQVIDEd-fJs9_MReiaA"/>
+    <packageImport xmi:id="_lwds8FIDEd-fJs9_MReiaA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_ucr2MFIDEd-fJs9_MReiaA" name="cpre492">
+      <packagedElement xmi:type="uml:Package" xmi:id="_ucr2MVIDEd-fJs9_MReiaA" name="sdmay1020">
+        <packagedElement xmi:type="uml:Package" xmi:id="_ucr2MlIDEd-fJs9_MReiaA" name="plugin">
+          <packagedElement xmi:type="uml:Package" xmi:id="_ucx80FIDEd-fJs9_MReiaA" name="zeus">
+            <eAnnotations xmi:id="_0_kUYFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_0_YHIFIDEd-fJs9_MReiaA _2ggisFIDEd-fJs9_MReiaA _24F8QFIDEd-fJs9_MReiaA _3A4r4FIDEd-fJs9_MReiaA _3DpsAFIDEd-fJs9_MReiaA _3qVRgFIDEd-fJs9_MReiaA _3zyIcFIDEd-fJs9_MReiaA _32XiYFIDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_0_YHIFIDEd-fJs9_MReiaA" name="ArtifactFactory" clientDependency="_1ryhMFIDEd-fJs9_MReiaA _1spc0FIDEd-fJs9_MReiaA _1tOEkVIDEd-fJs9_MReiaA _1tgYcVIDEd-fJs9_MReiaA _1t-5kVIDEd-fJs9_MReiaA _1udasVIDEd-fJs9_MReiaA _1uvukVIDEd-fJs9_MReiaA _1vIJEVIDEd-fJs9_MReiaA">
+              <eAnnotations xmi:id="_0_kUYVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+              <ownedOperation xmi:id="_1e5UsFIDEd-fJs9_MReiaA" name="createString" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_m4-s0FIGEd-fJs9_MReiaA" name="input" type="_1hR6U1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m4-s0VIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_m5EzcFIGEd-fJs9_MReiaA" type="_1j9a4FIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m5EzcVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_1kiCoFIDEd-fJs9_MReiaA" name="createArtifacts" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_m5RAsVIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m5RAslIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_1koJQVIDEd-fJs9_MReiaA" name="createMacro" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_m5dN8VIGEd-fJs9_MReiaA" name="input" type="_1hR6U1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m5dN8lIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_m5jUkFIGEd-fJs9_MReiaA" type="_1koJRFIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m5jUkVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_1kuP4VIDEd-fJs9_MReiaA" name="createVarible" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_m5XHUFIGEd-fJs9_MReiaA" name="input" type="_1hR6U1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m5XHUVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_m5XHUlIGEd-fJs9_MReiaA" type="_1kuP5FIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m5dN8FIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_1k0WgVIDEd-fJs9_MReiaA" name="createFunction" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_m5EzclIGEd-fJs9_MReiaA" name="input" type="_1hR6U1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m5K6EFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_m5K6EVIGEd-fJs9_MReiaA" type="_1k0WhFIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m5RAsFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_1k6dIlIDEd-fJs9_MReiaA" name="createType" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_m44mMFIGEd-fJs9_MReiaA" name="input" type="_1hR6U1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m44mMVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_m44mMlIGEd-fJs9_MReiaA" type="_1lAjwFIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m44mM1IGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_2ggisFIDEd-fJs9_MReiaA" name="Zeus" clientDependency="_2vBf0FIDEd-fJs9_MReiaA _2wEosVIDEd-fJs9_MReiaA _2w7kUFIDEd-fJs9_MReiaA _2x4mkVIDEd-fJs9_MReiaA _2ywJQVIDEd-fJs9_MReiaA">
+              <eAnnotations xmi:id="_2gsv8FIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+              <generalization xmi:id="_2hFKc1IDEd-fJs9_MReiaA" general="_2hFKcFIDEd-fJs9_MReiaA"/>
+              <ownedAttribute xmi:id="_2i5IUFIDEd-fJs9_MReiaA" name="PLUGIN_ID" visibility="public" isLeaf="true" isStatic="true" type="_1hR6U1IDEd-fJs9_MReiaA" isReadOnly="true">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_2i5IUVIDEd-fJs9_MReiaA" value="&quot;Zeus&quot;"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_2i5IUlIDEd-fJs9_MReiaA" name="plugin" visibility="private" isStatic="true" type="_2ggisFIDEd-fJs9_MReiaA" association="_2ztLgFIDEd-fJs9_MReiaA">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_2i5IU1IDEd-fJs9_MReiaA">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedOperation xmi:id="_2i5IVFIDEd-fJs9_MReiaA" name="getDefault" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_2i_O8FIDEd-fJs9_MReiaA" type="_2ggisFIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2i_O8VIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_2i_O8lIDEd-fJs9_MReiaA" name="start" visibility="public" concurrency="concurrent" raisedException="_2q6b4FIDEd-fJs9_MReiaA">
+                <ownedParameter xmi:id="_2jLcMlIDEd-fJs9_MReiaA" name="context" type="_2jFVklIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2jLcM1IDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_2q6b4lIDEd-fJs9_MReiaA" name="getImageDescriptor" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_2q6b41IDEd-fJs9_MReiaA" name="path" type="_1hR6U1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2q6b5FIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_2rAihVIDEd-fJs9_MReiaA" type="_2rAiglIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2rAihlIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_2rAih1IDEd-fJs9_MReiaA" name="Zeus" visibility="public" concurrency="concurrent"/>
+              <ownedOperation xmi:id="_2rAiiFIDEd-fJs9_MReiaA" name="stop" visibility="public" concurrency="concurrent" raisedException="_2q6b4FIDEd-fJs9_MReiaA">
+                <ownedParameter xmi:id="_2rMvwFIDEd-fJs9_MReiaA" name="context" type="_2jFVklIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2rMvwVIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_2ztLgFIDEd-fJs9_MReiaA" memberEnd="_2i5IUlIDEd-fJs9_MReiaA _2ztLgVIDEd-fJs9_MReiaA">
+              <ownedEnd xmi:id="_2ztLgVIDEd-fJs9_MReiaA" name="ownedEnd" type="_2ggisFIDEd-fJs9_MReiaA" association="_2ztLgFIDEd-fJs9_MReiaA"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_24F8QFIDEd-fJs9_MReiaA" name="RunHandler" clientDependency="_25V5cFIDEd-fJs9_MReiaA _27cLNFIDEd-fJs9_MReiaA _28NAMVIDEd-fJs9_MReiaA _290w0VIDEd-fJs9_MReiaA _2-rscVIDEd-fJs9_MReiaA _2_chcVIDEd-fJs9_MReiaA">
+              <eAnnotations xmi:id="_24F8QVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+              <generalization xmi:id="_24SJg1IDEd-fJs9_MReiaA" general="_24SJgFIDEd-fJs9_MReiaA"/>
+              <interfaceRealization xmi:id="_25V5cFIDEd-fJs9_MReiaA" supplier="_24SJhFIDEd-fJs9_MReiaA" client="_24F8QFIDEd-fJs9_MReiaA" contract="_24SJhFIDEd-fJs9_MReiaA"/>
+              <ownedOperation xmi:id="_25iGsFIDEd-fJs9_MReiaA" name="isHandled" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_25oNUFIDEd-fJs9_MReiaA" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_25oNUVIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_25oNUlIDEd-fJs9_MReiaA" name="execute" visibility="public" concurrency="concurrent" raisedException="_26An0FIDEd-fJs9_MReiaA">
+                <ownedParameter xmi:id="_25uT8lIDEd-fJs9_MReiaA" name="event" type="_25uT8FIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_25uT81IDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_250akVIDEd-fJs9_MReiaA" type="_25uT9FIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_250aklIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_26An0lIDEd-fJs9_MReiaA" name="isEnabled" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_26An01IDEd-fJs9_MReiaA" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_26GucFIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_3A4r4FIDEd-fJs9_MReiaA" name="ZeusRunButtonAction" clientDependency="_3BE5IlIDEd-fJs9_MReiaA _3cY8IFIDEd-fJs9_MReiaA _3cxWoVIDEd-fJs9_MReiaA _3d6mIVIDEd-fJs9_MReiaA _3eTAoVIDEd-fJs9_MReiaA _3erbIVIDEd-fJs9_MReiaA _3fQC4VIDEd-fJs9_MReiaA _3gA34VIDEd-fJs9_MReiaA _3gTLwVIDEd-fJs9_MReiaA _3hEn0VIDEd-fJs9_MReiaA _3hW7sVIDEd-fJs9_MReiaA _3hvWMVIDEd-fJs9_MReiaA _3iyfEVIDEd-fJs9_MReiaA _3jdNcVIDEd-fJs9_MReiaA _3j1n8VIDEd-fJs9_MReiaA _3kUJEVIDEd-fJs9_MReiaA _3k4w0VIDEd-fJs9_MReiaA _3lRLUVIDEd-fJs9_MReiaA _3lpl0VIDEd-fJs9_MReiaA _3mghcVIDEd-fJs9_MReiaA _3nFJMVIDEd-fJs9_MReiaA _3n2lQVIDEd-fJs9_MReiaA _3oI5IVIDEd-fJs9_MReiaA _3otg4VIDEd-fJs9_MReiaA _3o_0wVIDEd-fJs9_MReiaA _FjTXAFIFEd-fJs9_MReiaA _G3PrIFIFEd-fJs9_MReiaA _ILSs8FIFEd-fJs9_MReiaA">
+              <eAnnotations xmi:id="_3A-ygFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+              <ownedAttribute xmi:id="_3BjaQFIDEd-fJs9_MReiaA" name="zeusImport" visibility="private" isLeaf="true" type="_1hR6U1IDEd-fJs9_MReiaA" isReadOnly="true">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_3BjaQVIDEd-fJs9_MReiaA" value="&quot;importPackage(Packages.cpre492.sdmay1020.plugin.zeus);&quot; + &quot;aq = Packages.cpre492.sdmay1020.plugin.zeus.AtlasQueryAdapter;&quot; + &quot;af = Packages.cpre492.sdmay1020.plugin.zeus.ArtifactFactory;&quot;+ &quot;out = Packages.cpre492.sdmay1020.plugin.zeus.OutputResults;&quot;"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_3BjaQlIDEd-fJs9_MReiaA" name="window" visibility="private" type="_3Bpg4VIDEd-fJs9_MReiaA">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_3Bpg4FIDEd-fJs9_MReiaA">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <interfaceRealization xmi:id="_3BE5IlIDEd-fJs9_MReiaA" supplier="_3A-ygVIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA" contract="_3A-ygVIDEd-fJs9_MReiaA"/>
+              <ownedOperation xmi:id="_3Bpg41IDEd-fJs9_MReiaA" name="getScript" visibility="protected" concurrency="concurrent">
+                <ownedParameter xmi:id="_JlLmIlIHEd-fJs9_MReiaA" type="_1hR6U1IDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JlLmI1IHEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_3Bpg5lIDEd-fJs9_MReiaA" name="selectionChanged" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_JlFfgFIHEd-fJs9_MReiaA" name="action" type="_3B1uIVIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JlFfgVIHEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_JlFfglIHEd-fJs9_MReiaA" name="selection" type="_3CB7YFIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JlFfg1IHEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_3CICAFIDEd-fJs9_MReiaA" name="ZeusRunButtonAction" visibility="public" concurrency="concurrent"/>
+              <ownedOperation xmi:id="_3CICAVIDEd-fJs9_MReiaA" name="dispose" visibility="public" concurrency="concurrent"/>
+              <ownedOperation xmi:id="_3CICAlIDEd-fJs9_MReiaA" name="run" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_JlLmJFIHEd-fJs9_MReiaA" name="action" type="_3B1uIVIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JlLmJVIHEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_3CICBVIDEd-fJs9_MReiaA" name="init" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_JlLmIFIHEd-fJs9_MReiaA" name="window" type="_3Bpg4VIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JlLmIVIHEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_3DpsAFIDEd-fJs9_MReiaA" name="OutputResults" clientDependency="_4IzWMFIDEd-fJs9_MReiaA _4JFqEVIDEd-fJs9_MReiaA _4J8lsVIDEd-fJs9_MReiaA _4KVAMVIDEd-fJs9_MReiaA _4KtasVIDEd-fJs9_MReiaA _4LePsVIDEd-fJs9_MReiaA _4MI-EVIDEd-fJs9_MReiaA _4MzscVIDEd-fJs9_MReiaA _4NYUMVIDEd-fJs9_MReiaA _4ODCkVIDEd-fJs9_MReiaA _4OVWcVIDEd-fJs9_MReiaA _4PAE0VIDEd-fJs9_MReiaA _4PZGYVIDEd-fJs9_MReiaA _4P9uIVIDEd-fJs9_MReiaA _4QocgVIDEd-fJs9_MReiaA _4RTK4VIDEd-fJs9_MReiaA _4SD_4VIDEd-fJs9_MReiaA _4SonoVIDEd-fJs9_MReiaA _4Tlp4VIDEd-fJs9_MReiaA _4UQYQVIDEd-fJs9_MReiaA _4Uu5YVIDEd-fJs9_MReiaA _4VBNQVIDEd-fJs9_MReiaA _4WE9MVIDEd-fJs9_MReiaA _4Wpk8VIDEd-fJs9_MReiaA _4W740VIDEd-fJs9_MReiaA _4XUTUVIDEd-fJs9_MReiaA _4XmnMVIDEd-fJs9_MReiaA _4YXcMVIDEd-fJs9_MReiaA _4Y19UVIDEd-fJs9_MReiaA _4ZgrsVIDEd-fJs9_MReiaA _4aXnUVIDEd-fJs9_MReiaA _4bUpkVIDEd-fJs9_MReiaA _4b_X8VIDEd-fJs9_MReiaA _4cRr0VIDEd-fJs9_MReiaA _4cqtYFIDEd-fJs9_MReiaA">
+              <eAnnotations xmi:id="_3DpsAVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+              <ownedAttribute xmi:id="_4E-mIFIDEd-fJs9_MReiaA" name="outPathXML" visibility="package" isStatic="true" type="_4FEswFIDEd-fJs9_MReiaA">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_4E-mIVIDEd-fJs9_MReiaA" value="ResourcesPlugin.getWorkspace().getRoot().getLocation().append(&quot;output.xml&quot;)"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_4FEsw1IDEd-fJs9_MReiaA" name="fout" visibility="package" isStatic="true" type="_4FEsxVIDEd-fJs9_MReiaA">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_4FEsxFIDEd-fJs9_MReiaA" value="null"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_4FKzYVIDEd-fJs9_MReiaA" name="fOutStream" visibility="package" isStatic="true" type="_4FKzY1IDEd-fJs9_MReiaA">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_4FKzYlIDEd-fJs9_MReiaA" value="null"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_4FKzZVIDEd-fJs9_MReiaA" name="outFileXML" visibility="package" isStatic="true" type="_4FQ6AFIDEd-fJs9_MReiaA">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_4FKzZlIDEd-fJs9_MReiaA" value="null"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_4FQ6AlIDEd-fJs9_MReiaA" name="outPathTxt" visibility="package" isStatic="true" type="_4FEswFIDEd-fJs9_MReiaA">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_4FQ6A1IDEd-fJs9_MReiaA" value="ResourcesPlugin.getWorkspace().getRoot().getLocation().append(&quot;output.txt&quot;)"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_4FQ6BFIDEd-fJs9_MReiaA" name="outFileTxt" visibility="package" isStatic="true" type="_4FQ6AFIDEd-fJs9_MReiaA">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_4FQ6BVIDEd-fJs9_MReiaA" value="null"/>
+              </ownedAttribute>
+              <ownedOperation xmi:id="_4FXAoFIDEd-fJs9_MReiaA" name="toXMLFile" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_uIp_kFIGEd-fJs9_MReiaA" name="header" type="_1hR6U1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uIp_kVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_uI2M0FIGEd-fJs9_MReiaA" name="result" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uI2M0VIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_4FjN4VIDEd-fJs9_MReiaA" name="showGraph" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_uIRlEFIGEd-fJs9_MReiaA" name="title" type="_1hR6U1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uIRlEVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_uIXrsFIGEd-fJs9_MReiaA" name="roots" type="_1kiCoVIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uIXrsVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_uIdyUFIGEd-fJs9_MReiaA" name="leaves" type="_1kiCoVIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uIdyUVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_uIdyUlIGEd-fJs9_MReiaA" name="omissions" type="_1kiCoVIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uIdyU1IGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_uIdyVFIGEd-fJs9_MReiaA" name="highlights" type="_1kiCoVIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uIdyVVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_uIj48FIGEd-fJs9_MReiaA" name="simplify" type="_1kiCoVIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uIj48VIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_uIj48lIGEd-fJs9_MReiaA" name="center" type="_1kiCoVIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uIj481IGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_4F7oYFIDEd-fJs9_MReiaA" name="toTextFile" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_uJCaEFIGEd-fJs9_MReiaA" name="header" type="_1hR6U1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uJCaEVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_uJCaElIGEd-fJs9_MReiaA" name="result" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uJCaE1IGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_3qVRgFIDEd-fJs9_MReiaA" name="OpenHandler" clientDependency="_3qbYIFIDEd-fJs9_MReiaA _3sVcoVIDEd-fJs9_MReiaA _3snwgVIDEd-fJs9_MReiaA _3s6EYVIDEd-fJs9_MReiaA _3tSe4VIDEd-fJs9_MReiaA _3tkywVIDEd-fJs9_MReiaA _3t3GoVIDEd-fJs9_MReiaA _3uupUVIDEd-fJs9_MReiaA _3vZXsVIDEd-fJs9_MReiaA _3wEGEVIDEd-fJs9_MReiaA _3w07EVIDEd-fJs9_MReiaA _3xNVkVIDEd-fJs9_MReiaA _3x4D8VIDEd-fJs9_MReiaA _3yKX0VIDEd-fJs9_MReiaA _3yiyUVIDEd-fJs9_MReiaA _3y1GMVIDEd-fJs9_MReiaA">
+              <eAnnotations xmi:id="_3qVRgVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+              <interfaceRealization xmi:id="_3qbYIFIDEd-fJs9_MReiaA" supplier="_24SJhFIDEd-fJs9_MReiaA" client="_3qVRgFIDEd-fJs9_MReiaA" contract="_24SJhFIDEd-fJs9_MReiaA"/>
+              <ownedOperation xmi:id="_3qnlYFIDEd-fJs9_MReiaA" name="isEnabled" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_3qnlYVIDEd-fJs9_MReiaA" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3qnlYlIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_3qtsAFIDEd-fJs9_MReiaA" name="execute" visibility="public" concurrency="concurrent" raisedException="_26An0FIDEd-fJs9_MReiaA">
+                <ownedParameter xmi:id="_3qtsAVIDEd-fJs9_MReiaA" name="event" type="_25uT8FIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3qtsAlIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_3qtsA1IDEd-fJs9_MReiaA" type="_25uT9FIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3qtsBFIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_3q55QFIDEd-fJs9_MReiaA" name="addHandlerListener" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_3q__4lIDEd-fJs9_MReiaA" name="handlerListener" type="_3q__4FIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3q__41IDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_3q__5FIDEd-fJs9_MReiaA" name="removeHandlerListener" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_3q__5VIDEd-fJs9_MReiaA" name="handlerListener" type="_3q__4FIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3q__5lIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_3q__51IDEd-fJs9_MReiaA" name="isHandled" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_3rGGgFIDEd-fJs9_MReiaA" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3rGGgVIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_3rGGglIDEd-fJs9_MReiaA" name="dispose" visibility="public" concurrency="concurrent"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_3zyIcFIDEd-fJs9_MReiaA" name="ZeusMenu" clientDependency="_3z4PEVIDEd-fJs9_MReiaA _307_AFIDEd-fJs9_MReiaA _31UZgVIDEd-fJs9_MReiaA _31mtYVIDEd-fJs9_MReiaA _fOpJQFIEEd-fJs9_MReiaA _gnXPsFIEEd-fJs9_MReiaA">
+              <eAnnotations xmi:id="_3z4PEFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+              <interfaceRealization xmi:id="_3z4PEVIDEd-fJs9_MReiaA" supplier="_3A-ygVIDEd-fJs9_MReiaA" client="_3zyIcFIDEd-fJs9_MReiaA" contract="_3A-ygVIDEd-fJs9_MReiaA"/>
+              <ownedOperation xmi:id="_3z-VsFIDEd-fJs9_MReiaA" name="selectionChanged" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_30EcUFIDEd-fJs9_MReiaA" name="action" type="_3B1uIVIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_30EcUVIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_30Ki8FIDEd-fJs9_MReiaA" name="selection" type="_3CB7YFIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_30Ki8VIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_30Ki8lIDEd-fJs9_MReiaA" name="run" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_30QpkFIDEd-fJs9_MReiaA" name="action" type="_3B1uIVIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_30QpkVIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_30QpklIDEd-fJs9_MReiaA" name="init" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_30Qpk1IDEd-fJs9_MReiaA" name="window" type="_3Bpg4VIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_30WwMFIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_30WwMVIDEd-fJs9_MReiaA" name="dispose" visibility="public" concurrency="concurrent"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_32XiYFIDEd-fJs9_MReiaA" name="AtlasQueryAdapter" clientDependency="_37Vh8FIDEd-fJs9_MReiaA _38GW8VIDEd-fJs9_MReiaA _38excVIDEd-fJs9_MReiaA _38xFUVIDEd-fJs9_MReiaA _39Jf0VIDEd-fJs9_MReiaA _39bzsVIDEd-fJs9_MReiaA _3-GiEVIDEd-fJs9_MReiaA _ZFFfIFIGEd-fJs9_MReiaA _adVEcFIGEd-fJs9_MReiaA">
+              <eAnnotations xmi:id="_32XiYVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+              <ownedAttribute xmi:id="_33IXYFIDEd-fJs9_MReiaA" name="qf" visibility="private" isStatic="true" type="_1pmI0VIDEd-fJs9_MReiaA">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_33OeAFIDEd-fJs9_MReiaA" value="QueryFactory.instance"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_33OeAVIDEd-fJs9_MReiaA" name="queryState" visibility="private" isStatic="true" type="_33OeA1IDEd-fJs9_MReiaA">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_33OeAlIDEd-fJs9_MReiaA" value="qf.createQueryState()"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_33UkoFIDEd-fJs9_MReiaA" name="qfst" visibility="private" isStatic="true" type="_33arQFIDEd-fJs9_MReiaA">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_33UkoVIDEd-fJs9_MReiaA" value="qf.createQueryFunctionSymbolTable()"/>
+              </ownedAttribute>
+              <ownedOperation xmi:id="_33arQlIDEd-fJs9_MReiaA" name="argcast" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_ab_ntVIGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acFuUFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_acFuUVIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acFuUlIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_33m4gVIDEd-fJs9_MReiaA" name="read" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_ab5hE1IGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ab5hFFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_ab5hFVIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ab5hFlIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_33s_I1IDEd-fJs9_MReiaA" name="calledby" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_acFuU1IGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acFuVFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_acFuVVIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acFuVlIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_33zFwlIDEd-fJs9_MReiaA" name="types" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_acL08FIGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acL08VIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_acL08lIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acL081IGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_33_TAFIDEd-fJs9_MReiaA" name="artifacts" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_aba_81IGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aba_9FIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_aba_9VIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abhGkFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_34FZoFIDEd-fJs9_MReiaA" name="cg" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_abtT1VIGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abtT1lIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_abtT11IGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abtT2FIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_34FZpVIDEd-fJs9_MReiaA" name="write" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_abzadFIGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abzadVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_abzadlIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abzad1IGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_34LgQVIDEd-fJs9_MReiaA" name="functions" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_abnNN1IGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abnNOFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_abnNOVIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abtT0FIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_34Rm5FIDEd-fJs9_MReiaA" name="AtlasQueryAdapter" visibility="private" concurrency="concurrent"/>
+              <ownedOperation xmi:id="_34Rm5VIDEd-fJs9_MReiaA" name="writtenby" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_abzaeFIGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ab5hEFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_ab5hEVIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ab5hElIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_34Xtg1IDEd-fJs9_MReiaA" name="fdecl" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_acR7lFIGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acR7lVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_acR7llIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acR7l1IGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_34d0IFIDEd-fJs9_MReiaA" name="call" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_abU5WFIGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aba_8FIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_aba_8VIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aba_8lIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_34d0JVIDEd-fJs9_MReiaA" name="refby" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_abU5VFIGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abU5VVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_abU5VlIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abU5V1IGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_34qBYlIDEd-fJs9_MReiaA" name="rcg" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_abOytFIGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abOytVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_abOytlIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abOyt1IGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_34wIAlIDEd-fJs9_MReiaA" name="or" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_acL09FIGEd-fJs9_MReiaA" name="input1" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acL09VIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_acL09lIGEd-fJs9_MReiaA" name="input2" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acL091IGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_acL0-FIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acL0-VIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_34wICVIDEd-fJs9_MReiaA" name="leaves" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_acR7mFIGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acYCMFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_acYCMVIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acYCMlIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_348VQFIDEd-fJs9_MReiaA" name="def" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_ab5hF1IGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ab5hGFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_ab5hGVIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ab_nsFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_348VRVIDEd-fJs9_MReiaA" name="cast" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_ab_nsVIGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ab_nslIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_ab_ns1IGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ab_ntFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_35Cb4VIDEd-fJs9_MReiaA" name="argto" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_abOysFIGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abOysVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_abOyslIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abOys1IGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_35IigFIDEd-fJs9_MReiaA" name="arg" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_abhGlVIGEd-fJs9_MReiaA" name="input1" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abhGllIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_abhGl1IGEd-fJs9_MReiaA" name="input2" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abhGmFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_abhGmVIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abnNMFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_35OpJFIDEd-fJs9_MReiaA" name="variables" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_abzacFIGEd-fJs9_MReiaA" name="input" type="_1kiCoVIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abzacVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_abzaclIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abzac1IGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_35UvwlIDEd-fJs9_MReiaA" name="readby" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_abU5UFIGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abU5UVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_abU5UlIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abU5U1IGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_35Uvx1IDEd-fJs9_MReiaA" name="arg" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_abhGkVIGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abhGklIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_abhGk1IGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abhGlFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_35a2ZFIDEd-fJs9_MReiaA" name="minus" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_abnNMVIGEd-fJs9_MReiaA" name="input1" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abnNMlIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_abnNM1IGEd-fJs9_MReiaA" name="input2" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abnNNFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_abnNNVIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abnNNlIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_35nDplIDEd-fJs9_MReiaA" name="ref" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_acR7kFIGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acR7kVIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_acR7klIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acR7k1IGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_35tKRFIDEd-fJs9_MReiaA" name="roots" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_abtT0VIGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abtT0lIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_abtT01IGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_abtT1FIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_35tKSVIDEd-fJs9_MReiaA" name="and" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_acYCM1IGEd-fJs9_MReiaA" name="input" type="_33arQ1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acYCNFIGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_acYCNlIGEd-fJs9_MReiaA" type="_1kiCoVIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_acYCN1IGEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_1hR6UFIDEd-fJs9_MReiaA" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_1hR6UVIDEd-fJs9_MReiaA" name="lang">
+        <eAnnotations xmi:id="_1hR6VFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_1hR6U1IDEd-fJs9_MReiaA _2q6b4FIDEd-fJs9_MReiaA _25uT9FIDEd-fJs9_MReiaA _27cLMlIDEd-fJs9_MReiaA _3ECGgFIDEd-fJs9_MReiaA _3cAho1IDEd-fJs9_MReiaA _m2-hsFIGEd-fJs9_MReiaA"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_1hR6U1IDEd-fJs9_MReiaA" name="String" isLeaf="true">
+          <eAnnotations xmi:id="_1hR6VVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_2q6b4FIDEd-fJs9_MReiaA" name="Exception">
+          <eAnnotations xmi:id="_2q6b4VIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_25uT9FIDEd-fJs9_MReiaA" name="Object">
+          <eAnnotations xmi:id="_250akFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_27cLMlIDEd-fJs9_MReiaA" name="System" isLeaf="true">
+          <eAnnotations xmi:id="_27cLM1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_3ECGgFIDEd-fJs9_MReiaA" name="StringBuilder" isLeaf="true">
+          <eAnnotations xmi:id="_3ECGgVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_3cAho1IDEd-fJs9_MReiaA" name="Class" isLeaf="true">
+          <eAnnotations xmi:id="_3cAhpFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_3cAhpVIDEd-fJs9_MReiaA" parameter="_3cAhplIDEd-fJs9_MReiaA">
+            <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_3cAhplIDEd-fJs9_MReiaA" parameteredElement="_3cAhp1IDEd-fJs9_MReiaA">
+              <ownedParameteredElement xmi:type="uml:DataType" xmi:id="_3cAhp1IDEd-fJs9_MReiaA" name="T" templateParameter="_3cAhplIDEd-fJs9_MReiaA"/>
+            </ownedParameter>
+          </ownedTemplateSignature>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_m2-hsFIGEd-fJs9_MReiaA" name="Iterable" isAbstract="true">
+          <eAnnotations xmi:id="_m2-hsVIGEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_m2-hslIGEd-fJs9_MReiaA" parameter="_m2-hs1IGEd-fJs9_MReiaA">
+            <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_m2-hs1IGEd-fJs9_MReiaA" parameteredElement="_m2-htFIGEd-fJs9_MReiaA">
+              <ownedParameteredElement xmi:type="uml:DataType" xmi:id="_m2-htFIGEd-fJs9_MReiaA" name="T" templateParameter="_m2-hs1IGEd-fJs9_MReiaA"/>
+            </ownedParameter>
+          </ownedTemplateSignature>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_27WEkFIDEd-fJs9_MReiaA" name="io">
+        <eAnnotations xmi:id="_27cLMFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_27WEkVIDEd-fJs9_MReiaA _4FEsxVIDEd-fJs9_MReiaA _4FKzY1IDEd-fJs9_MReiaA _4FQ6AFIDEd-fJs9_MReiaA _4HK-gFIDEd-fJs9_MReiaA _4IaUoVIDEd-fJs9_MReiaA _4InI8VIDEd-fJs9_MReiaA"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_27WEkVIDEd-fJs9_MReiaA" name="PrintStream">
+          <eAnnotations xmi:id="_27cLMVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4FEsxVIDEd-fJs9_MReiaA" name="PrintWriter">
+          <eAnnotations xmi:id="_4FKzYFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4FKzY1IDEd-fJs9_MReiaA" name="FileOutputStream">
+          <eAnnotations xmi:id="_4FKzZFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4FQ6AFIDEd-fJs9_MReiaA" name="File">
+          <eAnnotations xmi:id="_4FQ6AVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4HK-gFIDEd-fJs9_MReiaA" name="IOException">
+          <eAnnotations xmi:id="_4HK-gVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4IaUoVIDEd-fJs9_MReiaA" name="StringWriter">
+          <eAnnotations xmi:id="_4IaUolIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4InI8VIDEd-fJs9_MReiaA" name="FileNotFoundException">
+          <eAnnotations xmi:id="_4InI8lIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_4IgbQVIDEd-fJs9_MReiaA" name="util">
+        <eAnnotations xmi:id="_4IgbQ1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_4IgbQlIDEd-fJs9_MReiaA"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_4IgbQlIDEd-fJs9_MReiaA" name="Iterator" isAbstract="true">
+          <eAnnotations xmi:id="_4IgbRFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_4IgbRVIDEd-fJs9_MReiaA" parameter="_4IgbRlIDEd-fJs9_MReiaA">
+            <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_4IgbRlIDEd-fJs9_MReiaA" parameteredElement="_4InI8FIDEd-fJs9_MReiaA">
+              <ownedParameteredElement xmi:type="uml:DataType" xmi:id="_4InI8FIDEd-fJs9_MReiaA" name="E" templateParameter="_4IgbRlIDEd-fJs9_MReiaA"/>
+            </ownedParameter>
+          </ownedTemplateSignature>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_1hYA8VIDEd-fJs9_MReiaA" name="com">
+      <packagedElement xmi:type="uml:Package" xmi:id="_1hYA8lIDEd-fJs9_MReiaA" name="ensoftcorp">
+        <packagedElement xmi:type="uml:Package" xmi:id="_1hYA81IDEd-fJs9_MReiaA" name="plugin">
+          <packagedElement xmi:type="uml:Package" xmi:id="_1hYA9FIDEd-fJs9_MReiaA" name="atlas">
+            <packagedElement xmi:type="uml:Package" xmi:id="_1hYA9VIDEd-fJs9_MReiaA" name="query">
+              <packagedElement xmi:type="uml:Package" xmi:id="_1hYA9lIDEd-fJs9_MReiaA" name="lang">
+                <eAnnotations xmi:id="_1kDhgFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_1j9a4FIDEd-fJs9_MReiaA _1kiCoVIDEd-fJs9_MReiaA _1koJRFIDEd-fJs9_MReiaA _1kuP5FIDEd-fJs9_MReiaA _1k0WhFIDEd-fJs9_MReiaA _1lAjwFIDEd-fJs9_MReiaA _33OeA1IDEd-fJs9_MReiaA _33arQFIDEd-fJs9_MReiaA _33arQ1IDEd-fJs9_MReiaA _37ItoFIDEd-fJs9_MReiaA _37ItolIDEd-fJs9_MReiaA _4IB6IFIDEd-fJs9_MReiaA _4IIAwlIDEd-fJs9_MReiaA _ZEg3YFIGEd-fJs9_MReiaA _ac2jUFIGEd-fJs9_MReiaA"/>
+                <packagedElement xmi:type="uml:Interface" xmi:id="_1j9a4FIDEd-fJs9_MReiaA" name="IStringValue" isAbstract="true">
+                  <eAnnotations xmi:id="_1kDhgVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Interface" xmi:id="_1kiCoVIDEd-fJs9_MReiaA" name="IArtifacts" isAbstract="true">
+                  <eAnnotations xmi:id="_1kiColIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                  <generalization xmi:id="_m24bEFIGEd-fJs9_MReiaA" general="_25uT9FIDEd-fJs9_MReiaA"/>
+                  <generalization xmi:id="_m24bEVIGEd-fJs9_MReiaA" general="_33arQ1IDEd-fJs9_MReiaA"/>
+                  <generalization xmi:id="_m2-htVIGEd-fJs9_MReiaA" general="_m2-hsFIGEd-fJs9_MReiaA"/>
+                  <ownedOperation xmi:id="_m3Ku8FIGEd-fJs9_MReiaA" name="size" visibility="public" isAbstract="true" concurrency="concurrent">
+                    <ownedParameter xmi:id="_m3Q1kFIGEd-fJs9_MReiaA" direction="return">
+                      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m3W8MFIGEd-fJs9_MReiaA" value="1"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                  <ownedOperation xmi:id="_m3W8MVIGEd-fJs9_MReiaA" name="retainAll" visibility="public" isAbstract="true" concurrency="concurrent">
+                    <ownedParameter xmi:id="_m3pQEFIGEd-fJs9_MReiaA" name="arg0" type="_1kiCoVIDEd-fJs9_MReiaA">
+                      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m3vWsFIGEd-fJs9_MReiaA" value="1"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                  <ownedOperation xmi:id="_m3vWsVIGEd-fJs9_MReiaA" name="removeAll" visibility="public" isAbstract="true" concurrency="concurrent">
+                    <ownedParameter xmi:id="_m31dUFIGEd-fJs9_MReiaA" name="arg0" type="_1kiCoVIDEd-fJs9_MReiaA">
+                      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m31dUVIGEd-fJs9_MReiaA" value="1"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                  <ownedOperation xmi:id="_m37j8FIGEd-fJs9_MReiaA" name="iterator" visibility="public" isAbstract="true" concurrency="concurrent">
+                    <ownedParameter xmi:id="_m4BqkFIGEd-fJs9_MReiaA" type="_4IIAwlIDEd-fJs9_MReiaA" direction="return">
+                      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m4HxMFIGEd-fJs9_MReiaA" value="1"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                  <ownedOperation xmi:id="_m4HxMVIGEd-fJs9_MReiaA" name="addAll" visibility="public" isAbstract="true" concurrency="concurrent">
+                    <ownedParameter xmi:id="_m4N30FIGEd-fJs9_MReiaA" name="arg0" type="_1kiCoVIDEd-fJs9_MReiaA">
+                      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m4N30VIGEd-fJs9_MReiaA" value="1"/>
+                    </ownedParameter>
+                    <ownedParameter xmi:id="_m4T-cFIGEd-fJs9_MReiaA" direction="return">
+                      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+                      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m4T-cVIGEd-fJs9_MReiaA" value="1"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                  <ownedOperation xmi:id="_m4T-clIGEd-fJs9_MReiaA" name="add" visibility="public" isAbstract="true" concurrency="concurrent">
+                    <ownedParameter xmi:id="_m4aFEFIGEd-fJs9_MReiaA" name="arg0" type="_4IIAwlIDEd-fJs9_MReiaA">
+                      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m4gLsFIGEd-fJs9_MReiaA" value="1"/>
+                    </ownedParameter>
+                    <ownedParameter xmi:id="_m4gLsVIGEd-fJs9_MReiaA" direction="return">
+                      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+                      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m4gLslIGEd-fJs9_MReiaA" value="1"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Interface" xmi:id="_1koJRFIDEd-fJs9_MReiaA" name="IMacroArtifact" isAbstract="true">
+                  <eAnnotations xmi:id="_1koJRVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Interface" xmi:id="_1kuP5FIDEd-fJs9_MReiaA" name="IVariableArtifact" isAbstract="true">
+                  <eAnnotations xmi:id="_1kuP5VIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Interface" xmi:id="_1k0WhFIDEd-fJs9_MReiaA" name="IFunctionArtifact" isAbstract="true">
+                  <eAnnotations xmi:id="_1k0WhVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Interface" xmi:id="_1lAjwFIDEd-fJs9_MReiaA" name="ITypeArtifact" isAbstract="true">
+                  <eAnnotations xmi:id="_1lAjwVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Interface" xmi:id="_33OeA1IDEd-fJs9_MReiaA" name="IQueryState" isAbstract="true">
+                  <eAnnotations xmi:id="_33OeBFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Interface" xmi:id="_33arQFIDEd-fJs9_MReiaA" name="IQueryFunctionSymbolTable" isAbstract="true">
+                  <eAnnotations xmi:id="_33arQVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                  <nestedClassifier xmi:type="uml:Enumeration" xmi:id="_37ItoFIDEd-fJs9_MReiaA" name="FUNCTION" isLeaf="true">
+                    <eAnnotations xmi:id="_37ItoVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                  </nestedClassifier>
+                  <nestedClassifier xmi:type="uml:Enumeration" xmi:id="_ZEg3YFIGEd-fJs9_MReiaA" name="FUNCTION" isLeaf="true">
+                    <eAnnotations xmi:id="_ZEg3YVIGEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                  </nestedClassifier>
+                  <nestedClassifier xmi:type="uml:Enumeration" xmi:id="_ac2jUFIGEd-fJs9_MReiaA" name="FUNCTION" isLeaf="true">
+                    <eAnnotations xmi:id="_ac2jUVIGEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                  </nestedClassifier>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Interface" xmi:id="_33arQ1IDEd-fJs9_MReiaA" name="IValue" isAbstract="true">
+                  <eAnnotations xmi:id="_33gx4FIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                  <generalization xmi:id="_aZmbAFIGEd-fJs9_MReiaA" general="_25uT9FIDEd-fJs9_MReiaA"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Interface" xmi:id="_37ItolIDEd-fJs9_MReiaA" name="IQueryFunction" isAbstract="true">
+                  <eAnnotations xmi:id="_37Ito1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Interface" xmi:id="_4IB6IFIDEd-fJs9_MReiaA" name="IVariable" isAbstract="true">
+                  <eAnnotations xmi:id="_4IB6IVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Interface" xmi:id="_4IIAwlIDEd-fJs9_MReiaA" name="IArtifact" isAbstract="true">
+                  <eAnnotations xmi:id="_4IIAw1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                </packagedElement>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Package" xmi:id="_1pmI0FIDEd-fJs9_MReiaA" name="api">
+                <eAnnotations xmi:id="_1pmI0lIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_1pmI0VIDEd-fJs9_MReiaA"/>
+                <packagedElement xmi:type="uml:Class" xmi:id="_1pmI0VIDEd-fJs9_MReiaA" name="QueryFactory">
+                  <eAnnotations xmi:id="_1pmI01IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                </packagedElement>
+              </packagedElement>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_4IOHYVIDEd-fJs9_MReiaA" name="ui">
+              <packagedElement xmi:type="uml:Package" xmi:id="_4IOHYlIDEd-fJs9_MReiaA" name="api">
+                <eAnnotations xmi:id="_4IUOAVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_4IUOAFIDEd-fJs9_MReiaA"/>
+                <packagedElement xmi:type="uml:Class" xmi:id="_4IUOAFIDEd-fJs9_MReiaA" name="GraphUI">
+                  <eAnnotations xmi:id="_4IUOAlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+                </packagedElement>
+              </packagedElement>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_1ryhMFIDEd-fJs9_MReiaA" supplier="_1hR6U1IDEd-fJs9_MReiaA" client="_0_YHIFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_1spc0FIDEd-fJs9_MReiaA" supplier="_1lAjwFIDEd-fJs9_MReiaA" client="_0_YHIFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_1tOEkVIDEd-fJs9_MReiaA" supplier="_1koJRFIDEd-fJs9_MReiaA" client="_0_YHIFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_1tgYcVIDEd-fJs9_MReiaA" supplier="_1kuP5FIDEd-fJs9_MReiaA" client="_0_YHIFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_1t-5kVIDEd-fJs9_MReiaA" supplier="_1k0WhFIDEd-fJs9_MReiaA" client="_0_YHIFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_1udasVIDEd-fJs9_MReiaA" supplier="_1kiCoVIDEd-fJs9_MReiaA" client="_0_YHIFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_1uvukVIDEd-fJs9_MReiaA" supplier="_1j9a4FIDEd-fJs9_MReiaA" client="_0_YHIFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_1vIJEVIDEd-fJs9_MReiaA" supplier="_1pmI0VIDEd-fJs9_MReiaA" client="_0_YHIFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_2gy2kFIDEd-fJs9_MReiaA" name="org">
+      <packagedElement xmi:type="uml:Package" xmi:id="_2gy2kVIDEd-fJs9_MReiaA" name="eclipse">
+        <packagedElement xmi:type="uml:Package" xmi:id="_2gy2klIDEd-fJs9_MReiaA" name="ui">
+          <eAnnotations xmi:id="_3BE5IFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_3A-ygVIDEd-fJs9_MReiaA _3Bpg4VIDEd-fJs9_MReiaA _3DpsAlIDEd-fJs9_MReiaA _3D7_4VIDEd-fJs9_MReiaA _3ECGglIDEd-fJs9_MReiaA _3EINIVIDEd-fJs9_MReiaA _3EOTwFIDEd-fJs9_MReiaA"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_2gy2k1IDEd-fJs9_MReiaA" name="plugin">
+            <eAnnotations xmi:id="_2hFKcVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_2hFKcFIDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_2hFKcFIDEd-fJs9_MReiaA" name="AbstractUIPlugin" isAbstract="true">
+              <eAnnotations xmi:id="_2hFKclIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+              <generalization xmi:id="_5RSBMVIDEd-fJs9_MReiaA" general="_5RL6kFIDEd-fJs9_MReiaA"/>
+              <ownedAttribute xmi:id="_5UcC4FIDEd-fJs9_MReiaA" name="bundleListener" visibility="private" type="_5UcC4lIDEd-fJs9_MReiaA">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_5UcC4VIDEd-fJs9_MReiaA">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_5UiJgVIDEd-fJs9_MReiaA" name="preferenceStore" visibility="private" type="_5UoQIVIDEd-fJs9_MReiaA">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_5UiJglIDEd-fJs9_MReiaA">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_5UoQJFIDEd-fJs9_MReiaA" name="dialogSettings" visibility="private" type="_5UuWwFIDEd-fJs9_MReiaA">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_5UoQJVIDEd-fJs9_MReiaA" value="null"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_5UuWwlIDEd-fJs9_MReiaA" name="imageRegistry" visibility="private" type="_5UuWxFIDEd-fJs9_MReiaA">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_5UuWw1IDEd-fJs9_MReiaA" value="null"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_5UuWxlIDEd-fJs9_MReiaA" name="FN_DIALOG_SETTINGS" visibility="private" isLeaf="true" isStatic="true" type="_1hR6U1IDEd-fJs9_MReiaA" isReadOnly="true">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_5UuWx1IDEd-fJs9_MReiaA" value="&quot;dialog_settings.xml&quot;"/>
+              </ownedAttribute>
+              <ownedOperation xmi:id="_5U0dYFIDEd-fJs9_MReiaA" name="getStateLocationOrNull" visibility="private" concurrency="concurrent">
+                <ownedParameter xmi:id="_5U0dYVIDEd-fJs9_MReiaA" type="_4FEswFIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5U6kAFIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5U6kAVIDEd-fJs9_MReiaA" name="refreshPluginActions" visibility="protected" concurrency="concurrent"/>
+              <ownedOperation xmi:id="_5U6kAlIDEd-fJs9_MReiaA" name="AbstractUIPlugin" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_5VAqolIDEd-fJs9_MReiaA" name="descriptor" type="_5VAqoFIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5VAqo1IDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5VAqpFIDEd-fJs9_MReiaA" name="loadPreferenceStore" visibility="protected" concurrency="concurrent"/>
+              <ownedOperation xmi:id="_5VAqpVIDEd-fJs9_MReiaA" name="loadDialogSettings" visibility="protected" concurrency="concurrent"/>
+              <ownedOperation xmi:id="_5VAqplIDEd-fJs9_MReiaA" name="startup" visibility="public" concurrency="concurrent" raisedException="_5VM34FIDEd-fJs9_MReiaA"/>
+              <ownedOperation xmi:id="_5VM34lIDEd-fJs9_MReiaA" name="saveDialogSettings" visibility="protected" concurrency="concurrent"/>
+              <ownedOperation xmi:id="_5VS-gFIDEd-fJs9_MReiaA" name="getPreferenceStore" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_5VrZA1IDEd-fJs9_MReiaA" type="_5VrZAFIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5VrZBFIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5VrZBVIDEd-fJs9_MReiaA" name="getDialogSettings" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_5VxfolIDEd-fJs9_MReiaA" type="_5VxfoFIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5Vxfo1IDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5VxfpFIDEd-fJs9_MReiaA" name="savePreferenceStore" visibility="protected" concurrency="concurrent"/>
+              <ownedOperation xmi:id="_5V3mQFIDEd-fJs9_MReiaA" name="createImageRegistry" visibility="protected" concurrency="concurrent">
+                <ownedParameter xmi:id="_5V3mQVIDEd-fJs9_MReiaA" type="_5UuWxFIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5V3mQlIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5V3mQ1IDEd-fJs9_MReiaA" name="shutdown" visibility="public" concurrency="concurrent" raisedException="_5VM34FIDEd-fJs9_MReiaA"/>
+              <ownedOperation xmi:id="_5V9s4FIDEd-fJs9_MReiaA" name="getImageRegistry" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_5V9s4VIDEd-fJs9_MReiaA" type="_5UuWxFIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5V9s4lIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5V9s41IDEd-fJs9_MReiaA" name="AbstractUIPlugin" visibility="public" concurrency="concurrent"/>
+              <ownedOperation xmi:id="_5V9s5FIDEd-fJs9_MReiaA" name="initializeImageRegistry" visibility="protected" concurrency="concurrent">
+                <ownedParameter xmi:id="_5V9s5VIDEd-fJs9_MReiaA" name="reg" type="_5UuWxFIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5WDzgFIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5WDzgVIDEd-fJs9_MReiaA" name="start" visibility="public" concurrency="concurrent" raisedException="_2q6b4FIDEd-fJs9_MReiaA">
+                <ownedParameter xmi:id="_5WDzglIDEd-fJs9_MReiaA" name="context" type="_2jFVklIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5WDzg1IDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5WJ6IFIDEd-fJs9_MReiaA" name="initializeDefaultPluginPreferences" visibility="protected" concurrency="concurrent"/>
+              <ownedOperation xmi:id="_5WJ6IVIDEd-fJs9_MReiaA" name="initializeDefaultPreferences" visibility="protected" concurrency="concurrent">
+                <ownedParameter xmi:id="_5WJ6IlIDEd-fJs9_MReiaA" name="store" type="_5VrZAFIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5WQAwFIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5WQAwVIDEd-fJs9_MReiaA" name="getWorkbench" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_5WQAwlIDEd-fJs9_MReiaA" type="_3EOTwFIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5WQAw1IDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5WQAxFIDEd-fJs9_MReiaA" name="imageDescriptorFromPlugin" visibility="public" isStatic="true" concurrency="concurrent">
+                <ownedParameter xmi:id="_5WQAxVIDEd-fJs9_MReiaA" name="pluginId" type="_1hR6U1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5WQAxlIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_5WWHYFIDEd-fJs9_MReiaA" name="imageFilePath" type="_1hR6U1IDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5WWHYVIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_5WWHYlIDEd-fJs9_MReiaA" type="_2rAiglIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5WWHY1IDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5WWHZFIDEd-fJs9_MReiaA" name="stop" visibility="public" concurrency="concurrent" raisedException="_2q6b4FIDEd-fJs9_MReiaA">
+                <ownedParameter xmi:id="_5WWHZVIDEd-fJs9_MReiaA" name="context" type="_2jFVklIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5WWHZlIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_3A-ygVIDEd-fJs9_MReiaA" name="IWorkbenchWindowActionDelegate" isAbstract="true">
+            <eAnnotations xmi:id="_3BE5IVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_3Bpg4VIDEd-fJs9_MReiaA" name="IWorkbenchWindow" isAbstract="true">
+            <eAnnotations xmi:id="_3Bpg4lIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_3DpsAlIDEd-fJs9_MReiaA" name="PlatformUI" isLeaf="true">
+            <eAnnotations xmi:id="_3DpsA1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_3D15Q1IDEd-fJs9_MReiaA" name="texteditor">
+            <eAnnotations xmi:id="_3D15RVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_3D15RFIDEd-fJs9_MReiaA _3cS1glIDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_3D15RFIDEd-fJs9_MReiaA" name="IDocumentProvider" isAbstract="true">
+              <eAnnotations xmi:id="_3D15RlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_3cS1glIDEd-fJs9_MReiaA" name="ITextEditor" isAbstract="true">
+              <eAnnotations xmi:id="_3cS1g1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_3D7_4VIDEd-fJs9_MReiaA" name="IEditorInput" isAbstract="true">
+            <eAnnotations xmi:id="_3D7_4lIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_3ECGglIDEd-fJs9_MReiaA" name="IEditorPart" isAbstract="true">
+            <eAnnotations xmi:id="_3ECGg1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_3EINIVIDEd-fJs9_MReiaA" name="IWorkbenchPage" isAbstract="true">
+            <eAnnotations xmi:id="_3EINIlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_3EOTwFIDEd-fJs9_MReiaA" name="IWorkbench" isAbstract="true">
+            <eAnnotations xmi:id="_3EOTwVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_3sJPYFIDEd-fJs9_MReiaA" name="ide">
+            <eAnnotations xmi:id="_3sJPYlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_3sJPYVIDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_3sJPYVIDEd-fJs9_MReiaA" name="IDE" isLeaf="true">
+              <eAnnotations xmi:id="_3sJPY1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_5UoQIFIDEd-fJs9_MReiaA" name="preferences">
+            <eAnnotations xmi:id="_5UoQIlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_5UoQIVIDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_5UoQIVIDEd-fJs9_MReiaA" name="ScopedPreferenceStore">
+              <eAnnotations xmi:id="_5UoQI1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_2rAigFIDEd-fJs9_MReiaA" name="jface">
+          <packagedElement xmi:type="uml:Package" xmi:id="_2rAigVIDEd-fJs9_MReiaA" name="resource">
+            <eAnnotations xmi:id="_2rAig1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_2rAiglIDEd-fJs9_MReiaA _5UuWxFIDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_2rAiglIDEd-fJs9_MReiaA" name="ImageDescriptor" isAbstract="true">
+              <eAnnotations xmi:id="_2rAihFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_5UuWxFIDEd-fJs9_MReiaA" name="ImageRegistry">
+              <eAnnotations xmi:id="_5UuWxVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_3B1uIFIDEd-fJs9_MReiaA" name="action">
+            <eAnnotations xmi:id="_3B1uIlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_3B1uIVIDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_3B1uIVIDEd-fJs9_MReiaA" name="IAction" isAbstract="true">
+              <eAnnotations xmi:id="_3B1uI1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_3B70wFIDEd-fJs9_MReiaA" name="viewers">
+            <eAnnotations xmi:id="_3CB7YVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_3CB7YFIDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_3CB7YFIDEd-fJs9_MReiaA" name="ISelection" isAbstract="true">
+              <eAnnotations xmi:id="_3CB7YlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_3ECGhFIDEd-fJs9_MReiaA" name="text">
+            <eAnnotations xmi:id="_3ECGhlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_3ECGhVIDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_3ECGhVIDEd-fJs9_MReiaA" name="IDocument" isAbstract="true">
+              <eAnnotations xmi:id="_3ECGh1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_3EOTwlIDEd-fJs9_MReiaA" name="dialogs">
+            <eAnnotations xmi:id="_3cAhoVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_3cAhoFIDEd-fJs9_MReiaA _5UuWwFIDEd-fJs9_MReiaA _5VxfoFIDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_3cAhoFIDEd-fJs9_MReiaA" name="MessageDialog">
+              <eAnnotations xmi:id="_3cAholIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_5UuWwFIDEd-fJs9_MReiaA" name="DialogSettings">
+              <eAnnotations xmi:id="_5UuWwVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_5VxfoFIDEd-fJs9_MReiaA" name="IDialogSettings" isAbstract="true">
+              <eAnnotations xmi:id="_5VxfoVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_5VlSYFIDEd-fJs9_MReiaA" name="preference">
+            <eAnnotations xmi:id="_5VrZAVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_5VrZAFIDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_5VrZAFIDEd-fJs9_MReiaA" name="IPreferenceStore" isAbstract="true">
+              <eAnnotations xmi:id="_5VrZAlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_24F8QlIDEd-fJs9_MReiaA" name="core">
+          <packagedElement xmi:type="uml:Package" xmi:id="_24F8Q1IDEd-fJs9_MReiaA" name="commands">
+            <eAnnotations xmi:id="_24SJgVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_24SJgFIDEd-fJs9_MReiaA _24SJhFIDEd-fJs9_MReiaA _25uT8FIDEd-fJs9_MReiaA _26An0FIDEd-fJs9_MReiaA _3q__4FIDEd-fJs9_MReiaA _5YdANFIDEd-fJs9_MReiaA _5Z4jkFIDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_24SJgFIDEd-fJs9_MReiaA" name="AbstractHandler" clientDependency="_5YjG0VIDEd-fJs9_MReiaA" isAbstract="true">
+              <eAnnotations xmi:id="_24SJglIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+              <generalization xmi:id="_5YdAM1IDEd-fJs9_MReiaA" general="_5YdAMFIDEd-fJs9_MReiaA"/>
+              <ownedAttribute xmi:id="_5ZgJEFIDEd-fJs9_MReiaA" name="baseEnabled" visibility="private">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_5ZgJEVIDEd-fJs9_MReiaA" value="true"/>
+              </ownedAttribute>
+              <interfaceRealization xmi:id="_5YjG0VIDEd-fJs9_MReiaA" supplier="_5YdANFIDEd-fJs9_MReiaA" client="_24SJgFIDEd-fJs9_MReiaA" contract="_5YdANFIDEd-fJs9_MReiaA"/>
+              <ownedOperation xmi:id="_5ZgJElIDEd-fJs9_MReiaA" name="addHandlerListener" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_5ZmPsFIDEd-fJs9_MReiaA" name="handlerListener" type="_3q__4FIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5ZmPsVIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5ZmPslIDEd-fJs9_MReiaA" name="removeHandlerListener" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_5ZmPs1IDEd-fJs9_MReiaA" name="handlerListener" type="_3q__4FIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5ZsWUFIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5ZsWUVIDEd-fJs9_MReiaA" name="setBaseEnabled" visibility="protected" concurrency="concurrent">
+                <ownedParameter xmi:id="_5ZsWUlIDEd-fJs9_MReiaA" name="state">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5ZsWU1IDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5ZsWVFIDEd-fJs9_MReiaA" name="hasListeners" visibility="protected" concurrency="concurrent">
+                <ownedParameter xmi:id="_5Zyc8FIDEd-fJs9_MReiaA" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5Zyc8VIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5Zyc8lIDEd-fJs9_MReiaA" name="dispose" visibility="public" concurrency="concurrent"/>
+              <ownedOperation xmi:id="_5Zyc81IDEd-fJs9_MReiaA" name="isEnabled" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_5Zyc9FIDEd-fJs9_MReiaA" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5Zyc9VIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5Zyc9lIDEd-fJs9_MReiaA" name="fireHandlerChanged" visibility="protected" concurrency="concurrent">
+                <ownedParameter xmi:id="_5Z4jklIDEd-fJs9_MReiaA" name="handlerEvent" type="_5Z4jkFIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5Z4jk1IDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5Z-qMFIDEd-fJs9_MReiaA" name="AbstractHandler" visibility="public" concurrency="concurrent"/>
+              <ownedOperation xmi:id="_5Z-qMVIDEd-fJs9_MReiaA" name="isHandled" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_5aEw0FIDEd-fJs9_MReiaA" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5aEw0VIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5aEw0lIDEd-fJs9_MReiaA" name="setEnabled" visibility="public" concurrency="concurrent">
+                <ownedParameter xmi:id="_5aEw01IDEd-fJs9_MReiaA" name="evaluationContext" type="_25uT9FIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5aEw1FIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_5aEw1VIDEd-fJs9_MReiaA" name="execute" visibility="public" isAbstract="true" concurrency="concurrent" raisedException="_26An0FIDEd-fJs9_MReiaA">
+                <ownedParameter xmi:id="_5aK3cFIDEd-fJs9_MReiaA" name="arg0" type="_25uT8FIDEd-fJs9_MReiaA">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5aK3cVIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_5aQ-EFIDEd-fJs9_MReiaA" type="_25uT9FIDEd-fJs9_MReiaA" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5aQ-EVIDEd-fJs9_MReiaA" value="1"/>
+                </ownedParameter>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_24SJhFIDEd-fJs9_MReiaA" name="IHandler" isAbstract="true">
+              <eAnnotations xmi:id="_24SJhVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_25uT8FIDEd-fJs9_MReiaA" name="ExecutionEvent" isLeaf="true">
+              <eAnnotations xmi:id="_25uT8VIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_26An0FIDEd-fJs9_MReiaA" name="ExecutionException" isLeaf="true">
+              <eAnnotations xmi:id="_26An0VIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_3q__4FIDEd-fJs9_MReiaA" name="IHandlerListener" isAbstract="true">
+              <eAnnotations xmi:id="_3q__4VIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_5YW5kFIDEd-fJs9_MReiaA" name="common">
+              <eAnnotations xmi:id="_5YdAMVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_5YdAMFIDEd-fJs9_MReiaA"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_5YdAMFIDEd-fJs9_MReiaA" name="EventManager" isAbstract="true">
+                <eAnnotations xmi:id="_5YdAMlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+              </packagedElement>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_5YdANFIDEd-fJs9_MReiaA" name="IHandler2" isAbstract="true">
+              <eAnnotations xmi:id="_5YjG0FIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_5Z4jkFIDEd-fJs9_MReiaA" name="HandlerEvent" isLeaf="true">
+              <eAnnotations xmi:id="_5Z4jkVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_3r9CIFIDEd-fJs9_MReiaA" name="filesystem">
+            <eAnnotations xmi:id="_3r9CIlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_3r9CIVIDEd-fJs9_MReiaA _3sDIwFIDEd-fJs9_MReiaA _3sJPZFIDEd-fJs9_MReiaA _3sPWA1IDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_3r9CIVIDEd-fJs9_MReiaA" name="IFileSystem" isAbstract="true">
+              <eAnnotations xmi:id="_3r9CI1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_3sDIwFIDEd-fJs9_MReiaA" name="IFileInfo" isAbstract="true">
+              <eAnnotations xmi:id="_3sDIwVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_3sJPZFIDEd-fJs9_MReiaA" name="IFileStore" isAbstract="true">
+              <eAnnotations xmi:id="_3sPWAFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_3sPWA1IDEd-fJs9_MReiaA" name="EFS">
+              <eAnnotations xmi:id="_3sVcoFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_4E-mIlIDEd-fJs9_MReiaA" name="runtime">
+            <eAnnotations xmi:id="_4FEswVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_4FEswFIDEd-fJs9_MReiaA _5RL6kFIDEd-fJs9_MReiaA _5VAqoFIDEd-fJs9_MReiaA _5VM34FIDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_4FEswFIDEd-fJs9_MReiaA" name="IPath" isAbstract="true">
+              <eAnnotations xmi:id="_4FEswlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_5RL6kFIDEd-fJs9_MReiaA" name="Plugin" isAbstract="true">
+              <eAnnotations xmi:id="_5RSBMFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_5VAqoFIDEd-fJs9_MReiaA" name="IPluginDescriptor" isAbstract="true">
+              <eAnnotations xmi:id="_5VAqoVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_5VM34FIDEd-fJs9_MReiaA" name="CoreException">
+              <eAnnotations xmi:id="_5VM34VIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_4HRFI1IDEd-fJs9_MReiaA" name="resources">
+            <eAnnotations xmi:id="_4HXLwVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_4HXLwFIDEd-fJs9_MReiaA _4HjZAFIDEd-fJs9_MReiaA _4InI81IDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_4HXLwFIDEd-fJs9_MReiaA" name="ResourcesPlugin" isLeaf="true">
+              <eAnnotations xmi:id="_4HXLwlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_4HjZAFIDEd-fJs9_MReiaA" name="IWorkspaceRoot" isAbstract="true">
+              <eAnnotations xmi:id="_4HjZAVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_4InI81IDEd-fJs9_MReiaA" name="IWorkspace" isAbstract="true">
+              <eAnnotations xmi:id="_4InI9FIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_3DvyoFIDEd-fJs9_MReiaA" name="swt">
+          <packagedElement xmi:type="uml:Package" xmi:id="_3DvyoVIDEd-fJs9_MReiaA" name="widgets">
+            <eAnnotations xmi:id="_3Dvyo1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_3DvyolIDEd-fJs9_MReiaA _3sPWAVIDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_3DvyolIDEd-fJs9_MReiaA" name="Shell">
+              <eAnnotations xmi:id="_3DvypFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_3sPWAVIDEd-fJs9_MReiaA" name="FileDialog">
+              <eAnnotations xmi:id="_3sPWAlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_2jFVkFIDEd-fJs9_MReiaA" name="osgi">
+        <packagedElement xmi:type="uml:Package" xmi:id="_2jFVkVIDEd-fJs9_MReiaA" name="framework">
+          <eAnnotations xmi:id="_2jLcMFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_2jFVklIDEd-fJs9_MReiaA _5UcC4lIDEd-fJs9_MReiaA"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_2jFVklIDEd-fJs9_MReiaA" name="BundleContext" isAbstract="true">
+            <eAnnotations xmi:id="_2jLcMVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_5UcC4lIDEd-fJs9_MReiaA" name="BundleListener" isAbstract="true">
+            <eAnnotations xmi:id="_5UiJgFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_3DvypVIDEd-fJs9_MReiaA" name="mozilla">
+        <packagedElement xmi:type="uml:Package" xmi:id="_3DvyplIDEd-fJs9_MReiaA" name="javascript">
+          <eAnnotations xmi:id="_3D15QVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_3D15QFIDEd-fJs9_MReiaA _3D15R1IDEd-fJs9_MReiaA _3ECGiFIDEd-fJs9_MReiaA _3cS1gFIDEd-fJs9_MReiaA"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_3D15QFIDEd-fJs9_MReiaA" name="ContextFactory">
+            <eAnnotations xmi:id="_3D15QlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_3D15R1IDEd-fJs9_MReiaA" name="Context">
+            <eAnnotations xmi:id="_3D7_4FIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_3ECGiFIDEd-fJs9_MReiaA" name="RhinoException" isAbstract="true">
+            <eAnnotations xmi:id="_3EINIFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_3cS1gFIDEd-fJs9_MReiaA" name="Scriptable" isAbstract="true">
+            <eAnnotations xmi:id="_3cS1gVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            <generalization xmi:id="_N11YcFIGEd-fJs9_MReiaA" general="_25uT9FIDEd-fJs9_MReiaA"/>
+            <ownedAttribute xmi:id="_N2HsUFIGEd-fJs9_MReiaA" name="NOT_FOUND" visibility="public" isLeaf="true" isStatic="true" type="_25uT9FIDEd-fJs9_MReiaA" isReadOnly="true">
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_N2HsUVIGEd-fJs9_MReiaA">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedOperation xmi:id="_N2HsUlIGEd-fJs9_MReiaA" name="delete" visibility="public" isAbstract="true" concurrency="concurrent">
+              <ownedParameter xmi:id="_N2gG0FIGEd-fJs9_MReiaA" name="arg0">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2gG0VIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_N2gG0lIGEd-fJs9_MReiaA" name="setPrototype" visibility="public" isAbstract="true" concurrency="concurrent">
+              <ownedParameter xmi:id="_N2mNcFIGEd-fJs9_MReiaA" name="arg0" type="_3cS1gFIDEd-fJs9_MReiaA">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2mNcVIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_N2mNclIGEd-fJs9_MReiaA" name="&lt;clinit>" visibility="public" isStatic="true" isAbstract="true" concurrency="concurrent"/>
+            <ownedOperation xmi:id="_N2sUEFIGEd-fJs9_MReiaA" name="setParentScope" visibility="public" isAbstract="true" concurrency="concurrent">
+              <ownedParameter xmi:id="_N2sUEVIGEd-fJs9_MReiaA" name="arg0" type="_3cS1gFIDEd-fJs9_MReiaA">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2sUElIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_N2sUE1IGEd-fJs9_MReiaA" name="get" visibility="public" isAbstract="true" concurrency="concurrent">
+              <ownedParameter xmi:id="_N2yasFIGEd-fJs9_MReiaA" name="arg0">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2yasVIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_N2yaslIGEd-fJs9_MReiaA" name="arg1" type="_3cS1gFIDEd-fJs9_MReiaA">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2yas1IGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_N2yatFIGEd-fJs9_MReiaA" type="_25uT9FIDEd-fJs9_MReiaA" direction="return">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2yatVIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_N24hUFIGEd-fJs9_MReiaA" name="getDefaultValue" visibility="public" isAbstract="true" concurrency="concurrent">
+              <ownedParameter xmi:id="_N24hUVIGEd-fJs9_MReiaA" name="arg0" type="_25uT9FIDEd-fJs9_MReiaA">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N24hUlIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_N2-n8FIGEd-fJs9_MReiaA" type="_25uT9FIDEd-fJs9_MReiaA" direction="return">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2-n8VIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_N2-n8lIGEd-fJs9_MReiaA" name="put" visibility="public" isAbstract="true" concurrency="concurrent">
+              <ownedParameter xmi:id="_N2-n81IGEd-fJs9_MReiaA" name="arg0">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3EukFIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_N3EukVIGEd-fJs9_MReiaA" name="arg1" type="_3cS1gFIDEd-fJs9_MReiaA">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3EuklIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_N3Euk1IGEd-fJs9_MReiaA" name="arg2" type="_25uT9FIDEd-fJs9_MReiaA">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3EulFIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_N3EulVIGEd-fJs9_MReiaA" name="hasInstance" visibility="public" isAbstract="true" concurrency="concurrent">
+              <ownedParameter xmi:id="_N3K1MFIGEd-fJs9_MReiaA" name="arg0" type="_3cS1gFIDEd-fJs9_MReiaA">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3K1MVIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_N3K1MlIGEd-fJs9_MReiaA" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3K1M1IGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_N3K1NFIGEd-fJs9_MReiaA" name="has" visibility="public" isAbstract="true" concurrency="concurrent">
+              <ownedParameter xmi:id="_N3Q70FIGEd-fJs9_MReiaA" name="arg0">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3Q70VIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_N3Q70lIGEd-fJs9_MReiaA" name="arg1" type="_3cS1gFIDEd-fJs9_MReiaA">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3Q701IGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_N3Q71FIGEd-fJs9_MReiaA" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3Q71VIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_N3Q71lIGEd-fJs9_MReiaA" name="put" visibility="public" isAbstract="true" concurrency="concurrent">
+              <ownedParameter xmi:id="_N3XCcFIGEd-fJs9_MReiaA" name="arg0" type="_1hR6U1IDEd-fJs9_MReiaA">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3XCcVIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_N3XCclIGEd-fJs9_MReiaA" name="arg1" type="_3cS1gFIDEd-fJs9_MReiaA">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3XCc1IGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_N3XCdFIGEd-fJs9_MReiaA" name="arg2" type="_25uT9FIDEd-fJs9_MReiaA">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3XCdVIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_N3XCdlIGEd-fJs9_MReiaA" name="getClassName" visibility="public" isAbstract="true" concurrency="concurrent">
+              <ownedParameter xmi:id="_N3dJEFIGEd-fJs9_MReiaA" type="_1hR6U1IDEd-fJs9_MReiaA" direction="return">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3dJEVIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_N3dJElIGEd-fJs9_MReiaA" name="getIds" visibility="public" isAbstract="true" concurrency="concurrent">
+              <ownedParameter xmi:id="_N3jPsVIGEd-fJs9_MReiaA" type="_25uT9FIDEd-fJs9_MReiaA" direction="return">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3jPslIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_N3jPtFIGEd-fJs9_MReiaA" name="getPrototype" visibility="public" isAbstract="true" concurrency="concurrent">
+              <ownedParameter xmi:id="_N3pWUFIGEd-fJs9_MReiaA" type="_3cS1gFIDEd-fJs9_MReiaA" direction="return">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3pWUVIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_N3pWUlIGEd-fJs9_MReiaA" name="get" visibility="public" isAbstract="true" concurrency="concurrent">
+              <ownedParameter xmi:id="_N31jkFIGEd-fJs9_MReiaA" name="arg0" type="_1hR6U1IDEd-fJs9_MReiaA">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N31jkVIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_N31jklIGEd-fJs9_MReiaA" name="arg1" type="_3cS1gFIDEd-fJs9_MReiaA">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N31jk1IGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_N31jlFIGEd-fJs9_MReiaA" type="_25uT9FIDEd-fJs9_MReiaA" direction="return">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N31jlVIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_N31jllIGEd-fJs9_MReiaA" name="delete" visibility="public" isAbstract="true" concurrency="concurrent">
+              <ownedParameter xmi:id="_N37qMFIGEd-fJs9_MReiaA" name="arg0" type="_1hR6U1IDEd-fJs9_MReiaA">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N37qMVIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_N37qMlIGEd-fJs9_MReiaA" name="getParentScope" visibility="public" isAbstract="true" concurrency="concurrent">
+              <ownedParameter xmi:id="_N4Bw0FIGEd-fJs9_MReiaA" type="_3cS1gFIDEd-fJs9_MReiaA" direction="return">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N4Bw0VIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_N4Bw0lIGEd-fJs9_MReiaA" name="has" visibility="public" isAbstract="true" concurrency="concurrent">
+              <ownedParameter xmi:id="_N4H3cFIGEd-fJs9_MReiaA" name="arg0" type="_1hR6U1IDEd-fJs9_MReiaA">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N4H3cVIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_N4H3clIGEd-fJs9_MReiaA" name="arg1" type="_3cS1gFIDEd-fJs9_MReiaA">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N4H3c1IGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_N4H3dFIGEd-fJs9_MReiaA" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N4H3dVIGEd-fJs9_MReiaA" value="1"/>
+              </ownedParameter>
+            </ownedOperation>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_4G4qpFIDEd-fJs9_MReiaA" name="w3c">
+        <packagedElement xmi:type="uml:Package" xmi:id="_4G4qpVIDEd-fJs9_MReiaA" name="dom">
+          <eAnnotations xmi:id="_4G-xQVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_4G-xQFIDEd-fJs9_MReiaA _4HK-glIDEd-fJs9_MReiaA _4HdSY1IDEd-fJs9_MReiaA _4IUOA1IDEd-fJs9_MReiaA _4IaUo1IDEd-fJs9_MReiaA"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_4G-xQFIDEd-fJs9_MReiaA" name="Element" isAbstract="true">
+            <eAnnotations xmi:id="_4G-xQlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_4HK-glIDEd-fJs9_MReiaA" name="DOMImplementation" isAbstract="true">
+            <eAnnotations xmi:id="_4HK-g1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_4HdSY1IDEd-fJs9_MReiaA" name="Document" isAbstract="true">
+            <eAnnotations xmi:id="_4HdSZFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_4IUOA1IDEd-fJs9_MReiaA" name="NodeList" isAbstract="true">
+            <eAnnotations xmi:id="_4IaUoFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_4IaUo1IDEd-fJs9_MReiaA" name="ProcessingInstruction" isAbstract="true">
+            <eAnnotations xmi:id="_4IgbQFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_4HjZAlIDEd-fJs9_MReiaA" name="xml">
+        <packagedElement xmi:type="uml:Package" xmi:id="_4HjZA1IDEd-fJs9_MReiaA" name="sax">
+          <eAnnotations xmi:id="_4HpfoVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_4HpfoFIDEd-fJs9_MReiaA"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_4HpfoFIDEd-fJs9_MReiaA" name="SAXException">
+            <eAnnotations xmi:id="_4HpfolIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_2vBf0FIDEd-fJs9_MReiaA" supplier="_1hR6U1IDEd-fJs9_MReiaA" client="_2ggisFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_2wEosVIDEd-fJs9_MReiaA" supplier="_2rAiglIDEd-fJs9_MReiaA" client="_2ggisFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Abstraction" xmi:id="_2w7kUFIDEd-fJs9_MReiaA" supplier="_2hFKcFIDEd-fJs9_MReiaA" client="_2ggisFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_2x4mkVIDEd-fJs9_MReiaA" supplier="_2jFVklIDEd-fJs9_MReiaA" client="_2ggisFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_2ywJQVIDEd-fJs9_MReiaA" supplier="_2q6b4FIDEd-fJs9_MReiaA" client="_2ggisFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Abstraction" xmi:id="_27cLNFIDEd-fJs9_MReiaA" supplier="_24SJgFIDEd-fJs9_MReiaA" client="_24F8QFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_28NAMVIDEd-fJs9_MReiaA" supplier="_26An0FIDEd-fJs9_MReiaA" client="_24F8QFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_290w0VIDEd-fJs9_MReiaA" supplier="_27cLMlIDEd-fJs9_MReiaA" client="_24F8QFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_2-rscVIDEd-fJs9_MReiaA" supplier="_27WEkVIDEd-fJs9_MReiaA" client="_24F8QFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_2_chcVIDEd-fJs9_MReiaA" supplier="_25uT8FIDEd-fJs9_MReiaA" client="_24F8QFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3cY8IFIDEd-fJs9_MReiaA" supplier="_3ECGglIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3cxWoVIDEd-fJs9_MReiaA" supplier="_3ECGgFIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3d6mIVIDEd-fJs9_MReiaA" supplier="_27cLMlIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3eTAoVIDEd-fJs9_MReiaA" supplier="_3cAho1IDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3erbIVIDEd-fJs9_MReiaA" supplier="_3ECGiFIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3fQC4VIDEd-fJs9_MReiaA" supplier="_3ECGhVIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3gA34VIDEd-fJs9_MReiaA" supplier="_27WEkVIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3gTLwVIDEd-fJs9_MReiaA" supplier="_3cS1glIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3hEn0VIDEd-fJs9_MReiaA" supplier="_3DvyolIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3hW7sVIDEd-fJs9_MReiaA" supplier="_3B1uIVIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3hvWMVIDEd-fJs9_MReiaA" supplier="_3D15QFIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3iyfEVIDEd-fJs9_MReiaA" supplier="_3D15RFIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3jdNcVIDEd-fJs9_MReiaA" supplier="_3EINIVIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3j1n8VIDEd-fJs9_MReiaA" supplier="_3DpsAlIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3kUJEVIDEd-fJs9_MReiaA" supplier="_3DpsAFIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3k4w0VIDEd-fJs9_MReiaA" supplier="_3D7_4VIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3lRLUVIDEd-fJs9_MReiaA" supplier="_3cS1gFIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3lpl0VIDEd-fJs9_MReiaA" supplier="_2q6b4FIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3mghcVIDEd-fJs9_MReiaA" supplier="_3Bpg4VIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3nFJMVIDEd-fJs9_MReiaA" supplier="_3D15R1IDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3n2lQVIDEd-fJs9_MReiaA" supplier="_3cAhoFIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3oI5IVIDEd-fJs9_MReiaA" supplier="_3CB7YFIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3otg4VIDEd-fJs9_MReiaA" supplier="_3EOTwFIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3o_0wVIDEd-fJs9_MReiaA" supplier="_1hR6U1IDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3sVcoVIDEd-fJs9_MReiaA" supplier="_3r9CIVIDEd-fJs9_MReiaA" client="_3qVRgFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3snwgVIDEd-fJs9_MReiaA" supplier="_25uT8FIDEd-fJs9_MReiaA" client="_3qVRgFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3s6EYVIDEd-fJs9_MReiaA" supplier="_3EINIVIDEd-fJs9_MReiaA" client="_3qVRgFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3tSe4VIDEd-fJs9_MReiaA" supplier="_3DpsAlIDEd-fJs9_MReiaA" client="_3qVRgFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3tkywVIDEd-fJs9_MReiaA" supplier="_3sPWA1IDEd-fJs9_MReiaA" client="_3qVRgFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3t3GoVIDEd-fJs9_MReiaA" supplier="_3sPWAVIDEd-fJs9_MReiaA" client="_3qVRgFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3uupUVIDEd-fJs9_MReiaA" supplier="_3sDIwFIDEd-fJs9_MReiaA" client="_3qVRgFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3vZXsVIDEd-fJs9_MReiaA" supplier="_3sJPZFIDEd-fJs9_MReiaA" client="_3qVRgFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3wEGEVIDEd-fJs9_MReiaA" supplier="_3Bpg4VIDEd-fJs9_MReiaA" client="_3qVRgFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3w07EVIDEd-fJs9_MReiaA" supplier="_3DvyolIDEd-fJs9_MReiaA" client="_3qVRgFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3xNVkVIDEd-fJs9_MReiaA" supplier="_26An0FIDEd-fJs9_MReiaA" client="_3qVRgFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3x4D8VIDEd-fJs9_MReiaA" supplier="_3sJPYVIDEd-fJs9_MReiaA" client="_3qVRgFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3yKX0VIDEd-fJs9_MReiaA" supplier="_1hR6U1IDEd-fJs9_MReiaA" client="_3qVRgFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3yiyUVIDEd-fJs9_MReiaA" supplier="_3EOTwFIDEd-fJs9_MReiaA" client="_3qVRgFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3y1GMVIDEd-fJs9_MReiaA" supplier="_3q__4FIDEd-fJs9_MReiaA" client="_3qVRgFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_307_AFIDEd-fJs9_MReiaA" supplier="_3B1uIVIDEd-fJs9_MReiaA" client="_3zyIcFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_31UZgVIDEd-fJs9_MReiaA" supplier="_3CB7YFIDEd-fJs9_MReiaA" client="_3zyIcFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_31mtYVIDEd-fJs9_MReiaA" supplier="_3Bpg4VIDEd-fJs9_MReiaA" client="_3zyIcFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_37Vh8FIDEd-fJs9_MReiaA" supplier="_37ItolIDEd-fJs9_MReiaA" client="_32XiYFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_38GW8VIDEd-fJs9_MReiaA" supplier="_33OeA1IDEd-fJs9_MReiaA" client="_32XiYFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_38excVIDEd-fJs9_MReiaA" supplier="_37ItoFIDEd-fJs9_MReiaA" client="_32XiYFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_38xFUVIDEd-fJs9_MReiaA" supplier="_1kiCoVIDEd-fJs9_MReiaA" client="_32XiYFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_39Jf0VIDEd-fJs9_MReiaA" supplier="_33arQ1IDEd-fJs9_MReiaA" client="_32XiYFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_39bzsVIDEd-fJs9_MReiaA" supplier="_1pmI0VIDEd-fJs9_MReiaA" client="_32XiYFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3-GiEVIDEd-fJs9_MReiaA" supplier="_33arQFIDEd-fJs9_MReiaA" client="_32XiYFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_4GykAFIDEd-fJs9_MReiaA" name="javax">
+      <packagedElement xmi:type="uml:Package" xmi:id="_4GykAVIDEd-fJs9_MReiaA" name="xml">
+        <packagedElement xmi:type="uml:Package" xmi:id="_4G4qoFIDEd-fJs9_MReiaA" name="parsers">
+          <eAnnotations xmi:id="_4G4qolIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_4G4qoVIDEd-fJs9_MReiaA _4HK-hlIDEd-fJs9_MReiaA _4IIAwFIDEd-fJs9_MReiaA"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_4G4qoVIDEd-fJs9_MReiaA" name="DocumentBuilderFactory" isAbstract="true">
+            <eAnnotations xmi:id="_4G4qo1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_4HK-hlIDEd-fJs9_MReiaA" name="ParserConfigurationException">
+            <eAnnotations xmi:id="_4HRFIFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_4IIAwFIDEd-fJs9_MReiaA" name="DocumentBuilder" isAbstract="true">
+            <eAnnotations xmi:id="_4IIAwVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_4G-xQ1IDEd-fJs9_MReiaA" name="transform">
+          <eAnnotations xmi:id="_4HE34VIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_4HE34FIDEd-fJs9_MReiaA _4HK-hFIDEd-fJs9_MReiaA _4HRFIVIDEd-fJs9_MReiaA _4IB6IlIDEd-fJs9_MReiaA _4IIAxFIDEd-fJs9_MReiaA"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_4HE34FIDEd-fJs9_MReiaA" name="Transformer" isAbstract="true">
+            <eAnnotations xmi:id="_4HE34lIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_4HK-hFIDEd-fJs9_MReiaA" name="TransformerException">
+            <eAnnotations xmi:id="_4HK-hVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_4HRFIVIDEd-fJs9_MReiaA" name="TransformerFactoryConfigurationError">
+            <eAnnotations xmi:id="_4HRFIlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_4HXLw1IDEd-fJs9_MReiaA" name="dom">
+            <eAnnotations xmi:id="_4HdSYVIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_4HdSYFIDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_4HdSYFIDEd-fJs9_MReiaA" name="DOMSource">
+              <eAnnotations xmi:id="_4HdSYlIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_4H7zgFIDEd-fJs9_MReiaA" name="stream">
+            <eAnnotations xmi:id="_4H7zglIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd" references="_4H7zgVIDEd-fJs9_MReiaA"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_4H7zgVIDEd-fJs9_MReiaA" name="StreamResult">
+              <eAnnotations xmi:id="_4H7zg1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_4IB6IlIDEd-fJs9_MReiaA" name="TransformerConfigurationException">
+            <eAnnotations xmi:id="_4IB6I1IDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_4IIAxFIDEd-fJs9_MReiaA" name="TransformerFactory" isAbstract="true">
+            <eAnnotations xmi:id="_4IOHYFIDEd-fJs9_MReiaA" source="Zeus/cpre492.sdmay1020.plugin.zeus.ClassDiagram.ucd"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4IzWMFIDEd-fJs9_MReiaA" supplier="_4IUOA1IDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4JFqEVIDEd-fJs9_MReiaA" supplier="_3ECGgFIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4J8lsVIDEd-fJs9_MReiaA" supplier="_4InI81IDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4KVAMVIDEd-fJs9_MReiaA" supplier="_33arQ1IDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4KtasVIDEd-fJs9_MReiaA" supplier="_4G-xQFIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4LePsVIDEd-fJs9_MReiaA" supplier="_4FQ6AFIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4MI-EVIDEd-fJs9_MReiaA" supplier="_4IB6IlIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4MzscVIDEd-fJs9_MReiaA" supplier="_4G4qoVIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4NYUMVIDEd-fJs9_MReiaA" supplier="_4H7zgVIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4ODCkVIDEd-fJs9_MReiaA" supplier="_4IUOAFIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4OVWcVIDEd-fJs9_MReiaA" supplier="_4HdSY1IDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4PAE0VIDEd-fJs9_MReiaA" supplier="_4IaUo1IDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4PZGYVIDEd-fJs9_MReiaA" supplier="_4HpfoFIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4P9uIVIDEd-fJs9_MReiaA" supplier="_4FEswFIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4QocgVIDEd-fJs9_MReiaA" supplier="_4HK-glIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4RTK4VIDEd-fJs9_MReiaA" supplier="_4HK-hlIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4SD_4VIDEd-fJs9_MReiaA" supplier="_4HK-gFIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4SonoVIDEd-fJs9_MReiaA" supplier="_1kiCoVIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4Tlp4VIDEd-fJs9_MReiaA" supplier="_4InI8VIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4UQYQVIDEd-fJs9_MReiaA" supplier="_4IgbQlIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4Uu5YVIDEd-fJs9_MReiaA" supplier="_4IIAxFIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4VBNQVIDEd-fJs9_MReiaA" supplier="_1j9a4FIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4WE9MVIDEd-fJs9_MReiaA" supplier="_4IIAwFIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4Wpk8VIDEd-fJs9_MReiaA" supplier="_4FKzY1IDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4W740VIDEd-fJs9_MReiaA" supplier="_4HdSYFIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4XUTUVIDEd-fJs9_MReiaA" supplier="_4HXLwFIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4XmnMVIDEd-fJs9_MReiaA" supplier="_4HRFIVIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4YXcMVIDEd-fJs9_MReiaA" supplier="_4IIAwlIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4Y19UVIDEd-fJs9_MReiaA" supplier="_4FEsxVIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4ZgrsVIDEd-fJs9_MReiaA" supplier="_4HK-hFIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4aXnUVIDEd-fJs9_MReiaA" supplier="_4IB6IFIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4bUpkVIDEd-fJs9_MReiaA" supplier="_4HE34FIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4b_X8VIDEd-fJs9_MReiaA" supplier="_4IaUoVIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4cRr0VIDEd-fJs9_MReiaA" supplier="_4HjZAFIDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_4cqtYFIDEd-fJs9_MReiaA" supplier="_1hR6U1IDEd-fJs9_MReiaA" client="_3DpsAFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_fOpJQFIEEd-fJs9_MReiaA" name="" supplier="_3qVRgFIDEd-fJs9_MReiaA" client="_3zyIcFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_gnXPsFIEEd-fJs9_MReiaA" name="" supplier="_24F8QFIDEd-fJs9_MReiaA" client="_3zyIcFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_FjTXAFIFEd-fJs9_MReiaA" supplier="_0_YHIFIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_G3PrIFIFEd-fJs9_MReiaA" supplier="_32XiYFIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_ILSs8FIFEd-fJs9_MReiaA" supplier="_3DpsAFIDEd-fJs9_MReiaA" client="_3A4r4FIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_ZFFfIFIGEd-fJs9_MReiaA" supplier="_ZEg3YFIGEd-fJs9_MReiaA" client="_32XiYFIDEd-fJs9_MReiaA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_adVEcFIGEd-fJs9_MReiaA" supplier="_ac2jUFIGEd-fJs9_MReiaA" client="_32XiYFIDEd-fJs9_MReiaA"/>
+    <profileApplication xmi:id="_maloAFIDEd-fJs9_MReiaA">
+      <eAnnotations xmi:id="_ma374FIDEd-fJs9_MReiaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/com.omondo.uml.core/profiles/Omondo_Common_3.2_SN.profile.uml#_7hMtlSK5EdujMN-Mf6X4Bw"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/plugin/com.omondo.uml.core/profiles/Omondo_Common_3.2_SN.profile.uml#_RgfPHCK2Edu07u_JJk0LDQ"/>
+    </profileApplication>
+    <profileApplication xmi:id="_m1_xoFIDEd-fJs9_MReiaA">
+      <eAnnotations xmi:id="_m1_xoVIDEd-fJs9_MReiaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/com.omondo.uml.core/profiles/Meta.profile.uml#_kycnUIE4EduiecUdqhZMrw"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/plugin/com.omondo.uml.core/profiles/Meta.profile.uml#_EJn30IE0EduiecUdqhZMrw"/>
+    </profileApplication>
+    <profileApplication xmi:id="_m1_xolIDEd-fJs9_MReiaA">
+      <eAnnotations xmi:id="_m1_xo1IDEd-fJs9_MReiaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/org.eclipse.uml2.uml.resources/profiles/UML2.profile.uml#_dhEUENSUEdqN9tnr0j3PAQ"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/plugin/org.eclipse.uml2.uml.resources/profiles/UML2.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:id="_m1_xpFIDEd-fJs9_MReiaA">
+      <eAnnotations xmi:id="_m1_xpVIDEd-fJs9_MReiaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/com.omondo.uml.core/profiles/Java.profile.uml#_aZhLlH6MEdmbwasWWc4yvw"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/plugin/com.omondo.uml.core/profiles/Java.profile.uml#_aZhLkH6MEdmbwasWWc4yvw"/>
+    </profileApplication>
+    <profileApplication xmi:id="_m1_xplIDEd-fJs9_MReiaA">
+      <eAnnotations xmi:id="_m1_xp1IDEd-fJs9_MReiaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/com.omondo.uml.core/profiles/Deployment.profile.uml#_gPzkoXlkEdyC2_BXA89-Eg"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/plugin/com.omondo.uml.core/profiles/Deployment.profile.uml#_69q0IGkDEd2C2vBXA89-Eg"/>
+    </profileApplication>
+    <profileApplication xmi:id="_m1_xqFIDEd-fJs9_MReiaA">
+      <eAnnotations xmi:id="_m1_xqVIDEd-fJs9_MReiaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/com.omondo.uml.core/profiles/Omondo_Service_3.2_SN.profile.uml#_6VpgcCK5EdujMN-Mf6X4Bw"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/plugin/com.omondo.uml.core/profiles/Omondo_Service_3.2_SN.profile.uml#_RgMRQCK2Edu07u_JJk0LDQ"/>
+    </profileApplication>
+    <profileApplication xmi:id="_m1_xqlIDEd-fJs9_MReiaA">
+      <eAnnotations xmi:id="_m1_xq1IDEd-fJs9_MReiaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/com.omondo.uml.core/profiles/Omondo.profile.uml#_zrN_1iUoEdmNXYQzyImvfA"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/plugin/com.omondo.uml.core/profiles/Omondo.profile.uml#_zrN_0iUoEdmNXYQzyImvfA"/>
+    </profileApplication>
+    <profileApplication xmi:id="_m1_xrFIDEd-fJs9_MReiaA">
+      <eAnnotations xmi:id="_m1_xrVIDEd-fJs9_MReiaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/com.omondo.uml.core/profiles/Omondo_Webservice_3.2_SN.profile.uml#_6jgWRSK5EdujMN-Mf6X4Bw"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/plugin/com.omondo.uml.core/profiles/Omondo_Webservice_3.2_SN.profile.uml#_RgVmWCK2Edu07u_JJk0LDQ"/>
+    </profileApplication>
+    <profileApplication xmi:id="_m1_xrlIDEd-fJs9_MReiaA">
+      <eAnnotations xmi:id="_m1_xr1IDEd-fJs9_MReiaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/com.omondo.uml.core/profiles/Omondo_Persistence_3.2_SN.profile.uml#_AevloCK6EdujMN-Mf6X4Bw"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/plugin/com.omondo.uml.core/profiles/Omondo_Persistence_3.2_SN.profile.uml#_RgVfdiK2Edu07u_JJk0LDQ"/>
+    </profileApplication>
+    <profileApplication xmi:id="_m1_xsFIDEd-fJs9_MReiaA">
+      <eAnnotations xmi:id="_m2F4QFIDEd-fJs9_MReiaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/com.omondo.uml.core/profiles/Omondo_Presentation_3.2_SN.profile.uml#_4Um1wCK5EdujMN-Mf6X4Bw"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/plugin/com.omondo.uml.core/profiles/Omondo_Presentation_3.2_SN.profile.uml#_RgVcjiK2Edu07u_JJk0LDQ"/>
+    </profileApplication>
+    <profileApplication xmi:id="_m2F4QVIDEd-fJs9_MReiaA">
+      <eAnnotations xmi:id="_m2L-4FIDEd-fJs9_MReiaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/com.omondo.uml.core/profiles/Omondo_Meta_3.2_SN.profile.uml#_7sFH4CK5EdujMN-Mf6X4Bw"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/plugin/com.omondo.uml.core/profiles/Omondo_Meta_3.2_SN.profile.uml#_RgVcYiK2Edu07u_JJk0LDQ"/>
+    </profileApplication>
+    <profileApplication xmi:id="_m2L-4VIDEd-fJs9_MReiaA">
+      <eAnnotations xmi:id="_m2L-4lIDEd-fJs9_MReiaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/com.omondo.uml.core/profiles/Omondo_Xml_3.2_SN.profile.uml#_7JNEVSK5EdujMN-Mf6X4Bw"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/plugin/com.omondo.uml.core/profiles/Omondo_Xml_3.2_SN.profile.uml#_RgVfXCK2Edu07u_JJk0LDQ"/>
+    </profileApplication>
+    <profileApplication xmi:id="_m2L-41IDEd-fJs9_MReiaA">
+      <eAnnotations xmi:id="_m2L-5FIDEd-fJs9_MReiaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/org.eclipse.uml2.uml.resources/profiles/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/plugin/org.eclipse.uml2.uml.resources/profiles/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:id="_m2L-5VIDEd-fJs9_MReiaA">
+      <eAnnotations xmi:id="_m2L-5lIDEd-fJs9_MReiaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/com.omondo.uml.core/profiles/Archetype.profile.uml#_f6v3QOROEduiB7qvAtFfTA"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/plugin/com.omondo.uml.core/profiles/Archetype.profile.uml#_j-cLoORNEduiB7qvAtFfTA"/>
+    </profileApplication>
+    <profileApplication xmi:id="_m2L-51IDEd-fJs9_MReiaA">
+      <eAnnotations xmi:id="_m2L-6FIDEd-fJs9_MReiaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/plugin/com.omondo.uml.core/profiles/Omondo_Process_3.2_SN.profile.uml#_7D2DMCK5EdujMN-Mf6X4Bw"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/plugin/com.omondo.uml.core/profiles/Omondo_Process_3.2_SN.profile.uml#_RgfOnSK2Edu07u_JJk0LDQ"/>
+    </profileApplication>
+  </uml:Model>
+  <Omondo_1:Omondo__Import xmi:id="_1sjWMFIDEd-fJs9_MReiaA" base_Usage="_1ryhMFIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_1tOEkFIDEd-fJs9_MReiaA" base_Usage="_1spc0FIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_1tgYcFIDEd-fJs9_MReiaA" base_Usage="_1tOEkVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_1t-5kFIDEd-fJs9_MReiaA" base_Usage="_1tgYcVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_1udasFIDEd-fJs9_MReiaA" base_Usage="_1t-5kVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_1uvukFIDEd-fJs9_MReiaA" base_Usage="_1udasVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_1vIJEFIDEd-fJs9_MReiaA" base_Usage="_1uvukVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_1vmqMFIDEd-fJs9_MReiaA" base_Usage="_1vIJEVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_1v_EsFIDEd-fJs9_MReiaA" base_Usage="_1vIJEVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_2wEosFIDEd-fJs9_MReiaA" base_Usage="_2vBf0FIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_2w1dsFIDEd-fJs9_MReiaA" base_Usage="_2wEosVIDEd-fJs9_MReiaA"/>
+  <Meta:derive xmi:id="_2x4mkFIDEd-fJs9_MReiaA" base_Dependency="_2w7kUFIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_2ywJQFIDEd-fJs9_MReiaA" base_Usage="_2x4mkVIDEd-fJs9_MReiaA"/>
+  <Standard:Send xmi:id="_2zCdIFIDEd-fJs9_MReiaA" base_Usage="_2ywJQVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_2zg-QFIDEd-fJs9_MReiaA" base_Usage="_2ywJQVIDEd-fJs9_MReiaA"/>
+  <Meta:derive xmi:id="_28NAMFIDEd-fJs9_MReiaA" base_Dependency="_27cLNFIDEd-fJs9_MReiaA"/>
+  <Standard:Send xmi:id="_283ukFIDEd-fJs9_MReiaA" base_Usage="_28NAMVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_290w0FIDEd-fJs9_MReiaA" base_Usage="_28NAMVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_2-rscFIDEd-fJs9_MReiaA" base_Usage="_290w0VIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_2_chcFIDEd-fJs9_MReiaA" base_Usage="_2-rscVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3AH24FIDEd-fJs9_MReiaA" base_Usage="_2_chcVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3cxWoFIDEd-fJs9_MReiaA" base_Usage="_3cY8IFIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3dDqgFIDEd-fJs9_MReiaA" base_Usage="_3cxWoVIDEd-fJs9_MReiaA"/>
+  <Standard:Instantiate xmi:id="_3diLoFIDEd-fJs9_MReiaA" base_Usage="_3cxWoVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3d6mIFIDEd-fJs9_MReiaA" base_Usage="_3cxWoVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3eTAoFIDEd-fJs9_MReiaA" base_Usage="_3d6mIVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3erbIFIDEd-fJs9_MReiaA" base_Usage="_3eTAoVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3e9vAFIDEd-fJs9_MReiaA" base_Usage="_3erbIVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3fQC4FIDEd-fJs9_MReiaA" base_Usage="_3erbIVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3fukAFIDEd-fJs9_MReiaA" base_Usage="_3fQC4VIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3gA34FIDEd-fJs9_MReiaA" base_Usage="_3fQC4VIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3gTLwFIDEd-fJs9_MReiaA" base_Usage="_3gA34VIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3glfoFIDEd-fJs9_MReiaA" base_Usage="_3gTLwVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Access xmi:id="_3hEn0FIDEd-fJs9_MReiaA" base_Usage="_3gTLwVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3hW7sFIDEd-fJs9_MReiaA" base_Usage="_3hEn0VIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3hvWMFIDEd-fJs9_MReiaA" base_Usage="_3hW7sVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3iBqEFIDEd-fJs9_MReiaA" base_Usage="_3hvWMVIDEd-fJs9_MReiaA"/>
+  <Standard:Instantiate xmi:id="_3iaEkFIDEd-fJs9_MReiaA" base_Usage="_3hvWMVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3iyfEFIDEd-fJs9_MReiaA" base_Usage="_3hvWMVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3jK5kFIDEd-fJs9_MReiaA" base_Usage="_3iyfEVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3jdNcFIDEd-fJs9_MReiaA" base_Usage="_3iyfEVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3j1n8FIDEd-fJs9_MReiaA" base_Usage="_3jdNcVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3kUJEFIDEd-fJs9_MReiaA" base_Usage="_3j1n8VIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3k4w0FIDEd-fJs9_MReiaA" base_Usage="_3kUJEVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3lRLUFIDEd-fJs9_MReiaA" base_Usage="_3k4w0VIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3lpl0FIDEd-fJs9_MReiaA" base_Usage="_3lRLUVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3l75sFIDEd-fJs9_MReiaA" base_Usage="_3lpl0VIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3mghcFIDEd-fJs9_MReiaA" base_Usage="_3lpl0VIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3my1UFIDEd-fJs9_MReiaA" base_Usage="_3mghcVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3nFJMFIDEd-fJs9_MReiaA" base_Usage="_3mghcVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3neKwFIDEd-fJs9_MReiaA" base_Usage="_3nFJMVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3n2lQFIDEd-fJs9_MReiaA" base_Usage="_3nFJMVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3oI5IFIDEd-fJs9_MReiaA" base_Usage="_3n2lQVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3otg4FIDEd-fJs9_MReiaA" base_Usage="_3oI5IVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3o_0wFIDEd-fJs9_MReiaA" base_Usage="_3otg4VIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3pYPQFIDEd-fJs9_MReiaA" base_Usage="_3o_0wVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3snwgFIDEd-fJs9_MReiaA" base_Usage="_3sVcoVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3s6EYFIDEd-fJs9_MReiaA" base_Usage="_3snwgVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3tSe4FIDEd-fJs9_MReiaA" base_Usage="_3s6EYVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3tkywFIDEd-fJs9_MReiaA" base_Usage="_3tSe4VIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3t3GoFIDEd-fJs9_MReiaA" base_Usage="_3tkywVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3ucVcFIDEd-fJs9_MReiaA" base_Usage="_3t3GoVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3uupUFIDEd-fJs9_MReiaA" base_Usage="_3t3GoVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3vZXsFIDEd-fJs9_MReiaA" base_Usage="_3uupUVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3vxyMFIDEd-fJs9_MReiaA" base_Usage="_3vZXsVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3wEGEFIDEd-fJs9_MReiaA" base_Usage="_3vZXsVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3winMFIDEd-fJs9_MReiaA" base_Usage="_3wEGEVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3w07EFIDEd-fJs9_MReiaA" base_Usage="_3wEGEVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3xNVkFIDEd-fJs9_MReiaA" base_Usage="_3w07EVIDEd-fJs9_MReiaA"/>
+  <Standard:Send xmi:id="_3xfpcFIDEd-fJs9_MReiaA" base_Usage="_3xNVkVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3x4D8FIDEd-fJs9_MReiaA" base_Usage="_3xNVkVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3yKX0FIDEd-fJs9_MReiaA" base_Usage="_3x4D8VIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3yiyUFIDEd-fJs9_MReiaA" base_Usage="_3yKX0VIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3y1GMFIDEd-fJs9_MReiaA" base_Usage="_3yiyUVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3zNgsFIDEd-fJs9_MReiaA" base_Usage="_3y1GMVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_31UZgFIDEd-fJs9_MReiaA" base_Usage="_307_AFIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_31mtYFIDEd-fJs9_MReiaA" base_Usage="_31UZgVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_315BQFIDEd-fJs9_MReiaA" base_Usage="_31mtYVIDEd-fJs9_MReiaA"/>
+  <JavaProfile_1:JavaProfile__Transient xmi:id="_35zQ4FIDEd-fJs9_MReiaA" base_Operation="_35tKSVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_370DEFIDEd-fJs9_MReiaA" base_Usage="_37Vh8FIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_38GW8FIDEd-fJs9_MReiaA" base_Usage="_37Vh8FIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_38excFIDEd-fJs9_MReiaA" base_Usage="_38GW8VIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_38xFUFIDEd-fJs9_MReiaA" base_Usage="_38excVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_39Jf0FIDEd-fJs9_MReiaA" base_Usage="_38xFUVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_39bzsFIDEd-fJs9_MReiaA" base_Usage="_39Jf0VIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_390OMFIDEd-fJs9_MReiaA" base_Usage="_39bzsVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3-GiEFIDEd-fJs9_MReiaA" base_Usage="_39bzsVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_3-Y18FIDEd-fJs9_MReiaA" base_Usage="_3-GiEVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_3-rJ0FIDEd-fJs9_MReiaA" base_Usage="_3-GiEVIDEd-fJs9_MReiaA"/>
+  <JavaProfile_1:JavaProfile__Transient xmi:id="_4FXAoVIDEd-fJs9_MReiaA" base_Operation="_4FXAoFIDEd-fJs9_MReiaA"/>
+  <JavaProfile_1:JavaProfile__Transient xmi:id="_4F7oYVIDEd-fJs9_MReiaA" base_Operation="_4F7oYFIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4JFqEFIDEd-fJs9_MReiaA" base_Usage="_4IzWMFIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4JX98FIDEd-fJs9_MReiaA" base_Usage="_4JFqEVIDEd-fJs9_MReiaA"/>
+  <Standard:Instantiate xmi:id="_4JwYcFIDEd-fJs9_MReiaA" base_Usage="_4JFqEVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4J8lsFIDEd-fJs9_MReiaA" base_Usage="_4JFqEVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4KVAMFIDEd-fJs9_MReiaA" base_Usage="_4J8lsVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4KtasFIDEd-fJs9_MReiaA" base_Usage="_4KVAMVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4K_ukFIDEd-fJs9_MReiaA" base_Usage="_4KtasVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4LePsFIDEd-fJs9_MReiaA" base_Usage="_4KtasVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4L2qMFIDEd-fJs9_MReiaA" base_Usage="_4LePsVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4MI-EFIDEd-fJs9_MReiaA" base_Usage="_4LePsVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4MbR8FIDEd-fJs9_MReiaA" base_Usage="_4MI-EVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4MzscFIDEd-fJs9_MReiaA" base_Usage="_4MI-EVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4NGAUFIDEd-fJs9_MReiaA" base_Usage="_4MzscVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4NYUMFIDEd-fJs9_MReiaA" base_Usage="_4MzscVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4NqoEFIDEd-fJs9_MReiaA" base_Usage="_4NYUMVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4ODCkFIDEd-fJs9_MReiaA" base_Usage="_4NYUMVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4OVWcFIDEd-fJs9_MReiaA" base_Usage="_4ODCkVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4Otw8FIDEd-fJs9_MReiaA" base_Usage="_4OVWcVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4PAE0FIDEd-fJs9_MReiaA" base_Usage="_4OVWcVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4PZGYFIDEd-fJs9_MReiaA" base_Usage="_4PAE0VIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4PraQFIDEd-fJs9_MReiaA" base_Usage="_4PZGYVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4P9uIFIDEd-fJs9_MReiaA" base_Usage="_4PZGYVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4QWIoFIDEd-fJs9_MReiaA" base_Usage="_4P9uIVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4QocgFIDEd-fJs9_MReiaA" base_Usage="_4P9uIVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4Q6wYFIDEd-fJs9_MReiaA" base_Usage="_4QocgVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4RTK4FIDEd-fJs9_MReiaA" base_Usage="_4QocgVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4RrlYFIDEd-fJs9_MReiaA" base_Usage="_4RTK4VIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4SD_4FIDEd-fJs9_MReiaA" base_Usage="_4RTK4VIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4SWTwFIDEd-fJs9_MReiaA" base_Usage="_4SD_4VIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4SonoFIDEd-fJs9_MReiaA" base_Usage="_4SD_4VIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4TBCIFIDEd-fJs9_MReiaA" base_Usage="_4SonoVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Access xmi:id="_4TTWAFIDEd-fJs9_MReiaA" base_Usage="_4SonoVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4Tlp4FIDEd-fJs9_MReiaA" base_Usage="_4SonoVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4T-EYFIDEd-fJs9_MReiaA" base_Usage="_4Tlp4VIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4UQYQFIDEd-fJs9_MReiaA" base_Usage="_4Tlp4VIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4Uu5YFIDEd-fJs9_MReiaA" base_Usage="_4UQYQVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4VBNQFIDEd-fJs9_MReiaA" base_Usage="_4Uu5YVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4VZnwFIDEd-fJs9_MReiaA" base_Usage="_4VBNQVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Access xmi:id="_4Vr7oFIDEd-fJs9_MReiaA" base_Usage="_4VBNQVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4WE9MFIDEd-fJs9_MReiaA" base_Usage="_4VBNQVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4WXREFIDEd-fJs9_MReiaA" base_Usage="_4WE9MVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4Wpk8FIDEd-fJs9_MReiaA" base_Usage="_4WE9MVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4W740FIDEd-fJs9_MReiaA" base_Usage="_4Wpk8VIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4XUTUFIDEd-fJs9_MReiaA" base_Usage="_4W740VIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4XmnMFIDEd-fJs9_MReiaA" base_Usage="_4XUTUVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4X_BsFIDEd-fJs9_MReiaA" base_Usage="_4XmnMVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4YXcMFIDEd-fJs9_MReiaA" base_Usage="_4XmnMVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4YjpcFIDEd-fJs9_MReiaA" base_Usage="_4YXcMVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4Y19UFIDEd-fJs9_MReiaA" base_Usage="_4YXcMVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4ZOX0FIDEd-fJs9_MReiaA" base_Usage="_4Y19UVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4ZgrsFIDEd-fJs9_MReiaA" base_Usage="_4Y19UVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4Z5GMFIDEd-fJs9_MReiaA" base_Usage="_4ZgrsVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4aXnUFIDEd-fJs9_MReiaA" base_Usage="_4ZgrsVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4awB0FIDEd-fJs9_MReiaA" base_Usage="_4aXnUVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Access xmi:id="_4bCVsFIDEd-fJs9_MReiaA" base_Usage="_4aXnUVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4bUpkFIDEd-fJs9_MReiaA" base_Usage="_4aXnUVIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4btEEFIDEd-fJs9_MReiaA" base_Usage="_4bUpkVIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4b_X8FIDEd-fJs9_MReiaA" base_Usage="_4bUpkVIDEd-fJs9_MReiaA"/>
+  <Standard:Instantiate xmi:id="_4cRr0FIDEd-fJs9_MReiaA" base_Usage="_4b_X8VIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4ckmwFIDEd-fJs9_MReiaA" base_Usage="_4cRr0VIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_4c9BQFIDEd-fJs9_MReiaA" base_Usage="_4cqtYFIDEd-fJs9_MReiaA"/>
+  <Omondo_1:Omondo__Import xmi:id="_4dPVIFIDEd-fJs9_MReiaA" base_Usage="_4cqtYFIDEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_FlBOQFIFEd-fJs9_MReiaA" base_Usage="_FjTXAFIFEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_G3oFoFIFEd-fJs9_MReiaA" base_Usage="_G3PrIFIFEd-fJs9_MReiaA"/>
+  <Standard:Call xmi:id="_IMb8cFIFEd-fJs9_MReiaA" base_Usage="_ILSs8FIFEd-fJs9_MReiaA"/>
+  <JavaProfile_1:JavaProfile__MultidimensionalArray xmi:id="_N3jPsFIGEd-fJs9_MReiaA" base_Operation="_N3dJElIGEd-fJs9_MReiaA" dimension="1"/>
+  <JavaProfile_1:JavaProfile__MultidimensionalArray xmi:id="_N3jPs1IGEd-fJs9_MReiaA" base_Parameter="_N3jPsVIGEd-fJs9_MReiaA" dimension="1"/>
+  <Standard:Call xmi:id="_ZFRsYFIGEd-fJs9_MReiaA" base_Usage="_ZFFfIFIGEd-fJs9_MReiaA"/>
+  <JavaProfile_1:JavaProfile__MultidimensionalArray xmi:id="_acYCNVIGEd-fJs9_MReiaA" base_Parameter="_acYCM1IGEd-fJs9_MReiaA" dimension="1"/>
+  <Standard:Call xmi:id="_adnYUFIGEd-fJs9_MReiaA" base_Usage="_adVEcFIGEd-fJs9_MReiaA"/>
+  <JavaProfile_1:JavaProfile__MultidimensionalArray xmi:id="_uI2M0lIGEd-fJs9_MReiaA" base_Parameter="_uI2M0FIGEd-fJs9_MReiaA" dimension="1"/>
+  <JavaProfile_1:JavaProfile__MultidimensionalArray xmi:id="_uJCaFFIGEd-fJs9_MReiaA" base_Parameter="_uJCaElIGEd-fJs9_MReiaA" dimension="1"/>
+</xmi:XMI>
