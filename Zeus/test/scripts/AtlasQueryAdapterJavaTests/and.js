@@ -27,12 +27,12 @@ IArtifacts2.add(IFunctionArtifact);
 var Results = AtlasQueryAdapter.and(IArtifacts, IArtifacts2);
 
 //Name of the graph
-var name = "Graph Test";
+var name = "and Test";
 
 //Pass the name and Results to the graph
 //NOTE : we pass the name first, then pass the results as the root node,
 //and finally pass the empty IArtifacts set to the showgraph
-OutputResults.showGraph(name, Results, empty,empty, empty,empty,empty);
+OutputResults.toTextFile(name, Results, empty,empty, empty,empty,empty);
 
 }
 

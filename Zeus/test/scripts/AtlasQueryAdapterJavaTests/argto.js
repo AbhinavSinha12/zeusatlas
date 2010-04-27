@@ -8,11 +8,9 @@ with(Zeus){
 
 //Creation of an IFunctionArtifact
 var IFunctionArtifact = ArtifactFactory.createFunction("getbuf");
-var IFunctionArtifact = ArtifactFactory.createFunction("freebuf");
 
 //Create an IArtifacts object
 var IArtifacts = ArtifactFactory.createArtifacts();
-var IArtifacts2 = ArtifactFactory.createArtifacts();
 
 
 //Create an empty IArtifacts object
@@ -21,18 +19,18 @@ var empty = ArtifactFactory.createArtifacts();
 
 //Add the IFunctionArtirfact to the collection IArtifacts
 IArtifacts.add(IFunctionArtifact);
-IArtifacts2.add(IFunctionArtifact);
 
-//create an IArtifactFunction that holds the result of "calledby(getbuf)"
-var Results = AtlasQueryAdapter.argto(IArtifacts, IArtifacts2);
+
+//create an IArtifactFunction that holds the result
+var Results = AtlasQueryAdapter.argto(IArtifacts);
 
 //Name of the graph
-var name = "Graph Test";
+var name = "argto Test";
 
 //Pass the name and Results to the graph
 //NOTE : we pass the name first, then pass the results as the root node,
 //and finally pass the empty IArtifacts set to the showgraph
-OutputResults.showGraph(name, Results, empty,empty, empty,empty,empty);
+OutputResults.toTextFile(name, Results, empty,empty, empty,empty,empty);
 
 }
 
