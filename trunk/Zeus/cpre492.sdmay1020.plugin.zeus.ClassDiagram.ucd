@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="cpre492.sdmay1020.plugin.zeus.ClassDiagram" id="{UMLID=_ucx80FIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus}" metadata="uml2-1.0" initialized="true" tag="10" key="3230303730363239205A657573">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.0" name="ArtifactFactory" location="683,135" size="134,155" timstampe="3" stereotype="" id="{UMLID=_0_YHIFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ArtifactFactory}" runTimeClassModel="createVarible(Ljava.lang.String;),createString(Ljava.lang.String;),createArtifacts(),createFunction(Ljava.lang.String;),createMacro(Ljava.lang.String;),createType(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="113,108">
+      <children xsi:type="editmodel:MethodEditModel" name="createFunction" size="112,16" id="{UMLID=_1k0WgVIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ArtifactFactory#createFunction(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createType" size="95,16" id="{UMLID=_1k6dIlIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ArtifactFactory#createType(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createVarible" size="105,16" id="{UMLID=_1kuP4VIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ArtifactFactory#createVarible(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createMacro" size="101,16" id="{UMLID=_1koJQVIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ArtifactFactory#createMacro(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createArtifacts" size="113,16" id="{UMLID=_1kiCoFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ArtifactFactory#createArtifacts()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createString" size="99,16" id="{UMLID=_1e5UsFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ArtifactFactory#createString(Ljava.lang.String;)}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:RequiredInterfaceEditModel" autoLocated="true" id="{UMLID=_1udasVIDEd-fJs9_MReiaA}" source="//@children.0" target="//@children.12" targetEnd="//@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="134,11" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true" ShowInnerEntity="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Zeus" location="112,98" size="154,178" timstampe="2" stereotype="" id="{UMLID=_2ggisFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/Zeus}" runTimeClassModel="getDefault(),getImageDescriptor(Ljava.lang.String;),stop(Lorg.osgi.framework.BundleContext;),Zeus(),PLUGIN_ID,start(Lorg.osgi.framework.BundleContext;),plugin">
+    <children xsi:type="editmodel:CompartmentEditModel" size="80,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="PLUGIN_ID" size="80,16" id="{UMLID=_2i5IUFIDEd-fJs9_MReiaA}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="plugin" size="63,21" id="{UMLID=_2i5IUlIDEd-fJs9_MReiaA}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="133,90">
+      <children xsi:type="editmodel:MethodEditModel" name="Zeus" size="65,16" id="{UMLID=_2rAih1IDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/Zeus#Zeus()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="start" size="62,16" id="{UMLID=_2i_O8lIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/Zeus#start(Lorg.osgi.framework.BundleContext;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="stop" size="61,16" id="{UMLID=_2rAiiFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/Zeus#stop(Lorg.osgi.framework.BundleContext;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDefault" size="89,16" id="{UMLID=_2i5IVFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/Zeus#getDefault()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getImageDescriptor" size="133,16" id="{UMLID=_2q6b4lIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/Zeus#getImageDescriptor(Ljava.lang.String;)}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true" ShowInnerEntity="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.1" name="RunHandler" location="84,473" size="115,101" timstampe="2" stereotype="" id="{UMLID=_24F8QFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/RunHandler}" runTimeClassModel="isEnabled(),isHandled(),execute(Lorg.eclipse.core.commands.ExecutionEvent;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="87,54">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" size="79,16" id="{UMLID=_25oNUlIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/RunHandler#execute(Lorg.eclipse.core.commands.ExecutionEvent;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isEnabled" size="86,16" id="{UMLID=_26An0lIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/RunHandler#isEnabled()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isHandled" size="87,16" id="{UMLID=_25iGsFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/RunHandler#isHandled()}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true" ShowInnerEntity="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ZeusRunButtonAction" location="931,268" size="175,191" timstampe="202" stereotype="" id="{UMLID=_3A4r4FIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ZeusRunButtonAction}" runTimeClassModel="run(Lorg.eclipse.jface.action.IAction;),selectionChanged(Lorg.eclipse.jface.action.IAction;Lorg.eclipse.jface.viewers.ISelection;),dispose(),ZeusRunButtonAction(),window,zeusImport,init(Lorg.eclipse.ui.IWorkbenchWindow;),getScript()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="82,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="window" size="69,16" id="{UMLID=_3BjaQlIDEd-fJs9_MReiaA}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="zeusImport" size="82,16" id="{UMLID=_3BjaQFIDEd-fJs9_MReiaA}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="146,108">
+      <children xsi:type="editmodel:MethodEditModel" name="ZeusRunButtonAction" size="146,16" id="{UMLID=_3CICAFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ZeusRunButtonAction#ZeusRunButtonAction()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="dispose" size="78,16" id="{UMLID=_3CICAVIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ZeusRunButtonAction#dispose()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="init" size="53,16" id="{UMLID=_3CICBVIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ZeusRunButtonAction#init(Lorg.eclipse.ui.IWorkbenchWindow;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="run" size="56,16" id="{UMLID=_3CICAlIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ZeusRunButtonAction#run(Lorg.eclipse.jface.action.IAction;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="selectionChanged" size="126,16" id="{UMLID=_3Bpg5lIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ZeusRunButtonAction#selectionChanged(Lorg.eclipse.jface.action.IAction;Lorg.eclipse.jface.viewers.ISelection;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getScript" size="83,16" id="{UMLID=_3Bpg41IDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ZeusRunButtonAction#getScript()}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" size="2,1" description="Call" autoLocated="true" id="{UMLID=_FjTXAFIFEd-fJs9_MReiaA}" source="//@children.3" target="//@children.0" targetEnd="//@children.3/@sourceConnections.0/@children.1" label="//@children.3/@sourceConnections.0/@children.2" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,11" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="134,144"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="38,28" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" size="2,1" description="Call" autoLocated="true" id="{UMLID=_G3PrIFIFEd-fJs9_MReiaA}" source="//@children.3" target="//@children.6" targetEnd="//@children.3/@sourceConnections.1/@children.1" label="//@children.3/@sourceConnections.1/@children.2" sourceEnd="//@children.3/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,95" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="159,293"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="38,28" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" size="2,1" description="Call" autoLocated="true" id="{UMLID=_ILSs8FIFEd-fJs9_MReiaA}" source="//@children.3" target="//@children.7" targetEnd="//@children.3/@sourceConnections.2/@children.1" label="//@children.3/@sourceConnections.2/@children.2" sourceEnd="//@children.3/@sourceConnections.2/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,164" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="127,26"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="38,28" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:RequiredInterfaceEditModel" id="{UMLID=_3lRLUVIDEd-fJs9_MReiaA}" source="//@children.3" target="//@children.8" targetEnd="//@children.3/@sourceConnections.3/@children.1" sourceEnd="//@children.3/@sourceConnections.3/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="95,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="6,20" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true" ShowInnerEntity="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.0" name="OpenHandler" location="266,473" size="173,155" timstampe="3" stereotype="" id="{UMLID=_3qVRgFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/OpenHandler}" runTimeClassModel="dispose(),isEnabled(),addHandlerListener(Lorg.eclipse.core.commands.IHandlerListener;),removeHandlerListener(Lorg.eclipse.core.commands.IHandlerListener;),isHandled(),execute(Lorg.eclipse.core.commands.ExecutionEvent;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="152,108">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" size="79,16" id="{UMLID=_3qtsAFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/OpenHandler#execute(Lorg.eclipse.core.commands.ExecutionEvent;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addHandlerListener" size="134,16" id="{UMLID=_3q55QFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/OpenHandler#addHandlerListener(Lorg.eclipse.core.commands.IHandlerListener;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="dispose" size="78,16" id="{UMLID=_3rGGglIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/OpenHandler#dispose()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isEnabled" size="86,16" id="{UMLID=_3qnlYFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/OpenHandler#isEnabled()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isHandled" size="87,16" id="{UMLID=_3q__51IDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/OpenHandler#isHandled()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeHandlerListener" size="152,16" id="{UMLID=_3q__5FIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/OpenHandler#removeHandlerListener(Lorg.eclipse.core.commands.IHandlerListener;)}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true" ShowInnerEntity="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ZeusMenu" location="168,322" size="147,119" timstampe="2" stereotype="" id="{UMLID=_3zyIcFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ZeusMenu}" runTimeClassModel="run(Lorg.eclipse.jface.action.IAction;),selectionChanged(Lorg.eclipse.jface.action.IAction;Lorg.eclipse.jface.viewers.ISelection;),dispose(),init(Lorg.eclipse.ui.IWorkbenchWindow;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="126,72">
+      <children xsi:type="editmodel:MethodEditModel" name="dispose" size="78,16" id="{UMLID=_30WwMVIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ZeusMenu#dispose()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="init" size="53,16" id="{UMLID=_30QpklIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ZeusMenu#init(Lorg.eclipse.ui.IWorkbenchWindow;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="run" size="56,16" id="{UMLID=_30Ki8lIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ZeusMenu#run(Lorg.eclipse.jface.action.IAction;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="selectionChanged" size="126,16" id="{UMLID=_3z-VsFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/ZeusMenu#selectionChanged(Lorg.eclipse.jface.action.IAction;Lorg.eclipse.jface.viewers.ISelection;)}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" size="2,1" autoLocated="true" id="{UMLID=_fOpJQFIEEd-fJs9_MReiaA}" source="//@children.5" target="//@children.4" targetEnd="//@children.5/@sourceConnections.0/@children.1" label="//@children.5/@sourceConnections.0/@children.2" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="122,119" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="24,0"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" size="2,1" autoLocated="true" id="{UMLID=_gnXPsFIEEd-fJs9_MReiaA}" source="//@children.5" target="//@children.2" targetEnd="//@children.5/@sourceConnections.1/@children.1" label="//@children.5/@sourceConnections.1/@children.2" sourceEnd="//@children.5/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="15,119" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="99,0"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true" ShowInnerEntity="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.1" name="AtlasQueryAdapter" location="490,70" size="159,587" timstampe="89" stereotype="" id="{UMLID=_32XiYFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter}" runTimeClassModel="or(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),refby(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),arg(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),leaves(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),rcg(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),types(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),calledby(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),roots(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),ref(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),queryState,and([Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),argcast(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),def(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),minus(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),call(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),argto(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),read(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),cast(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),functions(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),qf,variables(Lcom.ensoftcorp.plugin.atlas.query.lang.IArtifacts;),AtlasQueryAdapter(),artifacts(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),qfst,fdecl(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),writtenby(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),readby(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),cg(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),write(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),arg(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="82,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="qf" size="39,16" id="{UMLID=_33IXYFIDEd-fJs9_MReiaA}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="queryState" size="82,16" id="{UMLID=_33OeAVIDEd-fJs9_MReiaA}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="qfst" size="48,16" id="{UMLID=_33UkoFIDEd-fJs9_MReiaA}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="134,486">
+      <children xsi:type="editmodel:MethodEditModel" name="AtlasQueryAdapter" size="134,16" id="{UMLID=_34Rm5FIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#AtlasQueryAdapter()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="minus" size="68,16" id="{UMLID=_35a2ZFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#minus(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="and" size="58,16" id="{UMLID=_35tKSVIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#and([Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="or" size="50,16" id="{UMLID=_34wIAlIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#or(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="def" size="56,16" id="{UMLID=_348VQFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#def(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="argcast" size="77,16" id="{UMLID=_33arQlIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#argcast(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="arg" size="56,16" id="{UMLID=_35Uvx1IDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#arg(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="arg" size="56,16" id="{UMLID=_35IigFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#arg(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="argto" size="65,16" id="{UMLID=_35Cb4VIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#argto(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="artifacts" size="80,16" id="{UMLID=_33_TAFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#artifacts(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="calledby" size="80,16" id="{UMLID=_33s_I1IDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#calledby(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="cg" size="52,16" id="{UMLID=_34FZoFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#cg(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="call" size="56,16" id="{UMLID=_34d0IFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#call(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="cast" size="61,16" id="{UMLID=_348VRVIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#cast(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fdecl" size="64,16" id="{UMLID=_34Xtg1IDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#fdecl(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="functions" size="85,16" id="{UMLID=_34LgQVIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#functions(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="leaves" size="72,16" id="{UMLID=_34wICVIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#leaves(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="readby" size="74,16" id="{UMLID=_35UvwlIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#readby(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="read" size="62,16" id="{UMLID=_33m4gVIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#read(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="refby" size="66,16" id="{UMLID=_34d0JVIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#refby(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="ref" size="54,16" id="{UMLID=_35nDplIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#ref(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="rcg" size="56,16" id="{UMLID=_34qBYlIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#rcg(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="roots" size="65,16" id="{UMLID=_35tKRFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#roots(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="types" size="67,16" id="{UMLID=_33zFwlIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#types(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="variables" size="84,16" id="{UMLID=_35OpJFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#variables(Lcom.ensoftcorp.plugin.atlas.query.lang.IArtifacts;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="write" size="65,16" id="{UMLID=_34FZpVIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#write(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="writtenby" size="86,16" id="{UMLID=_34Rm5VIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/AtlasQueryAdapter#writtenby(Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:RequiredInterfaceEditModel" autoLocated="true" id="{UMLID=_39Jf0VIDEd-fJs9_MReiaA}" source="//@children.6" target="//@children.10" targetEnd="//@children.6/@sourceConnections.0/@children.1" sourceEnd="//@children.6/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,143" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true" ShowInnerEntity="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.2" name="OutputResults" location="686,406" size="127,209" timstampe="160" stereotype="" id="{UMLID=_3DpsAFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/OutputResults}" runTimeClassModel="outPathXML,fout,fOutStream,showGraph(Ljava.lang.String;Lcom.ensoftcorp.plugin.atlas.query.lang.IArtifacts;Lcom.ensoftcorp.plugin.atlas.query.lang.IArtifacts;Lcom.ensoftcorp.plugin.atlas.query.lang.IArtifacts;Lcom.ensoftcorp.plugin.atlas.query.lang.IArtifacts;Lcom.ensoftcorp.plugin.atlas.query.lang.IArtifacts;Lcom.ensoftcorp.plugin.atlas.query.lang.IArtifacts;),outFileXML,outPathTxt,toXMLFile(Ljava.lang.String;[Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;),outFileTxt,toTextFile(Ljava.lang.String;[Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="86,108">
+      <children xsi:type="editmodel:AttributeEditModel" name="outPathTxt" size="80,16" id="{UMLID=_4FQ6AlIDEd-fJs9_MReiaA}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="outFileTxt" size="75,16" id="{UMLID=_4FQ6BFIDEd-fJs9_MReiaA}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fOutStream" size="84,16" id="{UMLID=_4FKzYVIDEd-fJs9_MReiaA}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fout" size="48,16" id="{UMLID=_4FEsw1IDEd-fJs9_MReiaA}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="outPathXML" size="86,16" id="{UMLID=_4E-mIFIDEd-fJs9_MReiaA}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="outFileXML" size="81,16" id="{UMLID=_4FKzZVIDEd-fJs9_MReiaA}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="98,54">
+      <children xsi:type="editmodel:MethodEditModel" name="toXMLFile" size="86,16" id="{UMLID=_4FXAoFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/OutputResults#toXMLFile(Ljava.lang.String;[Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toTextFile" size="86,16" id="{UMLID=_4F7oYFIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/OutputResults#toTextFile(Ljava.lang.String;[Lcom.ensoftcorp.plugin.atlas.query.lang.IValue;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showGraph" size="98,16" id="{UMLID=_4FjN4VIDEd-fJs9_MReiaA,JavaID=cpre492.sdmay1020.plugin.zeus/OutputResults#showGraph(Ljava.lang.String;Lcom.ensoftcorp.plugin.atlas.query.lang.IArtifacts;Lcom.ensoftcorp.plugin.atlas.query.lang.IArtifacts;Lcom.ensoftcorp.plugin.atlas.query.lang.IArtifacts;Lcom.ensoftcorp.plugin.atlas.query.lang.IArtifacts;Lcom.ensoftcorp.plugin.atlas.query.lang.IArtifacts;Lcom.ensoftcorp.plugin.atlas.query.lang.IArtifacts;)}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true" ShowInnerEntity="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.3/@sourceConnections.3" name="Scriptable" location="1015,202" size="22,22" attachment="//@children.3" id="{UMLID=_3cS1gFIDEd-fJs9_MReiaA,JavaID=org.mozilla.javascript/Scriptable}" iconOrientation="1" kind="required"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="org.mozilla.rhino" location="987,240" size="91,15" fontInfo="Omondo_Font_Default-9-0" description="Name" attachment="//@children.8"/>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.6/@sourceConnections.0" name="IValue" location="392,202" size="22,22" attachment="//@children.6" id="{UMLID=_33arQ1IDEd-fJs9_MReiaA,JavaID=com.ensoftcorp.plugin.atlas.query.lang/IValue}" kind="required"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="com.ensoftcorp.plugin.atlas" location="336,238" size="152,15" fontInfo="Omondo_Font_Default-9-0" description="Name" attachment="//@children.10"/>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.0/@sourceConnections.0" name="IArtifacts" location="883,135" size="22,22" attachment="//@children.0" id="{UMLID=_1kiCoVIDEd-fJs9_MReiaA,JavaID=com.ensoftcorp.plugin.atlas.query.lang/IArtifacts}" iconOrientation="16" kind="required"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="com.ensoftcorp.plugin.atlas" location="815,163" size="152,15" fontInfo="Omondo_Font_Default-9-0" description="Name" attachment="//@children.12"/>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="14,14" gridOrigin="0,0" rulerUnit="cm" gridShow="true">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" shortPackageNameFormat="true" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showMethods="true" showAttributes="true" showLiterlas="true" showInnerEntity="true"/>
+</editmodel:ClassDiagramEditModel>
