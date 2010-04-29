@@ -20,4 +20,4 @@ var name = "Graph Test";
 //Pass the name and Results to the graph
 //NOTE : we pass the name first, then pass the results as the root node,
 //and finally pass the empty IArtifacts set to the showgraph
-or.showGraph(name, Results, empty,empty, empty,empty,empty);
+out.showGraph(name, Results, empty,empty, empty,empty,empty);
