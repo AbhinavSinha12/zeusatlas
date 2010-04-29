@@ -131,8 +131,23 @@ public class OutputResultsTest {
 		assertTrue(attributes.getNamedItem("xmlns:ss").getNodeValue().equalsIgnoreCase("urn:schemas-microsoft-com:office:spreadsheet"));
 		assertTrue(attributes.getNamedItem("xmlns:html").getNodeValue().equalsIgnoreCase("http://www.w3.org/TR/REC-html40"));
 		
-		//Check rows
-		NodeList nodes = doc.getElementsByTagName("Row");
+		//Check document elements
+		NodeList nodes = doc.getElementsByTagName("Styles");
+		assertTrue(nodes.getLength()==1);
+		
+		nodes = doc.getElementsByTagName("Style");
+		assertTrue(nodes.getLength()==1);
+		
+		nodes = doc.getElementsByTagName("Alignment");
+		assertTrue(nodes.getLength()==1);
+		
+		nodes = doc.getElementsByTagName("Worksheet");
+		assertTrue(nodes.getLength()==1);
+		
+		nodes = doc.getElementsByTagName("Table");
+		assertTrue(nodes.getLength()==1);
+		
+		nodes = doc.getElementsByTagName("Row");
 		assertTrue(nodes.item(0).getAttributes().getNamedItem("ID").getNodeValue().equalsIgnoreCase("Test"));
 		assertTrue(nodes.item(1).getAttributes().getNamedItem("ID").getNodeValue().equalsIgnoreCase("Test2"));
 		
