@@ -21,7 +21,6 @@ import org.xml.sax.SAXException;
 
 import com.ensoftcorp.plugin.atlas.query.lang.IArtifacts;
 import cpre492.sdmay1020.plugin.zeus.ArtifactFactory;
-import cpre492.sdmay1020.plugin.zeus.AtlasQueryAdapter;
 import cpre492.sdmay1020.plugin.zeus.OutputResults;
 
 public class OutputResultsTest {
