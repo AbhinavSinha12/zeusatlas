@@ -36,12 +36,12 @@ import com.ensoftcorp.plugin.atlas.ui.api.GraphUI;
 
 public class OutputResults {
 
-	static IPath outPathTxt = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.txt");
-	static File outFileTxt = null;
-	static FileOutputStream fOutStream = null;
-	static PrintWriter fout = null;
-	static IPath outPathXML = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.xml");
-	static File outFileXML = null;
+	protected static IPath outPathTxt = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.txt");
+	public static File outFileTxt = null;
+	public static FileOutputStream fOutStream = null;
+	public static PrintWriter fout = null;
+	protected static IPath outPathXML = ResourcesPlugin.getWorkspace().getRoot().getLocation().append("output.xml");
+	public static File outFileXML = null;
 	
 	/**
 	 * toTextFile prints the type and name of the input IValue (or IValue array) in an
