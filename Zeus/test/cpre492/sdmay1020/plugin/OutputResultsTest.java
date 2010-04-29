@@ -42,11 +42,14 @@ public class OutputResultsTest {
 	@Test
 	public void testTextFile()
 	{
+		//Setup variables
 		String testOutput = "Test Artifacts 1: dswrite ";
 		String testOutput2 = "Test2 Artifacts 1: dswrite";
 		
 		IArtifacts set = ArtifactFactory.createArtifacts();
 		set.add(ArtifactFactory.createFunction("dswrite"));
+		
+		//Write to text file, should append second write
 		OutputResults.toTextFile("Test", set);
 		OutputResults.toTextFile("Test2", set);
 		
@@ -60,13 +63,16 @@ public class OutputResultsTest {
 			fail("Text file not created");
 		}
 		
+		//Check text file
 		while(outfile.hasNext())
 		{
 			assertTrue(testfile.next().equalsIgnoreCase(outfile.next()));
 		}
 		
+		//Reset OutputResults
 		OutputResults.outFileTxt = null;
 		
+		//Write to text file, should overwrite
 		OutputResults.toTextFile("Test2", set);
 		
 		testfile = new Scanner(testOutput2);
@@ -78,6 +84,7 @@ public class OutputResultsTest {
 			fail("Text file not created");
 		}
 		
+		//Check text file
 		while(outfile.hasNext())
 		{
 			assertTrue(testfile.next().equalsIgnoreCase(outfile.next()));
@@ -87,9 +94,11 @@ public class OutputResultsTest {
 	@Test
 	public void testXMLFile()
 	{
+		//Setup variables
 		IArtifacts set = ArtifactFactory.createArtifacts();
 		set.add(ArtifactFactory.createFunction("dswrite"));
 		
+		//Write to XML file, should append second write
 		OutputResults.toXMLFile("Test", set);
 		OutputResults.toXMLFile("Test2", set);
 		
@@ -115,18 +124,22 @@ public class OutputResultsTest {
 		Node root = doc.getDocumentElement();
 		NamedNodeMap attributes = root.getAttributes();
 		
+		//Check attributes of the document element
 		assertTrue(attributes.getNamedItem("xmlns").getNodeValue().equalsIgnoreCase("urn:schemas-microsoft-com:office:spreadsheet"));
 		assertTrue(attributes.getNamedItem("xmlns:o").getNodeValue().equalsIgnoreCase("urn:schemas-microsoft-com:office:office"));
 		assertTrue(attributes.getNamedItem("xmlns:x").getNodeValue().equalsIgnoreCase("urn:schemas-microsoft-com:office:excel"));
 		assertTrue(attributes.getNamedItem("xmlns:ss").getNodeValue().equalsIgnoreCase("urn:schemas-microsoft-com:office:spreadsheet"));
 		assertTrue(attributes.getNamedItem("xmlns:html").getNodeValue().equalsIgnoreCase("http://www.w3.org/TR/REC-html40"));
 		
+		//Check rows
 		NodeList nodes = doc.getElementsByTagName("Row");
 		assertTrue(nodes.item(0).getAttributes().getNamedItem("ID").getNodeValue().equalsIgnoreCase("Test"));
 		assertTrue(nodes.item(1).getAttributes().getNamedItem("ID").getNodeValue().equalsIgnoreCase("Test2"));
 		
+		//Reset OutputResults
 		OutputResults.outFileXML = null;
 		
+		//Write to XML file, should overwrite the file
 		OutputResults.toXMLFile("Test3", set);
 		
 		try {
@@ -139,6 +152,7 @@ public class OutputResultsTest {
 			e.printStackTrace();
 		}
 		
+		//Check that the file was overwritten
 		nodes = doc.getElementsByTagName("Row");
 		assertTrue(nodes.item(0).getAttributes().getNamedItem("ID").getNodeValue().equalsIgnoreCase("Test3"));
 	}
