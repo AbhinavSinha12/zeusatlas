@@ -80,7 +80,10 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 			
 			// run the script - if invalid input, this will throw an exception
 			cx.evaluateString(scope, scriptString, "script", 1, null);
-
+			
+			Shell shell = window.getShell();
+			MessageDialog.openInformation(shell, "Zeus", "Script executed successfully");
+			
 	  } catch(RhinoException re) {// Invalid JavaScript input
 		  	Shell shell = window.getShell();
 		  	StringBuilder s = new StringBuilder();
@@ -89,7 +92,7 @@ public class ZeusRunButtonAction implements IWorkbenchWindowActionDelegate {
 		    // tell user where (first) error occurred -> helps with debugging input 
 		    s.append("\n(Line " + re.lineNumber() + ", Col " + re.columnNumber() + ") Src: " + re.lineSource());
 		    //re.printStackTrace(System.out);
-		    MessageDialog.openInformation(shell, "Error", s.toString());
+		    MessageDialog.openInformation(shell, "Zeus - Error", s.toString());
 	  } catch(Exception e){
 	  		System.out.println(e.toString());
 	  }finally {
