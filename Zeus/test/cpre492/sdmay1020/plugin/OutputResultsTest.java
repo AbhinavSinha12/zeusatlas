@@ -133,12 +133,15 @@ public class OutputResultsTest {
 		
 		//Check document elements
 		NodeList nodes = doc.getElementsByTagName("Styles");
+		Node node = null;
 		assertTrue(nodes.getLength()==1);
 		
 		nodes = doc.getElementsByTagName("Style");
+		node = nodes.item(0);
 		assertTrue(nodes.getLength()==1);
 		
 		nodes = doc.getElementsByTagName("Alignment");
+		node = nodes.item(0);
 		assertTrue(nodes.getLength()==1);
 		
 		nodes = doc.getElementsByTagName("Worksheet");
